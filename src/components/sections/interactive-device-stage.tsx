@@ -10,7 +10,6 @@ import {
   Cpu,
   ShieldCheck,
   Zap,
-  Sparkles,
 } from "lucide-react";
 
 interface ProductItem {
@@ -107,7 +106,7 @@ export function InteractiveDeviceStage() {
                 LIVE STORE ENGINE
               </span>
             </div>
-            <span className="shrink-0 text-[10px] bg-emerald-500/20 text-emerald-400 font-mono px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1">
+            <span className="shrink-0 text-[10px] bg-emerald-500/20 text-emerald-400 font-heading font-semibold px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               Sub-Second 4G
             </span>
@@ -152,10 +151,10 @@ export function InteractiveDeviceStage() {
 
               {/* Status Badges Overlay */}
               <div className="absolute top-2 left-2 right-2 flex items-center justify-between gap-1 pointer-events-none">
-                <span className="text-[9px] sm:text-[10px] font-mono font-semibold uppercase bg-brand-surface/95 backdrop-blur-xs text-brand-primary px-1.5 sm:px-2 py-0.5 rounded-md border border-brand-border shadow-2xs">
+                <span className="text-[9px] sm:text-[10px] font-heading font-bold uppercase bg-brand-surface/95 backdrop-blur-xs text-brand-primary px-1.5 sm:px-2 py-0.5 rounded-md border border-brand-border shadow-2xs">
                   {selectedProduct.condition}
                 </span>
-                <span className="text-[9px] sm:text-[10px] font-semibold text-emerald-800 bg-emerald-100/95 backdrop-blur-xs px-1.5 sm:px-2 py-0.5 rounded-md border border-emerald-300 shadow-2xs">
+                <span className="text-[9px] sm:text-[10px] font-heading font-bold text-emerald-800 bg-emerald-100/95 backdrop-blur-xs px-1.5 sm:px-2 py-0.5 rounded-md border border-emerald-300 shadow-2xs">
                   {selectedProduct.stock}
                 </span>
               </div>
@@ -175,7 +174,7 @@ export function InteractiveDeviceStage() {
             {/* Price & 1-Tap Action Row */}
             <div className="pt-2.5 sm:pt-3 border-t border-brand-border/70 flex items-center justify-between gap-2 min-w-0">
               <div className="min-w-0">
-                <span className="text-[9px] sm:text-[10px] font-mono uppercase text-brand-secondary block leading-none mb-1">
+                <span className="text-[9px] sm:text-[10px] font-heading font-semibold uppercase text-brand-secondary block leading-none mb-1">
                   Advertised Price
                 </span>
                 <span className="font-heading font-black text-base sm:text-lg text-brand-primary block leading-none">
@@ -287,7 +286,7 @@ export function InteractiveDeviceStage() {
                   </div>
                 </div>
 
-                <span className="text-[10px] bg-emerald-500/20 text-emerald-400 font-mono px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1">
+                <span className="text-[10px] bg-emerald-500/20 text-emerald-400 font-heading font-semibold px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                   Live 4G
                 </span>
@@ -343,7 +342,7 @@ export function InteractiveDeviceStage() {
 
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between text-[9px] mb-0.5">
-                          <span className="font-mono text-brand-secondary uppercase">
+                          <span className="font-heading font-semibold text-brand-secondary uppercase">
                             {product.category}
                           </span>
                           <span className="text-emerald-700 bg-emerald-50 px-1.5 py-0.2 rounded-full font-semibold border border-emerald-200/60">
@@ -394,7 +393,7 @@ export function InteractiveDeviceStage() {
               <div className="p-3 bg-brand-surface border-t border-brand-border/80 flex items-center justify-between text-[11px]">
                 <div className="flex items-center gap-1.5 text-brand-secondary">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-                  <span className="font-mono text-[10px]">Zero Lag UX</span>
+                  <span className="font-sans font-medium text-[10px]">Zero Lag UX</span>
                 </div>
                 <span className="font-heading font-bold text-xs text-brand-primary">
                   Instant Handoff
@@ -403,151 +402,231 @@ export function InteractiveDeviceStage() {
             </div>
           </div>
         ) : (
-          /* ================= DESKTOP STUDIO VIEW ================= */
+          /* ================= DESKTOP STUDIO DIGITAL STOREFRONT ================= */
           <div className="w-full rounded-2xl bg-brand-surface border border-brand-border shadow-xl overflow-hidden flex flex-col text-left">
-            {/* Browser Chrome Bar */}
-            <div className="flex items-center justify-between px-4 py-3 bg-neutral-100/90 border-b border-brand-border">
-              <div className="flex items-center gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-red-400 inline-block" />
-                <span className="w-3 h-3 rounded-full bg-amber-400 inline-block" />
-                <span className="w-3 h-3 rounded-full bg-emerald-400 inline-block" />
+            {/* macOS Browser Chrome Bar */}
+            <div className="flex items-center justify-between px-4 py-3 bg-neutral-100/95 border-b border-brand-border">
+              <div className="flex items-center gap-2">
+                <div className="flex items-center gap-1.5">
+                  <span className="w-3 h-3 rounded-full bg-red-400 inline-block" />
+                  <span className="w-3 h-3 rounded-full bg-amber-400 inline-block" />
+                  <span className="w-3 h-3 rounded-full bg-emerald-400 inline-block" />
+                </div>
+                <span className="text-[11px] font-heading font-semibold text-brand-secondary ml-2">
+                  Northstar Electronics · Live Digital Storefront
+                </span>
               </div>
-              <div className="flex items-center gap-2 px-3 py-1 bg-white rounded-md text-xs font-mono text-brand-secondary border border-brand-border/60 shadow-2xs">
-                <span className="text-emerald-600">🔒</span> gridmark.studio/live-storefront
+
+              {/* Minimal Address Bar */}
+              <div className="hidden sm:flex items-center gap-2 px-3.5 py-1 bg-white rounded-lg text-xs font-sans text-brand-secondary border border-brand-border/70 shadow-2xs">
+                <span className="text-emerald-600 text-xs">🔒</span>
+                <span className="text-brand-primary font-medium">store.northstar-electronics.ng</span>
+                <span className="text-brand-secondary/50">/catalogue/active-feed</span>
               </div>
-              <span className="text-[11px] font-heading font-semibold text-emerald-800 bg-emerald-100/80 px-2.5 py-0.5 rounded-full">
-                Production Verified
-              </span>
+
+              <div className="flex items-center gap-2">
+                <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[11px] font-heading font-bold border border-emerald-200/80">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                  Lagos Hub Active
+                </span>
+              </div>
             </div>
 
-            {/* Desktop Showcase Content */}
-            <div className="p-6 bg-brand-bg/40 grid grid-cols-1 md:grid-cols-12 gap-6">
-              {/* Left: Product List */}
-              <div className="md:col-span-7 space-y-3">
-                <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-heading font-bold uppercase tracking-wider text-brand-primary">
-                    Live Stock Feed (Lagos Retail)
-                  </span>
-                  <span className="text-xs text-emerald-600 font-mono font-medium">
-                    4 Active SKUs
-                  </span>
-                </div>
-
-                {PRODUCTS.map((item) => (
-                  <div
-                    key={item.id}
-                    onClick={() => setSelectedProduct(item)}
-                    className={`p-3 rounded-xl border transition-all cursor-pointer bg-brand-surface flex items-center justify-between gap-3 ${
-                      selectedProduct.id === item.id
-                        ? "border-brand-primary ring-2 ring-brand-primary/10 shadow-xs"
-                        : "border-brand-border hover:border-brand-primary/40"
-                    }`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="relative w-12 h-12 rounded-lg bg-neutral-100 border border-brand-border/60 overflow-hidden shrink-0 flex items-center justify-center">
-                        <Image
-                          src={item.image}
-                          alt={item.name}
-                          fill
-                          sizes="48px"
-                          className="object-contain p-1"
-                        />
-                      </div>
-                      <div>
-                        <span className="text-[10px] font-mono text-brand-secondary uppercase block">
-                          {item.condition} · {item.stock}
-                        </span>
-                        <h4 className="font-heading font-bold text-sm text-brand-primary">
-                          {item.name}
-                        </h4>
-                        <p className="text-xs text-brand-secondary mt-0.5">{item.specs}</p>
-                      </div>
-                    </div>
-                    <div className="text-right shrink-0">
-                      <span className="font-heading font-extrabold text-sm text-brand-primary block">
-                        {item.price}
-                      </span>
-                      <span className="text-[10px] text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-semibold">
-                        WhatsApp Ready
-                      </span>
-                    </div>
-                  </div>
-                ))}
+            {/* In-Storefront Navigation & Subheader */}
+            <div className="px-5 py-2.5 bg-brand-surface border-b border-brand-border/70 flex items-center justify-between">
+              <div className="flex items-center gap-1.5">
+                <button
+                  type="button"
+                  onClick={() => setActiveCategory("all")}
+                  className={`px-3 py-1 rounded-lg text-xs font-heading font-semibold transition-colors cursor-pointer ${
+                    activeCategory === "all"
+                      ? "bg-brand-primary text-white"
+                      : "text-brand-secondary hover:text-brand-primary"
+                  }`}
+                >
+                  All Inventory ({PRODUCTS.length})
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveCategory("laptops")}
+                  className={`px-3 py-1 rounded-lg text-xs font-heading font-semibold transition-colors cursor-pointer ${
+                    activeCategory === "laptops"
+                      ? "bg-brand-primary text-white"
+                      : "text-brand-secondary hover:text-brand-primary"
+                  }`}
+                >
+                  MacBooks & Laptops
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveCategory("phones")}
+                  className={`px-3 py-1 rounded-lg text-xs font-heading font-semibold transition-colors cursor-pointer ${
+                    activeCategory === "phones"
+                      ? "bg-brand-primary text-white"
+                      : "text-brand-secondary hover:text-brand-primary"
+                  }`}
+                >
+                  iPhones
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setActiveCategory("displays")}
+                  className={`px-3 py-1 rounded-lg text-xs font-heading font-semibold transition-colors cursor-pointer ${
+                    activeCategory === "displays"
+                      ? "bg-brand-primary text-white"
+                      : "text-brand-secondary hover:text-brand-primary"
+                  }`}
+                >
+                  Monitors
+                </button>
               </div>
 
-              {/* Right: Technical Inspector Card with Hero Product Image */}
-              <div className="md:col-span-5 bg-brand-surface rounded-2xl border border-brand-border p-5 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center gap-1.5 text-xs font-mono uppercase tracking-wider text-brand-secondary mb-3">
-                    <Zap className="w-3.5 h-3.5 text-brand-accent" />
-                    <span>Architecture Inspector</span>
+              <div className="hidden md:flex items-center gap-2 text-xs text-brand-secondary font-sans">
+                <span className="inline-flex items-center gap-1 text-emerald-700 font-medium">
+                  <Zap className="w-3.5 h-3.5 text-emerald-600" />
+                  0.03s TTFB
+                </span>
+                <span>·</span>
+                <span>Sub-Second Cache</span>
+              </div>
+            </div>
+
+            {/* Desktop Storefront Content Container */}
+            <div className="p-4 sm:p-5 bg-brand-bg/40 flex flex-col gap-3.5">
+              {/* Product Hero Spotlight Stage */}
+              <div className="relative w-full aspect-[16/10] rounded-2xl bg-gradient-to-b from-white via-neutral-50 to-neutral-100/70 border border-brand-border/80 shadow-xs flex items-center justify-center p-4 overflow-hidden group">
+                {/* Subtle Ambient Radial Glow */}
+                <div className="absolute inset-0 bg-radial from-brand-accent/10 via-transparent to-transparent opacity-60 pointer-events-none" />
+
+                {/* Top Badges */}
+                <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 pointer-events-none z-10">
+                  <span className="px-2.5 py-1 rounded-lg bg-brand-surface/95 backdrop-blur-xs text-brand-primary text-xs font-heading font-bold border border-brand-border/80 shadow-2xs">
+                    {selectedProduct.condition}
+                  </span>
+                  <span className="px-2.5 py-1 rounded-lg bg-emerald-100/95 backdrop-blur-xs text-emerald-900 text-xs font-heading font-bold border border-emerald-300/80 shadow-2xs flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
+                    {selectedProduct.stock}
+                  </span>
+                </div>
+
+                {/* High-Res Studio Image */}
+                <div className="relative w-full h-full flex items-center justify-center">
+                  <Image
+                    src={selectedProduct.image}
+                    alt={selectedProduct.name}
+                    fill
+                    priority
+                    sizes="(max-width: 1024px) 100vw, 550px"
+                    className="object-contain p-2 drop-shadow-xl transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </div>
+              </div>
+
+              {/* SKU Details & Quick Action Card */}
+              <div className="bg-white rounded-2xl border border-brand-border p-4 shadow-xs flex flex-col gap-3">
+                <div className="flex items-start justify-between gap-3">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="text-[10px] font-heading uppercase tracking-wider text-brand-secondary font-bold">
+                        {selectedProduct.category} · Lagos Stock
+                      </span>
+                      <span className="text-[10px] font-heading font-bold text-emerald-800 bg-emerald-100 px-2 py-0.2 rounded-full">
+                        Verified Genuine
+                      </span>
+                    </div>
+                    <h3 className="font-heading font-black text-base sm:text-lg text-brand-primary leading-tight truncate">
+                      {selectedProduct.name}
+                    </h3>
+                    <p className="text-xs text-brand-secondary mt-0.5 truncate font-sans">
+                      {selectedProduct.specs}
+                    </p>
                   </div>
 
-                  {/* Active Product Studio Photo */}
-                  <div className="relative w-full aspect-[16/10] rounded-xl bg-neutral-100/90 border border-brand-border/70 overflow-hidden mb-3.5 flex items-center justify-center">
-                    <Image
-                      src={selectedProduct.image}
-                      alt={selectedProduct.name}
-                      fill
-                      priority
-                      sizes="350px"
-                      className="object-contain p-3 drop-shadow-md"
-                    />
-                  </div>
-
-                  <h4 className="font-heading font-extrabold text-base text-brand-primary">
-                    {selectedProduct.name}
-                  </h4>
-
-                  <div className="mt-3 p-3 rounded-xl bg-brand-bg border border-brand-border space-y-1.5 text-xs">
-                    <div className="flex justify-between">
-                      <span className="text-brand-secondary">Price advertised:</span>
-                      <span className="font-bold text-brand-primary font-mono">{selectedProduct.price}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-brand-secondary">Grade status:</span>
-                      <span className="font-bold text-emerald-700">{selectedProduct.condition}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-brand-secondary">Lagos warehouse:</span>
-                      <span className="font-bold text-brand-primary">{selectedProduct.stock}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-brand-secondary">Payload render:</span>
-                      <span className="font-mono text-emerald-600 font-bold">0.03s</span>
-                    </div>
-                  </div>
-
-                  <div className="mt-3.5 p-3 rounded-xl bg-emerald-50 border border-emerald-200/70 text-xs text-emerald-900 leading-relaxed">
-                    <span className="font-bold flex items-center gap-1 mb-1">
-                      <Sparkles className="w-3.5 h-3.5 text-emerald-700" />
-                      Automated WhatsApp Message
+                  <div className="text-right shrink-0">
+                    <span className="text-[10px] font-heading uppercase text-brand-secondary block leading-none mb-1">
+                      Showroom Price
                     </span>
-                    &ldquo;Hello, I want to confirm stock for {selectedProduct.name} ({selectedProduct.price}) advertised on your Gridmark storefront.&rdquo;
+                    <span className="font-heading font-black text-lg sm:text-xl text-brand-primary block leading-none">
+                      {selectedProduct.price}
+                    </span>
                   </div>
                 </div>
 
+                {/* Simulated WhatsApp Toast if clicked */}
+                {copiedId === selectedProduct.id && (
+                  <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 leading-snug animate-in fade-in">
+                    <span className="font-heading font-bold block mb-0.5 flex items-center gap-1">
+                      <Check className="w-3.5 h-3.5 text-emerald-700" />
+                      Inquiry Copied & Ready for WhatsApp:
+                    </span>
+                    <p className="font-sans text-[11px]">
+                      &ldquo;Hello, I want to order {selectedProduct.name} ({selectedProduct.price}) confirmed in stock at {selectedProduct.stock}.&rdquo;
+                    </p>
+                  </div>
+                )}
+
+                {/* Instant 1-Tap Order Button */}
                 <button
                   type="button"
                   onClick={() => handleEnquire(selectedProduct)}
-                  className={`mt-4 w-full py-2.5 px-4 rounded-xl font-heading font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer ${
+                  className={`w-full py-2.5 px-4 rounded-xl font-heading font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm ${
                     copiedId === selectedProduct.id
                       ? "bg-emerald-600 text-white"
-                      : "bg-brand-dark-surface text-brand-dark-text hover:bg-black"
+                      : "bg-brand-accent text-brand-primary hover:brightness-105 active:scale-[0.98]"
                   }`}
                 >
                   {copiedId === selectedProduct.id ? (
                     <>
-                      <Check className="w-4 h-4 text-brand-accent" />
-                      <span>Copied Pre-filled Inquiry!</span>
+                      <Check className="w-4 h-4 text-white" />
+                      <span>Inquiry Copied! Ready for WhatsApp</span>
                     </>
                   ) : (
                     <>
-                      <MessageSquare className="w-4 h-4 text-brand-accent" />
-                      <span>Simulate Customer Order Click</span>
+                      <MessageSquare className="w-4 h-4 text-brand-primary" />
+                      <span>Order via WhatsApp (Instant Handoff)</span>
                     </>
                   )}
                 </button>
+              </div>
+
+              {/* SKU Thumbnail Switcher Strip */}
+              <div>
+                <span className="text-[10px] font-heading font-bold uppercase tracking-wider text-brand-secondary block mb-1.5">
+                  Click to Switch Active Showroom SKU:
+                </span>
+                <div className="grid grid-cols-4 gap-2">
+                  {PRODUCTS.map((prod) => {
+                    const isSelected = selectedProduct.id === prod.id;
+                    return (
+                      <button
+                        key={prod.id}
+                        type="button"
+                        onClick={() => setSelectedProduct(prod)}
+                        className={`p-1.5 sm:p-2 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
+                          isSelected
+                            ? "bg-white border-brand-primary ring-2 ring-brand-primary/10 shadow-xs"
+                            : "bg-brand-surface/90 border-brand-border/80 hover:border-brand-primary/40 hover:bg-white"
+                        }`}
+                      >
+                        <div className="relative w-full aspect-[4/3] rounded-lg bg-neutral-100/80 border border-brand-border/40 overflow-hidden mb-1 flex items-center justify-center">
+                          <Image
+                            src={prod.image}
+                            alt={prod.name}
+                            fill
+                            sizes="120px"
+                            className="object-contain p-1"
+                          />
+                        </div>
+                        <h5 className="font-heading font-bold text-[11px] text-brand-primary truncate leading-tight">
+                          {prod.shortName}
+                        </h5>
+                        <span className="font-sans font-bold text-[10px] text-brand-secondary mt-0.5">
+                          {prod.price}
+                        </span>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>

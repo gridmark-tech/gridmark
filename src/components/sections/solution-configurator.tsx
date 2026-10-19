@@ -273,7 +273,7 @@ export function SolutionConfigurator() {
                   <Sparkles className="w-4 h-4 text-emerald-600" />
                   <span>Tailored for Lagos & Nigerian retail realities</span>
                 </span>
-                <span className="font-mono text-emerald-700 font-bold">100% Fixed Scope</span>
+                <span className="font-heading text-emerald-700 font-bold text-xs">100% Fixed Scope</span>
               </div>
             </div>
 
@@ -282,7 +282,7 @@ export function SolutionConfigurator() {
               <div>
                 <div className="flex items-center justify-between border-b border-brand-border/70 pb-4 mb-5">
                   <div>
-                    <span className="text-[10px] font-mono uppercase tracking-wider text-emerald-800 font-bold bg-emerald-100 px-2.5 py-0.5 rounded-full inline-block mb-1">
+                    <span className="text-[10px] font-heading uppercase tracking-wider text-emerald-800 font-bold bg-emerald-100 px-2.5 py-0.5 rounded-full inline-block mb-1">
                       {result.recommendedPillar}
                     </span>
                     <h3 className="font-heading font-extrabold text-2xl text-brand-primary">
@@ -291,10 +291,10 @@ export function SolutionConfigurator() {
                   </div>
 
                   <div className="text-right">
-                    <span className="text-[10px] text-brand-secondary font-mono block uppercase">
+                    <span className="text-[10px] text-brand-secondary font-heading font-semibold block uppercase">
                       Timeline
                     </span>
-                    <span className="font-mono font-bold text-xs text-brand-primary flex items-center gap-1 justify-end">
+                    <span className="font-sans font-bold text-xs text-brand-primary flex items-center gap-1 justify-end">
                       <Clock className="w-3.5 h-3.5 text-emerald-600" />
                       {result.turnaround}
                     </span>
@@ -303,17 +303,17 @@ export function SolutionConfigurator() {
 
                 <div className="space-y-4">
                   <div>
-                    <span className="text-[11px] font-mono uppercase tracking-wider text-brand-secondary block mb-1.5 font-semibold">
+                    <span className="text-[11px] font-heading uppercase tracking-wider text-brand-secondary block mb-1.5 font-semibold">
                       Architecture & Stack
                     </span>
-                    <div className="p-3 rounded-xl bg-white border border-brand-border text-xs font-mono text-brand-primary flex items-center gap-2 shadow-2xs">
+                    <div className="p-3 rounded-xl bg-white border border-brand-border text-xs font-sans font-medium text-brand-primary flex items-center gap-2 shadow-2xs">
                       <Layers className="w-4 h-4 text-brand-accent shrink-0" />
                       <span className="truncate">{result.architecture}</span>
                     </div>
                   </div>
 
                   <div>
-                    <span className="text-[11px] font-mono uppercase tracking-wider text-brand-secondary block mb-2 font-semibold">
+                    <span className="text-[11px] font-heading uppercase tracking-wider text-brand-secondary block mb-2 font-semibold">
                       Key Inclusions
                     </span>
                     <ul className="space-y-2">
@@ -328,21 +328,21 @@ export function SolutionConfigurator() {
                 </div>
               </div>
 
-              {/* Action Button: Prefills WhatsApp directly with the configured plan! */}
+              {/* Action Buttons: Signature Gridmark Accent + Secondary */}
               <div className="mt-8 pt-5 border-t border-brand-border/70 flex flex-col sm:flex-row items-center gap-3">
                 <Button
                   href={getWhatsAppUrl(result.whatsappMessage)}
                   external
-                  variant="dark"
+                  variant="accent"
                   size="md"
-                  className="w-full sm:w-auto gap-2 bg-emerald-700 hover:bg-emerald-800 border-emerald-700 text-white"
+                  className="w-full sm:w-auto gap-2 shadow-sm font-heading font-bold"
                 >
-                  <MessageSquare className="w-4 h-4" />
-                  <span>Enquire This Exact Scope on WhatsApp</span>
-                  <ArrowRight className="w-4 h-4 ml-auto sm:ml-1" />
+                  <MessageSquare className="w-4 h-4 text-brand-primary" />
+                  <span>Enquire Exact Scope on WhatsApp</span>
+                  <ArrowRight className="w-4 h-4 ml-auto sm:ml-1 text-brand-primary" />
                 </Button>
 
-                <Button href="/contact" variant="outline" size="md" className="w-full sm:w-auto">
+                <Button href="/contact" variant="secondary" size="md" className="w-full sm:w-auto font-heading">
                   Submit Form Details
                 </Button>
               </div>

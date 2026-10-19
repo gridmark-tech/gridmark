@@ -67,7 +67,7 @@ export function WhyGridmark() {
                       <div className="w-12 h-12 rounded-xl bg-brand-bg flex items-center justify-center text-brand-primary border border-brand-border/60">
                         <Icon className="w-6 h-6" />
                       </div>
-                      <span className="font-mono text-sm font-bold text-brand-secondary/60">
+                      <span className="font-heading text-sm font-black text-brand-secondary/60">
                         {item.number}
                       </span>
                     </div>

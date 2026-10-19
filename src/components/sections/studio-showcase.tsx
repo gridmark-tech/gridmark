@@ -94,7 +94,7 @@ export function StudioShowcase() {
           <span className="w-3 h-3 rounded-full bg-amber-400 inline-block" />
           <span className="w-3 h-3 rounded-full bg-emerald-400 inline-block" />
         </div>
-        <div className="flex items-center gap-2 px-3 py-1 bg-white rounded-md text-xs font-mono text-brand-secondary border border-brand-border/60 shadow-2xs">
+        <div className="flex items-center gap-2 px-3 py-1 bg-white rounded-md text-xs font-sans text-brand-secondary border border-brand-border/60 shadow-2xs">
           <span className="text-emerald-600 font-bold">●</span> gridmark.studio · production
         </div>
         <span className="text-[11px] font-heading font-semibold text-emerald-800 bg-emerald-100/80 px-2.5 py-0.5 rounded-full">
@@ -106,7 +106,7 @@ export function StudioShowcase() {
       <div className="p-4 sm:p-5 bg-brand-dark-surface text-brand-dark-text border-b border-white/10">
         <div className="flex items-center justify-between mb-3.5">
           <div>
-            <span className="text-[10px] font-mono uppercase tracking-wider text-brand-accent block">
+            <span className="text-[10px] font-heading font-bold uppercase tracking-wider text-brand-accent block">
               Gridmark Core Capabilities
             </span>
             <span className="font-heading font-extrabold text-base sm:text-lg text-white">
@@ -166,7 +166,7 @@ export function StudioShowcase() {
       <div className="p-5 sm:p-6 bg-brand-bg/50 flex flex-col justify-between gap-5">
         <div>
           <div className="flex items-center justify-between gap-2 mb-2">
-            <span className="text-[11px] font-mono text-brand-secondary uppercase font-semibold">
+            <span className="text-[11px] font-heading font-semibold text-brand-secondary uppercase">
               {current.tag}
             </span>
             <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200/60">
@@ -196,7 +196,7 @@ export function StudioShowcase() {
         {/* Live Metrics Row inside Showcase */}
         <div className="grid grid-cols-2 gap-3 pt-4 border-t border-brand-border/70">
           <div className="p-3 rounded-xl bg-brand-surface border border-brand-border/80">
-            <span className="text-[10px] font-mono text-brand-secondary block uppercase">
+            <span className="text-[10px] font-heading font-semibold text-brand-secondary block uppercase">
               {current.metricLabel}
             </span>
             <span className="font-heading font-extrabold text-xl text-brand-primary block mt-0.5">
@@ -208,7 +208,7 @@ export function StudioShowcase() {
           </div>
 
           <div className="p-3 rounded-xl bg-brand-surface border border-brand-border/80">
-            <span className="text-[10px] font-mono text-brand-secondary block uppercase">
+            <span className="text-[10px] font-heading font-semibold text-brand-secondary block uppercase">
               Engineering Standard
             </span>
             <span className="font-heading font-extrabold text-xl text-brand-primary block mt-0.5">

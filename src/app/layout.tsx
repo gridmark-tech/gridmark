@@ -72,7 +72,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-brand-bg text-brand-primary">
+      <body className="min-h-full flex flex-col bg-brand-bg text-brand-primary font-sans">
         {children}
       </body>
     </html>

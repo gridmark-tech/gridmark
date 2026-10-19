@@ -36,6 +36,16 @@ The platform is engineered specifically for commercial retailers and enterprises
 
 ---
 
+## Strict Typography Standards
+
+To guarantee visual consistency and prevent operating system font leaks:
+
+- **Headings & Accent Labels:** `Manrope` (`font-heading`) strictly applied to all titles, section badges, and step markers.
+- **Body, Metadata & Numbers:** `Inter` (`font-sans`) applied to all body copy, technical specs, pricing, and numbers.
+- **Monospace Purge:** System monospace fallbacks are purged globally; `--font-mono` is re-mapped to `Inter` to prevent OS Courier/Liberation leaks.
+
+---
+
 ## Mobile-Native Foundations
 
 In accordance with mobile-native engineering standards:
@@ -47,6 +57,7 @@ In accordance with mobile-native engineering standards:
 5. **Dynamic Viewport Height:** Mobile navigation and app layout utilize `100dvh` to seamlessly adjust with mobile browser address bars.
 6. **Overscroll Guarding:** `overscroll-behavior-y: none` prevents accidental page rubber-banding during catalogue interaction.
 7. **Control Selection Guard:** `user-select: none` applied to buttons and control handles while preserving copyable text on content.
+8. **Scrollbar Suppression:** Global scrollbar track removal (`scrollbar-width: none !important`) ensuring an app-native aesthetic while retaining full mouse wheel and touch scrollability.
 
 ---
 

@@ -53,7 +53,7 @@ export default function WorkPage() {
                   <Badge variant="accent" className="bg-emerald-100/90 text-emerald-800 border-emerald-300 font-semibold">
                     Live Client Deployment
                   </Badge>
-                  <span className="text-xs font-mono text-brand-secondary">
+                  <span className="text-xs font-heading font-medium text-brand-secondary">
                     {project.clientType}
                   </span>
                 </div>
@@ -121,7 +121,7 @@ export default function WorkPage() {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 rounded-lg bg-brand-bg text-xs font-mono font-medium text-brand-primary border border-brand-border/80"
+                        className="px-3 py-1 rounded-lg bg-brand-bg text-xs font-sans font-medium text-brand-primary border border-brand-border/80"
                       >
                         {tech}
                       </span>

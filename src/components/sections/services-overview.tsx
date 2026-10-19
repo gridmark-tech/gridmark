@@ -114,7 +114,7 @@ export function ServicesOverview() {
                     <div className="w-11 h-11 rounded-xl bg-emerald-50 text-emerald-700 border border-emerald-200/60 flex items-center justify-center">
                       <Store className="w-5 h-5" />
                     </div>
-                    <span className="text-[10px] font-mono uppercase bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full font-bold">
+                    <span className="text-[10px] font-heading uppercase bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full font-bold">
                       Retail Engine
                     </span>
                   </div>
@@ -130,7 +130,7 @@ export function ServicesOverview() {
                   {/* Visual Artifact 1: Live Interactive Catalogue Micro-Widget with WebP Image */}
                   <div className="mt-5 p-3.5 rounded-2xl bg-brand-bg/80 border border-brand-border space-y-2.5">
                     <div className="flex items-center justify-between text-[10px]">
-                      <span className="font-mono text-brand-secondary">Ikeja Showroom Stock</span>
+                      <span className="font-heading font-semibold text-brand-secondary">Ikeja Showroom Stock</span>
                       <span className="text-emerald-700 font-bold flex items-center gap-1">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                         Live Verified
@@ -152,10 +152,10 @@ export function ServicesOverview() {
                           <h4 className="font-heading font-bold text-xs text-brand-primary truncate">
                             MacBook Pro 16&quot; M3 Max
                           </h4>
-                          <p className="text-[10px] text-brand-secondary font-mono mt-0.5 truncate">
+                          <p className="text-[10px] text-brand-secondary font-sans mt-0.5 truncate">
                             36GB RAM · 1TB SSD · Space Black
                           </p>
-                          <span className="font-mono font-extrabold text-xs text-brand-primary block mt-1">
+                          <span className="font-heading font-black text-xs text-brand-primary block mt-1">
                             ₦3,850,000
                           </span>
                         </div>
@@ -227,7 +227,7 @@ export function ServicesOverview() {
                     <div className="w-11 h-11 rounded-xl bg-blue-50 text-blue-700 border border-blue-200/60 flex items-center justify-center">
                       <Globe className="w-5 h-5" />
                     </div>
-                    <span className="text-[10px] font-mono uppercase bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full font-bold">
+                    <span className="text-[10px] font-heading uppercase bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full font-bold">
                       Web Platform
                     </span>
                   </div>
@@ -243,34 +243,34 @@ export function ServicesOverview() {
                   {/* Visual Artifact 2: Telemetry & Core Web Vitals Gauge */}
                   <div className="mt-5 p-3.5 rounded-2xl bg-brand-bg/80 border border-brand-border space-y-2.5">
                     <div className="flex items-center justify-between text-[10px]">
-                      <span className="font-mono text-brand-secondary">Mobile Performance Telemetry</span>
-                      <span className="font-mono text-emerald-700 font-bold">Grade: 100/100</span>
+                      <span className="font-heading font-semibold text-brand-secondary">Mobile Performance Telemetry</span>
+                      <span className="font-sans text-emerald-700 font-bold">Grade: 100/100</span>
                     </div>
 
                     <div className="grid grid-cols-3 gap-2">
                       <div className="p-2.5 rounded-xl bg-white border border-brand-border text-center">
-                        <div className="w-8 h-8 rounded-full border-2 border-emerald-500 text-emerald-600 font-bold text-xs flex items-center justify-center mx-auto">
+                        <div className="w-8 h-8 rounded-full border-2 border-emerald-500 text-emerald-600 font-bold text-xs flex items-center justify-center mx-auto font-sans">
                           100
                         </div>
-                        <span className="text-[9px] font-mono text-brand-secondary block mt-1 uppercase">
+                        <span className="text-[9px] font-heading font-semibold text-brand-secondary block mt-1 uppercase">
                           Performance
                         </span>
                       </div>
 
                       <div className="p-2.5 rounded-xl bg-white border border-brand-border text-center">
-                        <div className="w-8 h-8 rounded-full border-2 border-emerald-500 text-emerald-600 font-bold text-xs flex items-center justify-center mx-auto font-mono">
+                        <div className="w-8 h-8 rounded-full border-2 border-emerald-500 text-emerald-600 font-bold text-xs flex items-center justify-center mx-auto font-sans">
                           0.4s
                         </div>
-                        <span className="text-[9px] font-mono text-brand-secondary block mt-1 uppercase">
+                        <span className="text-[9px] font-heading font-semibold text-brand-secondary block mt-1 uppercase">
                           LCP Time
                         </span>
                       </div>
 
                       <div className="p-2.5 rounded-xl bg-white border border-brand-border text-center">
-                        <div className="w-8 h-8 rounded-full border-2 border-emerald-500 text-emerald-600 font-bold text-xs flex items-center justify-center mx-auto font-mono">
+                        <div className="w-8 h-8 rounded-full border-2 border-emerald-500 text-emerald-600 font-bold text-xs flex items-center justify-center mx-auto font-sans">
                           0.0
                         </div>
-                        <span className="text-[9px] font-mono text-brand-secondary block mt-1 uppercase">
+                        <span className="text-[9px] font-heading font-semibold text-brand-secondary block mt-1 uppercase">
                           Zero CLS
                         </span>
                       </div>
@@ -316,7 +316,7 @@ export function ServicesOverview() {
                     <div className="w-11 h-11 rounded-xl bg-purple-50 text-purple-700 border border-purple-200/60 flex items-center justify-center">
                       <Palette className="w-5 h-5" />
                     </div>
-                    <span className="text-[10px] font-mono uppercase bg-purple-100 text-purple-800 px-2.5 py-0.5 rounded-full font-bold">
+                    <span className="text-[10px] font-heading uppercase bg-purple-100 text-purple-800 px-2.5 py-0.5 rounded-full font-bold">
                       Identity Systems
                     </span>
                   </div>
@@ -332,7 +332,7 @@ export function ServicesOverview() {
                   {/* Visual Artifact 3: Brand Color Token Swatches + Mini Grid */}
                   <div className="mt-5 p-3.5 rounded-2xl bg-brand-bg/80 border border-brand-border space-y-2.5">
                     <div className="flex items-center justify-between text-[10px]">
-                      <span className="font-mono text-brand-secondary">Design Tokens & Palette</span>
+                      <span className="font-heading font-semibold text-brand-secondary">Design Tokens & Palette</span>
                       <span className="text-purple-700 font-bold flex items-center gap-1">
                         <Sparkles className="w-3 h-3 text-purple-600" />
                         Strict Cohesion
@@ -343,19 +343,19 @@ export function ServicesOverview() {
                     <div className="grid grid-cols-4 gap-1.5 p-2 bg-white rounded-xl border border-brand-border">
                       <div className="space-y-1 text-center">
                         <div className="h-7 rounded-md bg-[#171916] border border-black/10" />
-                        <span className="text-[9px] font-mono text-neutral-600 block">Carbon</span>
+                        <span className="text-[9px] font-heading font-semibold text-neutral-600 block">Carbon</span>
                       </div>
                       <div className="space-y-1 text-center">
                         <div className="h-7 rounded-md bg-[#B8F36B] border border-black/10" />
-                        <span className="text-[9px] font-mono text-neutral-600 block">Lime</span>
+                        <span className="text-[9px] font-heading font-semibold text-neutral-600 block">Lime</span>
                       </div>
                       <div className="space-y-1 text-center">
                         <div className="h-7 rounded-md bg-[#FFFFFF] border border-neutral-300" />
-                        <span className="text-[9px] font-mono text-neutral-600 block">Ivory</span>
+                        <span className="text-[9px] font-heading font-semibold text-neutral-600 block">Ivory</span>
                       </div>
                       <div className="space-y-1 text-center">
                         <div className="h-7 rounded-md bg-[#646962] border border-black/10" />
-                        <span className="text-[9px] font-mono text-neutral-600 block">Steel</span>
+                        <span className="text-[9px] font-heading font-semibold text-neutral-600 block">Steel</span>
                       </div>
                     </div>
                   </div>

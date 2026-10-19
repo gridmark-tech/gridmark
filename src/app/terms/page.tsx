@@ -21,7 +21,7 @@ export default function TermsPage() {
             <h1 className="mt-2 font-heading font-extrabold text-3xl sm:text-4xl text-brand-primary">
               Terms of Use
             </h1>
-            <p className="mt-3 text-sm text-brand-secondary font-mono">
+            <p className="mt-3 text-sm text-brand-secondary font-sans font-medium">
               Last updated: October 2026
             </p>
           </div>

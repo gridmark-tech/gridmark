@@ -91,7 +91,7 @@ export default function AboutPage() {
                 </p>
                 <div className="pt-4 border-t border-brand-border/60 flex items-center justify-between text-xs text-brand-primary font-medium">
                   <span>Transparent Fixed Engagements</span>
-                  <span className="font-mono text-emerald-600 font-bold">100% Honest</span>
+                  <span className="font-heading text-emerald-600 font-bold">100% Honest</span>
                 </div>
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function AboutPage() {
                   key={index}
                   className="p-7 rounded-2xl bg-brand-surface border border-brand-border/80 shadow-2xs"
                 >
-                  <span className="font-mono text-xs font-bold text-brand-secondary/60 block mb-3">
+                  <span className="font-heading text-xs font-black text-brand-secondary/60 block mb-3">
                     0{index + 1}
                   </span>
                   <h3 className="font-heading font-bold text-lg text-brand-primary">

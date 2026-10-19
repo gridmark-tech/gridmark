@@ -12,6 +12,7 @@
 
   --font-heading: var(--font-manrope), sans-serif;
   --font-sans: var(--font-inter), sans-serif;
+  --font-mono: var(--font-inter), sans-serif;
 }
 
 :root {
@@ -31,18 +32,28 @@ html {
   overscroll-behavior-y: none;
   background-color: var(--background);
   color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
   max-width: 100%;
   overflow-x: hidden;
 }
 
-/* Clean app-like experience: hide default scrollbars globally while preserving smooth scrolling */
+/* Strict Site Typography Enforcement */
 html,
 body {
+  font-family: var(--font-inter), sans-serif;
   max-width: 100%;
   overflow-x: hidden;
   position: relative;
   scrollbar-width: none !important;
   -ms-overflow-style: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-manrope), sans-serif;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
 }
 
 html::-webkit-scrollbar,

@@ -44,7 +44,7 @@ export function FeaturedWork() {
                   <Badge variant="accent" className="bg-emerald-100/90 text-emerald-800 border-emerald-300 font-semibold">
                     Live Client Deployment
                   </Badge>
-                  <span className="text-xs font-mono text-brand-secondary">
+                  <span className="text-xs font-heading font-medium text-brand-secondary">
                     {project.category}
                   </span>
                 </div>
@@ -95,7 +95,7 @@ export function FeaturedWork() {
                       Storefront Detail View
                     </span>
                   </div>
-                  <span className="text-[11px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full font-semibold">
+                  <span className="text-[11px] font-heading font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full">
                     Live Demo Flow
                   </span>
                 </div>
@@ -114,13 +114,13 @@ export function FeaturedWork() {
                       />
                     </div>
 
-                    <div className="text-xs text-brand-secondary uppercase font-mono">
+                    <div className="text-xs text-brand-secondary uppercase font-heading font-semibold">
                       Selected Model
                     </div>
                     <div className="text-base font-heading font-bold text-brand-primary mt-1">
                       MacBook Pro 16&quot; Apple M3 Max
                     </div>
-                    <div className="mt-2 text-xs text-brand-secondary grid grid-cols-2 gap-1.5 font-mono">
+                    <div className="mt-2 text-xs text-brand-secondary grid grid-cols-2 gap-1.5 font-sans">
                       <span>• 36GB Unified Memory</span>
                       <span>• 1TB Ultra-Fast SSD</span>
                       <span>• Liquid Retina XDR</span>

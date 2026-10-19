@@ -65,7 +65,7 @@ export function Process() {
               <div className="h-full p-6 sm:p-7 rounded-2xl bg-brand-surface border border-brand-border/80 shadow-2xs relative flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between mb-5">
-                    <span className="w-10 h-10 rounded-xl bg-brand-dark-surface text-brand-dark-text font-mono text-sm font-bold flex items-center justify-center">
+                    <span className="w-10 h-10 rounded-xl bg-brand-dark-surface text-brand-dark-text font-heading text-sm font-black flex items-center justify-center">
                       {step.step}
                     </span>
                     <span className="text-xs font-heading uppercase tracking-wider text-brand-secondary font-medium">
@@ -82,7 +82,7 @@ export function Process() {
                   </p>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-brand-border/50 text-[11px] font-mono text-brand-secondary">
+                <div className="mt-6 pt-4 border-t border-brand-border/50 text-[11px] font-heading font-semibold text-brand-secondary">
                   Checkpoint verified
                 </div>
               </div>

@@ -83,7 +83,7 @@ export function TrustPositioning() {
                         The WhatsApp Bottleneck
                       </span>
                     </div>
-                    <span className="text-xs font-mono text-red-700 bg-red-100 px-2.5 py-0.5 rounded-full font-semibold">
+                    <span className="text-xs font-heading text-red-700 bg-red-100 px-2.5 py-0.5 rounded-full font-semibold">
                       Common Friction
                     </span>
                   </div>
@@ -124,7 +124,7 @@ export function TrustPositioning() {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-red-200/60 flex items-center justify-between text-xs text-red-700 font-mono">
+                <div className="mt-6 pt-4 border-t border-red-200/60 flex items-center justify-between text-xs text-red-700 font-heading font-semibold">
                   <span>Friction Factor: High</span>
                   <span className="font-bold">Estimated 65% Lost Leads</span>
                 </div>
@@ -148,7 +148,7 @@ export function TrustPositioning() {
                         The Gridmark Engine
                       </span>
                     </div>
-                    <span className="text-xs font-mono text-emerald-800 bg-emerald-200/80 px-2.5 py-0.5 rounded-full font-bold">
+                    <span className="text-xs font-heading text-emerald-800 bg-emerald-200/80 px-2.5 py-0.5 rounded-full font-bold">
                       1-Tap Conversion
                     </span>
                   </div>
@@ -165,7 +165,7 @@ export function TrustPositioning() {
                         className="object-contain p-1"
                       />
                       <div className="absolute top-2 left-2 flex gap-1.5">
-                        <span className="text-[10px] font-mono font-bold uppercase bg-white/90 backdrop-blur-xs text-neutral-700 px-2 py-0.5 rounded border border-neutral-200 shadow-2xs">
+                        <span className="text-[10px] font-heading font-bold uppercase bg-white/90 backdrop-blur-xs text-neutral-700 px-2 py-0.5 rounded border border-neutral-200 shadow-2xs">
                           Verified Stock
                         </span>
                       </div>
@@ -180,12 +180,12 @@ export function TrustPositioning() {
                       <h4 className="font-heading font-extrabold text-base text-brand-primary">
                         Dell XPS 15 9530 (2024 Edition)
                       </h4>
-                      <p className="text-xs text-brand-secondary mt-0.5 font-mono">
+                      <p className="text-xs text-brand-secondary mt-0.5 font-sans">
                         Core i9-13900H · 32GB RAM · 1TB SSD · RTX 4070 · OLED 3.5K
                       </p>
                     </div>
 
-                    <div className="grid grid-cols-2 gap-2 text-[11px] bg-neutral-50 p-2.5 rounded-xl border border-neutral-200/70 font-mono">
+                    <div className="grid grid-cols-2 gap-2 text-[11px] bg-neutral-50 p-2.5 rounded-xl border border-neutral-200/70 font-sans">
                       <div>Battery Health: <strong className="text-brand-primary">98% (32 Cycles)</strong></div>
                       <div>Warranty: <strong className="text-brand-primary">6 Months Direct</strong></div>
                       <div>Grade: <strong className="text-emerald-700">Open Box A+</strong></div>
@@ -210,7 +210,7 @@ export function TrustPositioning() {
                   </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-emerald-200/80 flex items-center justify-between text-xs text-emerald-800 font-mono">
+                <div className="mt-6 pt-4 border-t border-emerald-200/80 flex items-center justify-between text-xs text-emerald-800 font-heading font-semibold">
                   <span>Customer Friction: Zero</span>
                   <span className="font-bold flex items-center gap-1">
                     <Zap className="w-3.5 h-3.5 text-emerald-600" />
