@@ -76,6 +76,16 @@ In accordance with mobile-native engineering standards:
 | `/sitemap.xml` | Generated sitemap for search indexing |
 | `/robots.txt` | Crawler policy |
 | `/manifest.webmanifest` | PWA web app manifest |
+| `/icon.svg` | Scalable vector logo favicon |
+| `/apple-icon.png` | Apple Touch Icon (180x180) |
+
+---
+
+## Brand Assets & Metadata
+
+- **Favicon & App Icons:** Modular 2x2 Gridmark emblem rendered in SVG (`/icon.svg`), multi-size ICO (`/favicon.ico`), and Apple touch icon (`/apple-icon.png`).
+- **Interactive Device Showcase:** Dual-mode hardware stage featuring an enlarged iPhone mockup and desktop studio preview, switched via a floating glass dock with spring motion transitions.
+- **Architectural Backdrop:** High-resolution subtle spatial backdrop (`/images/hero/hero-bg.webp`) with directional gradient mask, isolated strictly to the Hero viewport.
 
 ---
 

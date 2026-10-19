@@ -18,9 +18,11 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-45 mix-blend-multiply"
+          className="object-cover object-right lg:object-center opacity-85"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/70 via-transparent to-brand-bg" />
+        {/* Directional contrast gradients: text readability on left, clean curves on right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-bg via-brand-bg/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/30 via-transparent to-brand-bg" />
       </div>
 
       {/* Subtle grid background pattern */}
@@ -32,7 +34,7 @@ export function Hero() {
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-12 items-center">
           {/* Left Column: Value Proposition & Copy */}
-          <div className="lg:col-span-7 flex flex-col items-start">
+          <div className="lg:col-span-7 xl:col-span-6 flex flex-col items-start">
             <Reveal direction="down" delay={0.1}>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-surface border border-brand-border/80 text-[11px] sm:text-xs font-heading font-semibold uppercase tracking-wider text-brand-secondary shadow-2xs mb-3.5 sm:mb-4">
                 <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
@@ -90,7 +92,7 @@ export function Hero() {
           </div>
 
           {/* Right Column: Interactive Mobile & Desktop Device Stage */}
-          <div className="lg:col-span-5 w-full min-w-0 max-w-full flex justify-center lg:justify-end">
+          <div className="lg:col-span-5 xl:col-span-6 w-full min-w-0 max-w-full flex justify-center lg:justify-end">
             <Reveal direction="up" delay={0.3} duration={0.6} className="w-full min-w-0 max-w-full flex justify-center lg:justify-end">
               <InteractiveDeviceStage />
             </Reveal>

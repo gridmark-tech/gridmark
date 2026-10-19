@@ -232,78 +232,34 @@ export function InteractiveDeviceStage() {
           Full interactive iPhone chassis + Desktop Studio Inspector for wide screens
          ========================================================================= */}
       <div className="hidden lg:flex flex-col items-center w-full">
-        {/* Device Mode Switcher Bar */}
-        <div className="relative inline-flex items-center gap-1.5 p-1 rounded-full bg-brand-surface border border-brand-border/90 shadow-2xs mb-2.5">
-          <button
-            type="button"
-            onClick={() => setDeviceMode("mobile")}
-            className={`relative z-10 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-heading font-semibold transition-colors cursor-pointer ${
-              deviceMode === "mobile"
-                ? "text-brand-dark-text"
-                : "text-brand-secondary hover:text-brand-primary"
-            }`}
-          >
-            {deviceMode === "mobile" && (
-              <motion.span
-                layoutId="activeDeviceTab"
-                className="absolute inset-0 rounded-full bg-brand-dark-surface shadow-xs -z-10"
-                transition={{ type: "spring", stiffness: 450, damping: 35 }}
-              />
-            )}
-            <Smartphone className="w-3.5 h-3.5" />
-            <span className="whitespace-nowrap">Mobile Device (90% Users)</span>
-          </button>
-
-          <button
-            type="button"
-            onClick={() => setDeviceMode("desktop")}
-            className={`relative z-10 inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-heading font-semibold transition-colors cursor-pointer ${
-              deviceMode === "desktop"
-                ? "text-brand-dark-text"
-                : "text-brand-secondary hover:text-brand-primary"
-            }`}
-          >
-            {deviceMode === "desktop" && (
-              <motion.span
-                layoutId="activeDeviceTab"
-                className="absolute inset-0 rounded-full bg-brand-dark-surface shadow-xs -z-10"
-                transition={{ type: "spring", stiffness: 450, damping: 35 }}
-              />
-            )}
-            <Laptop className="w-3.5 h-3.5" />
-            <span className="whitespace-nowrap">Desktop Studio View</span>
-          </button>
-        </div>
-
-        <div className="w-full flex justify-center items-start min-h-[500px]">
+        {/* Device Display Stage */}
+        <div className="w-full flex justify-center items-start min-h-[580px]">
           <AnimatePresence mode="wait" initial={false}>
             {deviceMode === "mobile" ? (
               <motion.div
                 key="mobile"
-                initial={{ opacity: 0, scale: 0.95, y: 8 }}
+                initial={{ opacity: 0, scale: 0.96, y: 10 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.95, y: -8 }}
+                exit={{ opacity: 0, scale: 0.96, y: -10 }}
                 transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
                 className="w-full flex justify-center"
               >
-                {/* ================= PHOTOREALISTIC IPHONE MOCKUP FRAME ================= */}
-                <div className="relative w-full max-w-[280px] sm:max-w-[295px] aspect-[302/594] select-none mx-auto drop-shadow-2xl">
+                {/* ================= ENLARGED PHOTOREALISTIC IPHONE MOCKUP FRAME ================= */}
+                <div className="relative w-full max-w-[340px] xl:max-w-[355px] aspect-[302/594] select-none mx-auto drop-shadow-2xl">
                   {/* Inner Screen Content */}
-                  <div className="absolute top-[2.2%] bottom-[2.8%] left-[6.3%] right-[7.0%] rounded-[36px] overflow-hidden bg-brand-bg flex flex-col text-left z-10 shadow-inner">
+                  <div className="absolute top-[2.2%] bottom-[2.8%] left-[6.3%] right-[7.0%] rounded-[40px] overflow-hidden bg-brand-bg flex flex-col text-left z-10 shadow-inner">
                     {/* Mobile App Bar */}
-                    <div className="pt-9 px-3.5 pb-2 bg-brand-dark-surface text-brand-dark-text flex items-center justify-between border-b border-white/10 shrink-0">
-                      <div className="flex items-center gap-1.5">
-                        <span className="w-4 h-4 rounded-md bg-brand-accent text-brand-primary font-extrabold text-[9px] flex items-center justify-center">
+                    <div className="pt-10 px-4 pb-2.5 bg-brand-dark-surface text-brand-dark-text flex items-center justify-between border-b border-white/10 shrink-0">
+                      <div className="flex items-center gap-2 min-w-0">
+                        <span className="w-5 h-5 rounded-md bg-brand-accent text-brand-primary font-extrabold text-[10px] flex items-center justify-center shrink-0">
                           G
                         </span>
-                        <div>
-                          <span className="font-heading font-bold text-[11px] tracking-tight text-white block leading-tight">
-                            GRIDMARK STORE
-                          </span>
-                        </div>
+                        <span className="font-heading font-bold text-xs tracking-tight text-white block leading-tight truncate">
+                          GRIDMARK STORE
+                        </span>
                       </div>
 
-                      <span className="text-[9px] bg-emerald-500/20 text-emerald-400 font-heading font-semibold px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1">
+                      <span className="text-[10px] bg-emerald-500/20 text-emerald-400 font-heading font-semibold px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1 shrink-0">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                         Live 4G
                       </span>
@@ -312,14 +268,14 @@ export function InteractiveDeviceStage() {
                     {/* Quick Filter Chips */}
                     <div
                       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-                      className="px-2.5 py-1.5 bg-brand-surface border-b border-brand-border/70 flex items-center gap-1 overflow-x-auto no-scrollbar text-[10.5px] shrink-0"
+                      className="px-3 py-2 bg-brand-surface border-b border-brand-border/70 flex items-center gap-1.5 overflow-x-auto no-scrollbar text-xs shrink-0"
                     >
                       {["all", "laptops", "phones", "displays"].map((cat) => (
                         <button
                           key={cat}
                           type="button"
                           onClick={() => setActiveCategory(cat)}
-                          className={`px-2 py-0.5 rounded-md font-heading font-semibold capitalize whitespace-nowrap transition-colors cursor-pointer ${
+                          className={`px-2.5 py-1 rounded-md font-heading font-semibold capitalize whitespace-nowrap transition-colors cursor-pointer ${
                             activeCategory === cat
                               ? "bg-brand-primary text-white"
                               : "bg-brand-bg text-brand-secondary border border-brand-border/70"
@@ -331,7 +287,7 @@ export function InteractiveDeviceStage() {
                     </div>
 
                     {/* Scrollable Product Feed */}
-                    <div className="flex-1 overflow-y-auto p-2 space-y-1.5 no-scrollbar">
+                    <div className="flex-1 overflow-y-auto p-2.5 space-y-2 no-scrollbar">
                       {filtered.map((product) => {
                         const isSelected = selectedProduct.id === product.id;
                         const isCopied = copiedId === product.id;
@@ -340,25 +296,25 @@ export function InteractiveDeviceStage() {
                           <div
                             key={product.id}
                             onClick={() => setSelectedProduct(product)}
-                            className={`p-2 rounded-xl border transition-all cursor-pointer bg-brand-surface flex items-center gap-2 ${
+                            className={`p-2.5 rounded-xl border transition-all cursor-pointer bg-brand-surface flex items-center gap-2.5 ${
                               isSelected
                                 ? "border-brand-primary ring-2 ring-brand-primary/10 shadow-xs"
                                 : "border-brand-border hover:border-brand-primary/40"
                             }`}
                           >
                             {/* Product Thumbnail WebP */}
-                            <div className="relative w-12 h-12 rounded-lg bg-neutral-100 border border-brand-border/60 overflow-hidden shrink-0 flex items-center justify-center">
+                            <div className="relative w-14 h-14 rounded-lg bg-neutral-100 border border-brand-border/60 overflow-hidden shrink-0 flex items-center justify-center">
                               <Image
                                 src={product.image}
                                 alt={product.name}
                                 fill
-                                sizes="48px"
+                                sizes="56px"
                                 className="object-contain p-1"
                               />
                             </div>
 
                             <div className="flex-1 min-w-0">
-                              <div className="flex items-center justify-between text-[8.5px] mb-0.5">
+                              <div className="flex items-center justify-between text-[9px] mb-0.5">
                                 <span className="font-heading font-semibold text-brand-secondary uppercase">
                                   {product.category}
                                 </span>
@@ -367,16 +323,16 @@ export function InteractiveDeviceStage() {
                                 </span>
                               </div>
 
-                              <h4 className="font-heading font-bold text-[11px] text-brand-primary leading-tight truncate">
+                              <h4 className="font-heading font-bold text-xs text-brand-primary leading-tight truncate">
                                 {product.name}
                               </h4>
 
-                              <p className="text-[9.5px] text-brand-secondary mt-0.5 truncate">
+                              <p className="text-[10px] text-brand-secondary mt-0.5 truncate">
                                 {product.specs}
                               </p>
 
                               <div className="mt-1 pt-1 border-t border-brand-border/60 flex items-center justify-between">
-                                <span className="font-heading font-extrabold text-[11px] text-brand-primary">
+                                <span className="font-heading font-extrabold text-xs text-brand-primary">
                                   {product.price}
                                 </span>
 
@@ -386,7 +342,7 @@ export function InteractiveDeviceStage() {
                                     e.stopPropagation();
                                     handleEnquire(product);
                                   }}
-                                  className={`inline-flex items-center gap-1 text-[8.5px] font-semibold px-2 py-0.5 rounded-md transition-all cursor-pointer ${
+                                  className={`inline-flex items-center gap-1 text-[9.5px] font-semibold px-2 py-0.5 rounded-md transition-all cursor-pointer ${
                                     isCopied
                                       ? "bg-emerald-600 text-white"
                                       : "bg-brand-dark-surface text-brand-dark-text hover:bg-black"
@@ -407,12 +363,12 @@ export function InteractiveDeviceStage() {
                     </div>
 
                     {/* Mobile Bottom Status / Navigation Bar */}
-                    <div className="px-3 pt-1.5 pb-4 bg-brand-surface border-t border-brand-border/80 flex items-center justify-between text-[10px] shrink-0">
-                      <div className="flex items-center gap-1 text-brand-secondary">
-                        <ShieldCheck className="w-3 h-3 text-emerald-600" />
-                        <span className="font-sans font-medium text-[9px] whitespace-nowrap">Zero Lag UX</span>
+                    <div className="px-4 pt-2 pb-5 bg-brand-surface border-t border-brand-border/80 flex items-center justify-between text-xs shrink-0">
+                      <div className="flex items-center gap-1.5 text-brand-secondary">
+                        <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                        <span className="font-sans font-medium text-[10px] whitespace-nowrap">Zero Lag UX</span>
                       </div>
-                      <span className="font-heading font-bold text-[10.5px] text-brand-primary whitespace-nowrap">
+                      <span className="font-heading font-bold text-[11px] text-brand-primary whitespace-nowrap">
                         Instant Handoff
                       </span>
                     </div>
@@ -424,262 +380,277 @@ export function InteractiveDeviceStage() {
                     alt="iPhone Mockup"
                     fill
                     priority
-                    sizes="320px"
-                    className="pointer-events-none select-none z-20 object-contain drop-shadow-xl"
+                    sizes="(max-width: 1280px) 340px, 355px"
+                    className="pointer-events-none select-none z-20 object-contain drop-shadow-2xl"
                   />
                 </div>
               </motion.div>
-      ) : (
-        <motion.div
-          key="desktop"
-          initial={{ opacity: 0, scale: 0.95, y: 8 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          exit={{ opacity: 0, scale: 0.95, y: -8 }}
-          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-          className="w-full flex justify-center"
-        >
-          {/* ================= DESKTOP STUDIO DIGITAL STOREFRONT ================= */}
-          <div className="w-full max-w-[560px] rounded-2xl bg-brand-surface border border-brand-border shadow-xl overflow-hidden flex flex-col text-left">
-            {/* macOS Browser Chrome Bar (Unbroken Flat Single Row) */}
-            <div className="flex items-center justify-between px-3.5 py-2 bg-neutral-100/95 border-b border-brand-border gap-2">
-              <div className="flex items-center gap-1.5 shrink-0">
-                <div className="flex items-center gap-1 shrink-0">
-                  <span className="w-2.5 h-2.5 rounded-full bg-red-400 inline-block shrink-0" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block shrink-0" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block shrink-0" />
-                </div>
-                <span className="text-[11px] font-heading font-semibold text-brand-secondary ml-1 whitespace-nowrap">
-                  Northstar Electronics
-                </span>
-              </div>
-
-              {/* Minimal Address Bar */}
-              <div className="flex items-center gap-1.5 px-2.5 py-0.5 bg-white rounded-md text-[10.5px] sm:text-[11px] font-sans text-brand-secondary border border-brand-border/70 shadow-2xs whitespace-nowrap shrink-0">
-                <span className="text-emerald-600 text-[10px]">🔒</span>
-                <span className="text-brand-primary font-medium whitespace-nowrap">store.northstar-electronics.ng</span>
-              </div>
-
-              <div className="flex items-center gap-1.5 shrink-0">
-                <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-heading font-bold border border-emerald-200/80 whitespace-nowrap">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                  <span className="whitespace-nowrap">Lagos Hub Active</span>
-                </span>
-              </div>
-            </div>
-
-            {/* In-Storefront Navigation & Subheader */}
-            <div className="px-3.5 py-1.5 bg-brand-surface border-b border-brand-border/70 flex items-center justify-between">
-              <div className="flex items-center gap-1">
-                <button
-                  type="button"
-                  onClick={() => setActiveCategory("all")}
-                  className={`px-2.5 py-0.5 rounded-md text-xs font-heading font-semibold transition-colors cursor-pointer ${
-                    activeCategory === "all"
-                      ? "bg-brand-primary text-white"
-                      : "text-brand-secondary hover:text-brand-primary"
-                  }`}
-                >
-                  All ({PRODUCTS.length})
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveCategory("laptops")}
-                  className={`px-2.5 py-0.5 rounded-md text-xs font-heading font-semibold transition-colors cursor-pointer ${
-                    activeCategory === "laptops"
-                      ? "bg-brand-primary text-white"
-                      : "text-brand-secondary hover:text-brand-primary"
-                  }`}
-                >
-                  Laptops
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveCategory("phones")}
-                  className={`px-2.5 py-0.5 rounded-md text-xs font-heading font-semibold transition-colors cursor-pointer ${
-                    activeCategory === "phones"
-                      ? "bg-brand-primary text-white"
-                      : "text-brand-secondary hover:text-brand-primary"
-                  }`}
-                >
-                  Phones
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveCategory("displays")}
-                  className={`px-2.5 py-0.5 rounded-md text-xs font-heading font-semibold transition-colors cursor-pointer ${
-                    activeCategory === "displays"
-                      ? "bg-brand-primary text-white"
-                      : "text-brand-secondary hover:text-brand-primary"
-                  }`}
-                >
-                  Displays
-                </button>
-              </div>
-
-              <div className="hidden md:flex items-center gap-1.5 text-[11px] text-brand-secondary font-sans">
-                <span className="inline-flex items-center gap-1 text-emerald-700 font-medium">
-                  <Zap className="w-3 h-3 text-emerald-600" />
-                  0.03s TTFB
-                </span>
-              </div>
-            </div>
-
-            {/* Desktop Storefront Content Container */}
-            <div className="p-3 sm:p-3.5 bg-brand-bg/40 flex flex-col gap-2.5">
-              {/* Product Hero Spotlight Stage */}
-              <div className="relative w-full h-44 sm:h-48 rounded-xl bg-gradient-to-b from-white via-neutral-50 to-neutral-100/70 border border-brand-border/80 shadow-xs flex items-center justify-center p-3 overflow-hidden group">
-                {/* Subtle Ambient Radial Glow */}
-                <div className="absolute inset-0 bg-radial from-brand-accent/10 via-transparent to-transparent opacity-60 pointer-events-none" />
-
-                {/* Top Badges */}
-                <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between gap-2 pointer-events-none z-10">
-                  <span className="px-2 py-0.5 rounded-md bg-brand-surface/95 backdrop-blur-xs text-brand-primary text-[10px] sm:text-xs font-heading font-bold border border-brand-border/80 shadow-2xs">
-                    {selectedProduct.condition}
-                  </span>
-                  <span className="px-2 py-0.5 rounded-md bg-emerald-100/95 backdrop-blur-xs text-emerald-900 text-[10px] sm:text-xs font-heading font-bold border border-emerald-300/80 shadow-2xs flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
-                    {selectedProduct.stock}
-                  </span>
-                </div>
-
-                {/* High-Res Studio Image */}
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={selectedProduct.id}
-                      initial={{ opacity: 0, scale: 0.96 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.96 }}
-                      transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="relative w-full h-full flex items-center justify-center"
-                    >
-                      <Image
-                        src={selectedProduct.image}
-                        alt={selectedProduct.name}
-                        fill
-                        priority
-                        sizes="(max-width: 1024px) 100vw, 550px"
-                        className="object-contain p-2 drop-shadow-md transition-transform duration-300 group-hover:scale-[1.02]"
-                      />
-                    </motion.div>
-                  </AnimatePresence>
-                </div>
-              </div>
-
-              {/* SKU Details & Quick Action Card */}
-              <div className="bg-white rounded-xl border border-brand-border p-3 shadow-xs flex flex-col gap-2">
-                <div className="flex items-center justify-between gap-2">
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-1.5 mb-0.5">
-                      <span className="text-[9px] font-heading uppercase tracking-wider text-brand-secondary font-bold whitespace-nowrap">
-                        {selectedProduct.category} · Lagos Stock
-                      </span>
-                      <span className="text-[9px] font-heading font-bold text-emerald-800 bg-emerald-100 px-1.5 py-0.2 rounded-full whitespace-nowrap">
-                        Verified Genuine
+            ) : (
+              <motion.div
+                key="desktop"
+                initial={{ opacity: 0, scale: 0.96, y: 10 }}
+                animate={{ opacity: 1, scale: 1, y: 0 }}
+                exit={{ opacity: 0, scale: 0.96, y: -10 }}
+                transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                className="w-full flex justify-center"
+              >
+                {/* ================= ENLARGED DESKTOP STUDIO DIGITAL STOREFRONT ================= */}
+                <div className="w-full max-w-[620px] xl:max-w-[650px] rounded-2xl bg-brand-surface border border-brand-border shadow-xl overflow-hidden flex flex-col text-left">
+                  {/* macOS Browser Chrome Bar */}
+                  <div className="flex items-center justify-between px-4 py-2.5 bg-neutral-100/95 border-b border-brand-border gap-2">
+                    <div className="flex items-center gap-2 shrink-0">
+                      <div className="flex items-center gap-1.5 shrink-0">
+                        <span className="w-3 h-3 rounded-full bg-red-400 inline-block shrink-0" />
+                        <span className="w-3 h-3 rounded-full bg-amber-400 inline-block shrink-0" />
+                        <span className="w-3 h-3 rounded-full bg-emerald-400 inline-block shrink-0" />
+                      </div>
+                      <span className="text-xs font-heading font-semibold text-brand-secondary ml-1 whitespace-nowrap">
+                        Northstar Electronics
                       </span>
                     </div>
-                    <h3 className="font-heading font-black text-sm sm:text-base text-brand-primary leading-tight truncate whitespace-nowrap">
-                      {selectedProduct.name}
-                    </h3>
+
+                    {/* Minimal Address Bar */}
+                    <div className="flex items-center gap-1.5 px-3 py-1 bg-white rounded-md text-xs font-sans text-brand-secondary border border-brand-border/70 shadow-2xs whitespace-nowrap shrink-0">
+                      <span className="text-emerald-600 text-xs">🔒</span>
+                      <span className="text-brand-primary font-medium whitespace-nowrap">store.northstar-electronics.ng</span>
+                    </div>
+
+                    <div className="flex items-center gap-1.5 shrink-0">
+                      <span className="flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[11px] font-heading font-bold border border-emerald-200/80 whitespace-nowrap">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                        <span className="whitespace-nowrap">Lagos Hub Active</span>
+                      </span>
+                    </div>
                   </div>
 
-                  <div className="text-right shrink-0">
-                    <span className="text-[9px] font-heading uppercase text-brand-secondary block leading-none mb-0.5 whitespace-nowrap">
-                      Showroom Price
-                    </span>
-                    <span className="font-heading font-black text-base sm:text-lg text-brand-primary block leading-none whitespace-nowrap">
-                      {selectedProduct.price}
-                    </span>
+                  {/* In-Storefront Navigation & Subheader */}
+                  <div className="px-4 py-2 bg-brand-surface border-b border-brand-border/70 flex items-center justify-between">
+                    <div className="flex items-center gap-1.5">
+                      {["all", "laptops", "phones", "displays"].map((cat) => (
+                        <button
+                          key={cat}
+                          type="button"
+                          onClick={() => setActiveCategory(cat)}
+                          className={`px-3 py-1 rounded-md text-xs font-heading font-semibold transition-colors capitalize cursor-pointer ${
+                            activeCategory === cat
+                              ? "bg-brand-primary text-white"
+                              : "text-brand-secondary hover:text-brand-primary"
+                          }`}
+                        >
+                          {cat === "all" ? `All (${PRODUCTS.length})` : cat}
+                        </button>
+                      ))}
+                    </div>
+
+                    <div className="hidden sm:flex items-center gap-2 text-xs text-brand-secondary font-sans">
+                      <span className="inline-flex items-center gap-1 text-emerald-700 font-medium">
+                        <Zap className="w-3.5 h-3.5 text-emerald-600" />
+                        0.03s TTFB
+                      </span>
+                    </div>
                   </div>
-                </div>
 
-                <p className="text-[11px] text-brand-secondary truncate font-sans">
-                  {selectedProduct.specs}
-                </p>
+                  {/* Desktop Storefront Content Container */}
+                  <div className="p-4 bg-brand-bg/40 flex flex-col gap-3">
+                    {/* Product Hero Spotlight Stage */}
+                    <div className="relative w-full h-50 sm:h-54 rounded-xl bg-gradient-to-b from-white via-neutral-50 to-neutral-100/70 border border-brand-border/80 shadow-xs flex items-center justify-center p-3 overflow-hidden group">
+                      {/* Subtle Ambient Radial Glow */}
+                      <div className="absolute inset-0 bg-radial from-brand-accent/10 via-transparent to-transparent opacity-60 pointer-events-none" />
 
-                {/* Simulated WhatsApp Toast if clicked */}
-                {copiedId === selectedProduct.id && (
-                  <div className="p-2 rounded-lg bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 leading-snug animate-in fade-in">
-                    <span className="font-heading font-bold block mb-0.5 flex items-center gap-1 text-[11px] whitespace-nowrap">
-                      <Check className="w-3 h-3 text-emerald-700" />
-                      Inquiry Copied & Ready for WhatsApp:
-                    </span>
-                    <p className="font-sans text-[10px]">
-                      &ldquo;Hello, I want to order {selectedProduct.name} ({selectedProduct.price}) confirmed in stock at {selectedProduct.stock}.&rdquo;
-                    </p>
-                  </div>
-                )}
+                      {/* Top Badges */}
+                      <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 pointer-events-none z-10">
+                        <span className="px-2.5 py-1 rounded-md bg-brand-surface/95 backdrop-blur-xs text-brand-primary text-xs font-heading font-bold border border-brand-border/80 shadow-2xs">
+                          {selectedProduct.condition}
+                        </span>
+                        <span className="px-2.5 py-1 rounded-md bg-emerald-100/95 backdrop-blur-xs text-emerald-900 text-xs font-heading font-bold border border-emerald-300/80 shadow-2xs flex items-center gap-1.5">
+                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
+                          {selectedProduct.stock}
+                        </span>
+                      </div>
 
-                {/* Instant 1-Tap Order Button */}
-                <button
-                  type="button"
-                  onClick={() => handleEnquire(selectedProduct)}
-                  className={`w-full py-2 px-3 rounded-lg font-heading font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm whitespace-nowrap ${
-                    copiedId === selectedProduct.id
-                      ? "bg-emerald-600 text-white"
-                      : "bg-brand-accent text-brand-primary hover:brightness-105 active:scale-[0.98]"
-                  }`}
-                >
-                  {copiedId === selectedProduct.id ? (
-                    <>
-                      <Check className="w-3.5 h-3.5 text-white" />
-                      <span className="whitespace-nowrap">Inquiry Copied! Ready for WhatsApp</span>
-                    </>
-                  ) : (
-                    <>
-                      <MessageSquare className="w-3.5 h-3.5 text-brand-primary" />
-                      <span className="whitespace-nowrap">Order via WhatsApp (Instant Handoff)</span>
-                    </>
-                  )}
-                </button>
-              </div>
+                      {/* High-Res Studio Image */}
+                      <div className="relative w-full h-full flex items-center justify-center">
+                        <AnimatePresence mode="wait">
+                          <motion.div
+                            key={selectedProduct.id}
+                            initial={{ opacity: 0, scale: 0.96 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.96 }}
+                            transition={{ duration: 0.2, ease: "easeOut" }}
+                            className="relative w-full h-full flex items-center justify-center"
+                          >
+                            <Image
+                              src={selectedProduct.image}
+                              alt={selectedProduct.name}
+                              fill
+                              priority
+                              sizes="(max-width: 1024px) 100vw, 620px"
+                              className="object-contain p-2 drop-shadow-md transition-transform duration-300 group-hover:scale-[1.02]"
+                            />
+                          </motion.div>
+                        </AnimatePresence>
+                      </div>
+                    </div>
 
-              {/* SKU Thumbnail Switcher Strip */}
-              <div>
-                <span className="text-[9px] font-heading font-bold uppercase tracking-wider text-brand-secondary block mb-1">
-                  Click to Switch Active Showroom SKU:
-                </span>
-                <div className="grid grid-cols-4 gap-1.5">
-                  {PRODUCTS.map((prod) => {
-                    const isSelected = selectedProduct.id === prod.id;
-                    return (
+                    {/* SKU Details & Quick Action Card */}
+                    <div className="bg-white rounded-xl border border-brand-border p-3.5 shadow-xs flex flex-col gap-2.5">
+                      <div className="flex items-center justify-between gap-2">
+                        <div className="min-w-0">
+                          <div className="flex items-center gap-1.5 mb-1">
+                            <span className="text-[10px] font-heading uppercase tracking-wider text-brand-secondary font-bold whitespace-nowrap">
+                              {selectedProduct.category} · Lagos Stock
+                            </span>
+                            <span className="text-[10px] font-heading font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full whitespace-nowrap">
+                              Verified Genuine
+                            </span>
+                          </div>
+                          <h3 className="font-heading font-black text-base text-brand-primary leading-tight truncate whitespace-nowrap">
+                            {selectedProduct.name}
+                          </h3>
+                        </div>
+
+                        <div className="text-right shrink-0">
+                          <span className="text-[10px] font-heading uppercase text-brand-secondary block leading-none mb-1 whitespace-nowrap">
+                            Showroom Price
+                          </span>
+                          <span className="font-heading font-black text-lg text-brand-primary block leading-none whitespace-nowrap">
+                            {selectedProduct.price}
+                          </span>
+                        </div>
+                      </div>
+
+                      <p className="text-xs text-brand-secondary truncate font-sans">
+                        {selectedProduct.specs}
+                      </p>
+
+                      {/* Simulated WhatsApp Toast if clicked */}
+                      {copiedId === selectedProduct.id && (
+                        <div className="p-2.5 rounded-lg bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 leading-snug animate-in fade-in">
+                          <span className="font-heading font-bold block mb-0.5 flex items-center gap-1 text-xs whitespace-nowrap">
+                            <Check className="w-3.5 h-3.5 text-emerald-700" />
+                            Inquiry Copied & Ready for WhatsApp:
+                          </span>
+                          <p className="font-sans text-[11px]">
+                            &ldquo;Hello, I want to order {selectedProduct.name} ({selectedProduct.price}) confirmed in stock at {selectedProduct.stock}.&rdquo;
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Instant 1-Tap Order Button */}
                       <button
-                        key={prod.id}
                         type="button"
-                        onClick={() => setSelectedProduct(prod)}
-                        className={`p-1 sm:p-1.5 rounded-lg border text-left transition-all cursor-pointer flex flex-col justify-between ${
-                          isSelected
-                            ? "bg-white border-brand-primary ring-2 ring-brand-primary/10 shadow-xs"
-                            : "bg-brand-surface/90 border-brand-border/80 hover:border-brand-primary/40 hover:bg-white"
+                        onClick={() => handleEnquire(selectedProduct)}
+                        className={`w-full py-2.5 px-4 rounded-lg font-heading font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm whitespace-nowrap ${
+                          copiedId === selectedProduct.id
+                            ? "bg-emerald-600 text-white"
+                            : "bg-brand-accent text-brand-primary hover:brightness-105 active:scale-[0.98]"
                         }`}
                       >
-                        <div className="relative w-full aspect-[16/10] rounded bg-neutral-100/80 border border-brand-border/40 overflow-hidden mb-1 flex items-center justify-center">
-                          <Image
-                            src={prod.image}
-                            alt={prod.name}
-                            fill
-                            sizes="100px"
-                            className="object-contain p-0.5"
-                          />
-                        </div>
-                        <h5 className="font-heading font-bold text-[10px] text-brand-primary truncate leading-tight">
-                          {prod.shortName}
-                        </h5>
-                        <span className="font-sans font-bold text-[9px] text-brand-secondary mt-0.5">
-                          {prod.price}
-                        </span>
+                        {copiedId === selectedProduct.id ? (
+                          <>
+                            <Check className="w-4 h-4 text-white" />
+                            <span className="whitespace-nowrap">Inquiry Copied! Ready for WhatsApp</span>
+                          </>
+                        ) : (
+                          <>
+                            <MessageSquare className="w-4 h-4 text-brand-primary" />
+                            <span className="whitespace-nowrap">Order via WhatsApp (Instant Handoff)</span>
+                          </>
+                        )}
                       </button>
-                    );
-                  })}
+                    </div>
+
+                    {/* SKU Thumbnail Switcher Strip */}
+                    <div>
+                      <span className="text-[10px] font-heading font-bold uppercase tracking-wider text-brand-secondary block mb-1.5">
+                        Click to Switch Active Showroom SKU:
+                      </span>
+                      <div className="grid grid-cols-4 gap-2">
+                        {PRODUCTS.map((prod) => {
+                          const isSelected = selectedProduct.id === prod.id;
+                          return (
+                            <button
+                              key={prod.id}
+                              type="button"
+                              onClick={() => setSelectedProduct(prod)}
+                              className={`p-1.5 rounded-lg border text-left transition-all cursor-pointer flex flex-col justify-between ${
+                                isSelected
+                                  ? "bg-white border-brand-primary ring-2 ring-brand-primary/10 shadow-xs"
+                                  : "bg-brand-surface/90 border-brand-border/80 hover:border-brand-primary/40 hover:bg-white"
+                              }`}
+                            >
+                              <div className="relative w-full aspect-[16/10] rounded bg-neutral-100/80 border border-brand-border/40 overflow-hidden mb-1.5 flex items-center justify-center">
+                                <Image
+                                  src={prod.image}
+                                  alt={prod.name}
+                                  fill
+                                  sizes="120px"
+                                  className="object-contain p-0.5"
+                                />
+                              </div>
+                              <h5 className="font-heading font-bold text-[10.5px] text-brand-primary truncate leading-tight">
+                                {prod.shortName}
+                              </h5>
+                              <span className="font-sans font-bold text-[9.5px] text-brand-secondary mt-0.5">
+                                {prod.price}
+                              </span>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        {/* Floating Device Switcher Dock (Clean bottom pill, leaving full height above) */}
+        <div className="mt-4 flex items-center justify-center z-30">
+          <div className="inline-flex items-center gap-1 p-1 rounded-full bg-brand-surface/95 backdrop-blur-md border border-brand-border/90 shadow-md">
+            <button
+              type="button"
+              onClick={() => setDeviceMode("mobile")}
+              className={`relative z-10 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-heading font-semibold transition-colors cursor-pointer ${
+                deviceMode === "mobile"
+                  ? "text-brand-dark-text"
+                  : "text-brand-secondary hover:text-brand-primary"
+              }`}
+            >
+              {deviceMode === "mobile" && (
+                <motion.span
+                  layoutId="activeDockTab"
+                  className="absolute inset-0 rounded-full bg-brand-dark-surface shadow-xs -z-10"
+                  transition={{ type: "spring", stiffness: 450, damping: 35 }}
+                />
+              )}
+              <Smartphone className="w-3.5 h-3.5" />
+              <span className="whitespace-nowrap">Mobile Store (90% Users)</span>
+            </button>
+
+            <button
+              type="button"
+              onClick={() => setDeviceMode("desktop")}
+              className={`relative z-10 inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-heading font-semibold transition-colors cursor-pointer ${
+                deviceMode === "desktop"
+                  ? "text-brand-dark-text"
+                  : "text-brand-secondary hover:text-brand-primary"
+              }`}
+            >
+              {deviceMode === "desktop" && (
+                <motion.span
+                  layoutId="activeDockTab"
+                  className="absolute inset-0 rounded-full bg-brand-dark-surface shadow-xs -z-10"
+                  transition={{ type: "spring", stiffness: 450, damping: 35 }}
+                />
+              )}
+              <Laptop className="w-3.5 h-3.5" />
+              <span className="whitespace-nowrap">Desktop Studio</span>
+            </button>
           </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  </div>
-</div>
+        </div>
+      </div>
 </div>
   );
 }

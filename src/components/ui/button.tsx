@@ -68,6 +68,10 @@ export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Bu
       const isExternal =
         "external" in props ? props.external : href.startsWith("http") || href.startsWith("https");
 
+      // Strip 'external' prop so it never spreads onto the DOM element
+      const anchorRest = { ...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement> & { external?: boolean }) };
+      delete anchorRest.external;
+
       if (isExternal) {
         return (
           <a
@@ -76,7 +80,7 @@ export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Bu
             target="_blank"
             rel="noopener noreferrer"
             className={baseClasses}
-            {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+            {...anchorRest}
           >
             {children}
           </a>
@@ -88,7 +92,7 @@ export const Button = React.forwardRef<HTMLButtonElement | HTMLAnchorElement, Bu
           ref={ref as React.Ref<HTMLAnchorElement>}
           href={href}
           className={baseClasses}
-          {...(rest as React.AnchorHTMLAttributes<HTMLAnchorElement>)}
+          {...anchorRest}
         >
           {children}
         </Link>

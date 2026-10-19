@@ -28,6 +28,7 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
+  applicationName: siteConfig.name,
   title: {
     default: "Gridmark | Websites & Digital Storefronts for Businesses",
     template: "%s | Gridmark",
@@ -40,9 +41,24 @@ export const metadata: Metadata = {
     "business web design",
     "product catalogue web design",
     "brand experiences Lagos",
+    "sub-second e-commerce",
   ],
-  authors: [{ name: "Gridmark" }],
+  authors: [{ name: "Gridmark", url: siteConfig.url }],
   creator: "Gridmark",
+  publisher: "Gridmark",
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "32x32", type: "image/x-icon" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
   openGraph: {
     type: "website",
     locale: "en_NG",
@@ -50,15 +66,31 @@ export const metadata: Metadata = {
     title: "Gridmark | Websites & Digital Storefronts for Businesses",
     description: siteConfig.description,
     siteName: siteConfig.name,
+    images: [
+      {
+        url: "/images/hero/hero-bg.webp",
+        width: 1200,
+        height: 630,
+        alt: "Gridmark Digital Experiences",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Gridmark | Websites & Digital Storefronts for Businesses",
     description: siteConfig.description,
+    images: ["/images/hero/hero-bg.webp"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
