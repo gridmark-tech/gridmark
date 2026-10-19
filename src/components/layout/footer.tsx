@@ -6,7 +6,7 @@ import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/ui/logo";
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
+  const currentYear = 2026;
 
   return (
     <footer className="w-full bg-brand-dark-surface text-brand-dark-text mt-auto border-t border-white/10 safe-bottom">
