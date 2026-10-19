@@ -232,11 +232,11 @@ export function InteractiveDeviceStage() {
          ========================================================================= */}
       <div className="hidden lg:flex flex-col items-center w-full">
         {/* Device Mode Switcher Bar */}
-        <div className="inline-flex items-center gap-1.5 p-1.5 rounded-full bg-brand-surface border border-brand-border/90 shadow-xs mb-5">
+        <div className="inline-flex items-center gap-1.5 p-1 rounded-full bg-brand-surface border border-brand-border/90 shadow-2xs mb-2.5">
           <button
             type="button"
             onClick={() => setDeviceMode("mobile")}
-            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-heading font-semibold transition-all cursor-pointer ${
+            className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-heading font-semibold transition-all cursor-pointer ${
               deviceMode === "mobile"
                 ? "bg-brand-dark-surface text-brand-dark-text shadow-xs"
                 : "text-brand-secondary hover:text-brand-primary"
@@ -249,7 +249,7 @@ export function InteractiveDeviceStage() {
           <button
             type="button"
             onClick={() => setDeviceMode("desktop")}
-            className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-heading font-semibold transition-all cursor-pointer ${
+            className={`inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-heading font-semibold transition-all cursor-pointer ${
               deviceMode === "desktop"
                 ? "bg-brand-dark-surface text-brand-dark-text shadow-xs"
                 : "text-brand-secondary hover:text-brand-primary"
@@ -262,16 +262,16 @@ export function InteractiveDeviceStage() {
 
         {deviceMode === "mobile" ? (
           /* ================= MOBILE PHONE FRAME ================= */
-          <div className="relative w-full max-w-[360px] rounded-[44px] p-3.5 bg-neutral-900 border-[6px] border-neutral-800 shadow-2xl ring-1 ring-black/50">
+          <div className="relative w-full max-w-[340px] rounded-[38px] p-3 bg-neutral-900 border-[5px] border-neutral-800 shadow-xl ring-1 ring-black/50">
             {/* Hardware Notch / Island */}
-            <div className="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-4 bg-black rounded-full z-30 flex items-center justify-end px-2">
-              <span className="w-2 h-2 rounded-full bg-neutral-800" />
+            <div className="absolute top-3.5 left-1/2 -translate-x-1/2 w-24 h-3.5 bg-black rounded-full z-30 flex items-center justify-end px-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-neutral-800" />
             </div>
 
             {/* Screen Content */}
-            <div className="w-full rounded-[32px] bg-brand-bg overflow-hidden flex flex-col h-[580px] text-left border border-white/5 relative">
+            <div className="w-full rounded-[28px] bg-brand-bg overflow-hidden flex flex-col h-[500px] text-left border border-white/5 relative">
               {/* Mobile App Bar */}
-              <div className="pt-8 px-4 pb-3 bg-brand-dark-surface text-brand-dark-text flex items-center justify-between border-b border-white/10">
+              <div className="pt-7 px-3.5 pb-2.5 bg-brand-dark-surface text-brand-dark-text flex items-center justify-between border-b border-white/10">
                 <div className="flex items-center gap-2">
                   <span className="w-5 h-5 rounded-md bg-brand-accent text-brand-primary font-extrabold text-[10px] flex items-center justify-center">
                     G
@@ -295,7 +295,7 @@ export function InteractiveDeviceStage() {
               {/* Quick Filter Chips */}
               <div
                 style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-                className="p-3 bg-brand-surface border-b border-brand-border/70 flex items-center gap-1.5 overflow-x-auto no-scrollbar text-[11px]"
+                className="p-2.5 bg-brand-surface border-b border-brand-border/70 flex items-center gap-1.5 overflow-x-auto no-scrollbar text-[11px]"
               >
                 {["all", "laptops", "phones", "displays"].map((cat) => (
                   <button
@@ -314,7 +314,7 @@ export function InteractiveDeviceStage() {
               </div>
 
               {/* Scrollable Product Feed with Product Images */}
-              <div className="flex-1 overflow-y-auto p-3 space-y-2.5">
+              <div className="flex-1 overflow-y-auto p-2.5 space-y-2">
                 {filtered.map((product) => {
                   const isSelected = selectedProduct.id === product.id;
                   const isCopied = copiedId === product.id;
@@ -323,19 +323,19 @@ export function InteractiveDeviceStage() {
                     <div
                       key={product.id}
                       onClick={() => setSelectedProduct(product)}
-                      className={`p-3 rounded-2xl border transition-all cursor-pointer bg-brand-surface flex items-center gap-3 ${
+                      className={`p-2.5 rounded-xl border transition-all cursor-pointer bg-brand-surface flex items-center gap-2.5 ${
                         isSelected
                           ? "border-brand-primary ring-2 ring-brand-primary/10 shadow-xs"
                           : "border-brand-border hover:border-brand-primary/40"
                       }`}
                     >
                       {/* Product Thumbnail WebP */}
-                      <div className="relative w-16 h-16 rounded-xl bg-neutral-100 border border-brand-border/60 overflow-hidden shrink-0 flex items-center justify-center">
+                      <div className="relative w-14 h-14 rounded-lg bg-neutral-100 border border-brand-border/60 overflow-hidden shrink-0 flex items-center justify-center">
                         <Image
                           src={product.image}
                           alt={product.name}
                           fill
-                          sizes="64px"
+                          sizes="56px"
                           className="object-contain p-1"
                         />
                       </div>
@@ -358,7 +358,7 @@ export function InteractiveDeviceStage() {
                           {product.specs}
                         </p>
 
-                        <div className="mt-1.5 pt-1.5 border-t border-brand-border/60 flex items-center justify-between">
+                        <div className="mt-1 pt-1 border-t border-brand-border/60 flex items-center justify-between">
                           <span className="font-heading font-extrabold text-xs text-brand-primary">
                             {product.price}
                           </span>
@@ -390,7 +390,7 @@ export function InteractiveDeviceStage() {
               </div>
 
               {/* Mobile Bottom Navigation Bar */}
-              <div className="p-3 bg-brand-surface border-t border-brand-border/80 flex items-center justify-between text-[11px]">
+              <div className="p-2.5 bg-brand-surface border-t border-brand-border/80 flex items-center justify-between text-[11px]">
                 <div className="flex items-center gap-1.5 text-brand-secondary">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                   <span className="font-sans font-medium text-[10px]">Zero Lag UX</span>
@@ -405,27 +405,26 @@ export function InteractiveDeviceStage() {
           /* ================= DESKTOP STUDIO DIGITAL STOREFRONT ================= */
           <div className="w-full rounded-2xl bg-brand-surface border border-brand-border shadow-xl overflow-hidden flex flex-col text-left">
             {/* macOS Browser Chrome Bar */}
-            <div className="flex items-center justify-between px-4 py-3 bg-neutral-100/95 border-b border-brand-border">
+            <div className="flex items-center justify-between px-3.5 py-2 bg-neutral-100/95 border-b border-brand-border">
               <div className="flex items-center gap-2">
                 <div className="flex items-center gap-1.5">
-                  <span className="w-3 h-3 rounded-full bg-red-400 inline-block" />
-                  <span className="w-3 h-3 rounded-full bg-amber-400 inline-block" />
-                  <span className="w-3 h-3 rounded-full bg-emerald-400 inline-block" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-red-400 inline-block" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-400 inline-block" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 inline-block" />
                 </div>
-                <span className="text-[11px] font-heading font-semibold text-brand-secondary ml-2">
-                  Northstar Electronics · Live Digital Storefront
+                <span className="text-[11px] font-heading font-semibold text-brand-secondary ml-1.5">
+                  Northstar Electronics · Live Storefront
                 </span>
               </div>
 
               {/* Minimal Address Bar */}
-              <div className="hidden sm:flex items-center gap-2 px-3.5 py-1 bg-white rounded-lg text-xs font-sans text-brand-secondary border border-brand-border/70 shadow-2xs">
+              <div className="hidden sm:flex items-center gap-2 px-3 py-0.5 bg-white rounded-md text-[11px] font-sans text-brand-secondary border border-brand-border/70 shadow-2xs">
                 <span className="text-emerald-600 text-xs">🔒</span>
                 <span className="text-brand-primary font-medium">store.northstar-electronics.ng</span>
-                <span className="text-brand-secondary/50">/catalogue/active-feed</span>
               </div>
 
               <div className="flex items-center gap-2">
-                <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[11px] font-heading font-bold border border-emerald-200/80">
+                <span className="flex items-center gap-1 px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-heading font-bold border border-emerald-200/80">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                   Lagos Hub Active
                 </span>
@@ -433,77 +432,75 @@ export function InteractiveDeviceStage() {
             </div>
 
             {/* In-Storefront Navigation & Subheader */}
-            <div className="px-5 py-2.5 bg-brand-surface border-b border-brand-border/70 flex items-center justify-between">
-              <div className="flex items-center gap-1.5">
+            <div className="px-3.5 py-1.5 bg-brand-surface border-b border-brand-border/70 flex items-center justify-between">
+              <div className="flex items-center gap-1">
                 <button
                   type="button"
                   onClick={() => setActiveCategory("all")}
-                  className={`px-3 py-1 rounded-lg text-xs font-heading font-semibold transition-colors cursor-pointer ${
+                  className={`px-2.5 py-0.5 rounded-md text-xs font-heading font-semibold transition-colors cursor-pointer ${
                     activeCategory === "all"
                       ? "bg-brand-primary text-white"
                       : "text-brand-secondary hover:text-brand-primary"
                   }`}
                 >
-                  All Inventory ({PRODUCTS.length})
+                  All ({PRODUCTS.length})
                 </button>
                 <button
                   type="button"
                   onClick={() => setActiveCategory("laptops")}
-                  className={`px-3 py-1 rounded-lg text-xs font-heading font-semibold transition-colors cursor-pointer ${
+                  className={`px-2.5 py-0.5 rounded-md text-xs font-heading font-semibold transition-colors cursor-pointer ${
                     activeCategory === "laptops"
                       ? "bg-brand-primary text-white"
                       : "text-brand-secondary hover:text-brand-primary"
                   }`}
                 >
-                  MacBooks & Laptops
+                  Laptops
                 </button>
                 <button
                   type="button"
                   onClick={() => setActiveCategory("phones")}
-                  className={`px-3 py-1 rounded-lg text-xs font-heading font-semibold transition-colors cursor-pointer ${
+                  className={`px-2.5 py-0.5 rounded-md text-xs font-heading font-semibold transition-colors cursor-pointer ${
                     activeCategory === "phones"
                       ? "bg-brand-primary text-white"
                       : "text-brand-secondary hover:text-brand-primary"
                   }`}
                 >
-                  iPhones
+                  Phones
                 </button>
                 <button
                   type="button"
                   onClick={() => setActiveCategory("displays")}
-                  className={`px-3 py-1 rounded-lg text-xs font-heading font-semibold transition-colors cursor-pointer ${
+                  className={`px-2.5 py-0.5 rounded-md text-xs font-heading font-semibold transition-colors cursor-pointer ${
                     activeCategory === "displays"
                       ? "bg-brand-primary text-white"
                       : "text-brand-secondary hover:text-brand-primary"
                   }`}
                 >
-                  Monitors
+                  Displays
                 </button>
               </div>
 
-              <div className="hidden md:flex items-center gap-2 text-xs text-brand-secondary font-sans">
+              <div className="hidden md:flex items-center gap-1.5 text-[11px] text-brand-secondary font-sans">
                 <span className="inline-flex items-center gap-1 text-emerald-700 font-medium">
-                  <Zap className="w-3.5 h-3.5 text-emerald-600" />
+                  <Zap className="w-3 h-3 text-emerald-600" />
                   0.03s TTFB
                 </span>
-                <span>·</span>
-                <span>Sub-Second Cache</span>
               </div>
             </div>
 
             {/* Desktop Storefront Content Container */}
-            <div className="p-4 sm:p-5 bg-brand-bg/40 flex flex-col gap-3.5">
+            <div className="p-3 sm:p-3.5 bg-brand-bg/40 flex flex-col gap-2.5">
               {/* Product Hero Spotlight Stage */}
-              <div className="relative w-full aspect-[16/10] rounded-2xl bg-gradient-to-b from-white via-neutral-50 to-neutral-100/70 border border-brand-border/80 shadow-xs flex items-center justify-center p-4 overflow-hidden group">
+              <div className="relative w-full h-44 sm:h-48 rounded-xl bg-gradient-to-b from-white via-neutral-50 to-neutral-100/70 border border-brand-border/80 shadow-xs flex items-center justify-center p-3 overflow-hidden group">
                 {/* Subtle Ambient Radial Glow */}
                 <div className="absolute inset-0 bg-radial from-brand-accent/10 via-transparent to-transparent opacity-60 pointer-events-none" />
 
                 {/* Top Badges */}
-                <div className="absolute top-3 left-3 right-3 flex items-center justify-between gap-2 pointer-events-none z-10">
-                  <span className="px-2.5 py-1 rounded-lg bg-brand-surface/95 backdrop-blur-xs text-brand-primary text-xs font-heading font-bold border border-brand-border/80 shadow-2xs">
+                <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between gap-2 pointer-events-none z-10">
+                  <span className="px-2 py-0.5 rounded-md bg-brand-surface/95 backdrop-blur-xs text-brand-primary text-[10px] sm:text-xs font-heading font-bold border border-brand-border/80 shadow-2xs">
                     {selectedProduct.condition}
                   </span>
-                  <span className="px-2.5 py-1 rounded-lg bg-emerald-100/95 backdrop-blur-xs text-emerald-900 text-xs font-heading font-bold border border-emerald-300/80 shadow-2xs flex items-center gap-1.5">
+                  <span className="px-2 py-0.5 rounded-md bg-emerald-100/95 backdrop-blur-xs text-emerald-900 text-[10px] sm:text-xs font-heading font-bold border border-emerald-300/80 shadow-2xs flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 animate-pulse" />
                     {selectedProduct.stock}
                   </span>
@@ -517,49 +514,50 @@ export function InteractiveDeviceStage() {
                     fill
                     priority
                     sizes="(max-width: 1024px) 100vw, 550px"
-                    className="object-contain p-2 drop-shadow-xl transition-transform duration-300 group-hover:scale-[1.02]"
+                    className="object-contain p-2 drop-shadow-md transition-transform duration-300 group-hover:scale-[1.02]"
                   />
                 </div>
               </div>
 
               {/* SKU Details & Quick Action Card */}
-              <div className="bg-white rounded-2xl border border-brand-border p-4 shadow-xs flex flex-col gap-3">
-                <div className="flex items-start justify-between gap-3">
+              <div className="bg-white rounded-xl border border-brand-border p-3 shadow-xs flex flex-col gap-2">
+                <div className="flex items-center justify-between gap-2">
                   <div className="min-w-0">
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] font-heading uppercase tracking-wider text-brand-secondary font-bold">
+                    <div className="flex items-center gap-1.5 mb-0.5">
+                      <span className="text-[9px] font-heading uppercase tracking-wider text-brand-secondary font-bold">
                         {selectedProduct.category} · Lagos Stock
                       </span>
-                      <span className="text-[10px] font-heading font-bold text-emerald-800 bg-emerald-100 px-2 py-0.2 rounded-full">
+                      <span className="text-[9px] font-heading font-bold text-emerald-800 bg-emerald-100 px-1.5 py-0.2 rounded-full">
                         Verified Genuine
                       </span>
                     </div>
-                    <h3 className="font-heading font-black text-base sm:text-lg text-brand-primary leading-tight truncate">
+                    <h3 className="font-heading font-black text-sm sm:text-base text-brand-primary leading-tight truncate">
                       {selectedProduct.name}
                     </h3>
-                    <p className="text-xs text-brand-secondary mt-0.5 truncate font-sans">
-                      {selectedProduct.specs}
-                    </p>
                   </div>
 
                   <div className="text-right shrink-0">
-                    <span className="text-[10px] font-heading uppercase text-brand-secondary block leading-none mb-1">
+                    <span className="text-[9px] font-heading uppercase text-brand-secondary block leading-none mb-0.5">
                       Showroom Price
                     </span>
-                    <span className="font-heading font-black text-lg sm:text-xl text-brand-primary block leading-none">
+                    <span className="font-heading font-black text-base sm:text-lg text-brand-primary block leading-none">
                       {selectedProduct.price}
                     </span>
                   </div>
                 </div>
 
+                <p className="text-[11px] text-brand-secondary truncate font-sans">
+                  {selectedProduct.specs}
+                </p>
+
                 {/* Simulated WhatsApp Toast if clicked */}
                 {copiedId === selectedProduct.id && (
-                  <div className="p-3 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 leading-snug animate-in fade-in">
-                    <span className="font-heading font-bold block mb-0.5 flex items-center gap-1">
-                      <Check className="w-3.5 h-3.5 text-emerald-700" />
+                  <div className="p-2 rounded-lg bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 leading-snug animate-in fade-in">
+                    <span className="font-heading font-bold block mb-0.5 flex items-center gap-1 text-[11px]">
+                      <Check className="w-3 h-3 text-emerald-700" />
                       Inquiry Copied & Ready for WhatsApp:
                     </span>
-                    <p className="font-sans text-[11px]">
+                    <p className="font-sans text-[10px]">
                       &ldquo;Hello, I want to order {selectedProduct.name} ({selectedProduct.price}) confirmed in stock at {selectedProduct.stock}.&rdquo;
                     </p>
                   </div>
@@ -569,7 +567,7 @@ export function InteractiveDeviceStage() {
                 <button
                   type="button"
                   onClick={() => handleEnquire(selectedProduct)}
-                  className={`w-full py-2.5 px-4 rounded-xl font-heading font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm ${
+                  className={`w-full py-2 px-3 rounded-lg font-heading font-bold text-xs flex items-center justify-center gap-2 transition-all cursor-pointer shadow-sm ${
                     copiedId === selectedProduct.id
                       ? "bg-emerald-600 text-white"
                       : "bg-brand-accent text-brand-primary hover:brightness-105 active:scale-[0.98]"
@@ -577,12 +575,12 @@ export function InteractiveDeviceStage() {
                 >
                   {copiedId === selectedProduct.id ? (
                     <>
-                      <Check className="w-4 h-4 text-white" />
+                      <Check className="w-3.5 h-3.5 text-white" />
                       <span>Inquiry Copied! Ready for WhatsApp</span>
                     </>
                   ) : (
                     <>
-                      <MessageSquare className="w-4 h-4 text-brand-primary" />
+                      <MessageSquare className="w-3.5 h-3.5 text-brand-primary" />
                       <span>Order via WhatsApp (Instant Handoff)</span>
                     </>
                   )}
@@ -591,10 +589,10 @@ export function InteractiveDeviceStage() {
 
               {/* SKU Thumbnail Switcher Strip */}
               <div>
-                <span className="text-[10px] font-heading font-bold uppercase tracking-wider text-brand-secondary block mb-1.5">
+                <span className="text-[9px] font-heading font-bold uppercase tracking-wider text-brand-secondary block mb-1">
                   Click to Switch Active Showroom SKU:
                 </span>
-                <div className="grid grid-cols-4 gap-2">
+                <div className="grid grid-cols-4 gap-1.5">
                   {PRODUCTS.map((prod) => {
                     const isSelected = selectedProduct.id === prod.id;
                     return (
@@ -602,25 +600,25 @@ export function InteractiveDeviceStage() {
                         key={prod.id}
                         type="button"
                         onClick={() => setSelectedProduct(prod)}
-                        className={`p-1.5 sm:p-2 rounded-xl border text-left transition-all cursor-pointer flex flex-col justify-between ${
+                        className={`p-1 sm:p-1.5 rounded-lg border text-left transition-all cursor-pointer flex flex-col justify-between ${
                           isSelected
                             ? "bg-white border-brand-primary ring-2 ring-brand-primary/10 shadow-xs"
                             : "bg-brand-surface/90 border-brand-border/80 hover:border-brand-primary/40 hover:bg-white"
                         }`}
                       >
-                        <div className="relative w-full aspect-[4/3] rounded-lg bg-neutral-100/80 border border-brand-border/40 overflow-hidden mb-1 flex items-center justify-center">
+                        <div className="relative w-full aspect-[16/10] rounded bg-neutral-100/80 border border-brand-border/40 overflow-hidden mb-1 flex items-center justify-center">
                           <Image
                             src={prod.image}
                             alt={prod.name}
                             fill
-                            sizes="120px"
-                            className="object-contain p-1"
+                            sizes="100px"
+                            className="object-contain p-0.5"
                           />
                         </div>
-                        <h5 className="font-heading font-bold text-[11px] text-brand-primary truncate leading-tight">
+                        <h5 className="font-heading font-bold text-[10px] text-brand-primary truncate leading-tight">
                           {prod.shortName}
                         </h5>
-                        <span className="font-sans font-bold text-[10px] text-brand-secondary mt-0.5">
+                        <span className="font-sans font-bold text-[9px] text-brand-secondary mt-0.5">
                           {prod.price}
                         </span>
                       </button>

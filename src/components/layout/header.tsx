@@ -30,11 +30,11 @@ export function Header() {
 
   return (
     <>
-      {/* Floating Header with explicit margins from top & viewport edges */}
-      <header className="sticky top-3 sm:top-5 z-40 w-full px-3 sm:px-6 lg:px-8 safe-top">
+      {/* Floating Header with balanced margins from top & viewport edges */}
+      <header className="sticky top-2 sm:top-3 z-40 w-full px-3 sm:px-6 lg:px-8 safe-top">
         <div
           className={cn(
-            "mx-auto w-full max-w-[1320px] rounded-2xl transition-all duration-200 px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between",
+            "mx-auto w-full max-w-[1320px] rounded-2xl transition-all duration-200 px-4 sm:px-6 py-2 sm:py-2.5 flex items-center justify-between",
             isScrolled
               ? "bg-brand-surface/95 backdrop-blur-md border border-brand-border shadow-sm"
               : "bg-brand-surface/85 backdrop-blur-md border border-brand-border/80 shadow-2xs"
