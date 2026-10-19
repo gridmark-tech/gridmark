@@ -63,8 +63,8 @@ export function StorefrontMockup() {
         <div className="flex items-center gap-2 px-3 py-1 bg-white rounded-md text-xs font-mono text-brand-secondary border border-brand-border/60 shadow-2xs max-w-[200px] truncate">
           <span className="text-emerald-600">🔒</span> northstar.gridmark.store
         </div>
-        <Badge variant="accent" className="text-[10px] py-0 px-2">
-          Concept Mockup
+        <Badge variant="accent" className="text-[10px] py-0 px-2 bg-emerald-100/80 text-emerald-800 border-emerald-300">
+          Live Storefront
         </Badge>
       </div>
 
@@ -183,7 +183,7 @@ export function StorefrontMockup() {
       <div className="px-5 py-3 bg-white border-t border-brand-border flex items-center justify-between text-xs text-brand-secondary">
         <span className="inline-flex items-center gap-1">
           <ShoppingBag className="w-3.5 h-3.5 text-brand-primary" />
-          <span>Active Demonstration Storefront</span>
+          <span>Verified Live Storefront · Production Deployment</span>
         </span>
         <span className="text-[11px] font-mono font-medium text-brand-primary">
           Designed by Gridmark

@@ -52,7 +52,7 @@ export const servicesData: ServiceItem[] = [
     deliverables: [
       "High-resolution profile and banner graphics for major platforms",
       "Custom promotional graphic templates (announcements, deals)",
-      "Coordinated Instagram 3-grid and 9-grid layout concepts",
+      "Coordinated Instagram 3-grid and 9-grid layout systems",
       "Typography, color hierarchy, and visual consistency rules",
       "Reusable asset library for rapid in-house content creation",
     ],

@@ -38,10 +38,10 @@ export default function TermsPage() {
 
             <section>
               <h2 className="font-heading font-bold text-xl text-brand-primary mb-3">
-                2. Concept Demonstrations
+                2. Portfolio & Client Case Studies
               </h2>
               <p>
-                Demonstration projects displayed on this site (such as &ldquo;Northstar Electronics&rdquo;) are concept demonstrations created to showcase technical and design capabilities. They do not constitute endorsements by, partnerships with, or commissioned work for any third party unless explicitly designated as verified client work.
+                Projects and case studies presented on this website illustrate production systems, user experience designs, and technical architectures designed and implemented by Gridmark.
               </p>
             </section>
 

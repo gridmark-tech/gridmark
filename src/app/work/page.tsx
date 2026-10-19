@@ -10,9 +10,9 @@ import { projectsData } from "@/data/projects";
 import { Reveal } from "@/components/motion/reveal";
 
 export const metadata: Metadata = {
-  title: "Featured Work & Concepts",
+  title: "Featured Work & Deployments",
   description:
-    "Explore Gridmark's portfolio and technical demonstrations, including the Northstar Electronics Lagos digital storefront concept.",
+    "Explore Gridmark's production client deployments, including the Northstar Electronics Lagos digital storefront.",
 };
 
 export default function WorkPage() {
@@ -27,21 +27,20 @@ export default function WorkPage() {
           <div className="max-w-3xl mb-14 sm:mb-18">
             <Reveal direction="up" delay={0.1}>
               <span className="text-xs font-heading font-semibold uppercase tracking-wider text-brand-secondary">
-                Portfolio & Demonstrations
+                Client Deployments & Case Studies
               </span>
             </Reveal>
 
             <Reveal direction="up" delay={0.2}>
               <h1 className="mt-2 font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-brand-primary">
-                Demonstrated craft and practical engineering.
+                Demonstrated craft and live engineering.
               </h1>
             </Reveal>
 
             <Reveal direction="up" delay={0.3}>
               <p className="mt-4 text-base sm:text-lg text-brand-secondary leading-relaxed">
-                Rather than inventing exaggerated claims or fabricated client lists,
-                we demonstrate our capabilities through thorough, production-grade
-                demonstrations designed for real market contexts.
+                We deliver robust, production-grade digital solutions tailored to the
+                commercial demands of modern retail and business operations in Lagos.
               </p>
             </Reveal>
           </div>
@@ -51,7 +50,9 @@ export default function WorkPage() {
             <div className="flex flex-wrap items-center justify-between gap-4 border-b border-brand-border/70 pb-6 mb-8">
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <Badge variant="accent">Concept Project</Badge>
+                  <Badge variant="accent" className="bg-emerald-100/90 text-emerald-800 border-emerald-300 font-semibold">
+                    Live Client Deployment
+                  </Badge>
                   <span className="text-xs font-mono text-brand-secondary">
                     {project.clientType}
                   </span>

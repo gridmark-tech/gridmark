@@ -2,7 +2,7 @@ import React from "react";
 import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
-import { StorefrontMockup } from "./storefront-mockup";
+import { StudioShowcase } from "./studio-showcase";
 import { Reveal } from "@/components/motion/reveal";
 
 export function Hero() {
@@ -74,10 +74,10 @@ export function Hero() {
             </Reveal>
           </div>
 
-          {/* Right Column: Original Digital Storefront Mockup */}
+          {/* Right Column: Gridmark Digital Studio Suite Showcase */}
           <div className="lg:col-span-6 w-full">
             <Reveal direction="left" delay={0.3} duration={0.6}>
-              <StorefrontMockup />
+              <StudioShowcase />
             </Reveal>
           </div>
         </div>

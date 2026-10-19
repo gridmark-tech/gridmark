@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { siteConfig } from "@/config/site";
-import { Container } from "@/components/ui/container";
 import { Logo } from "@/components/ui/logo";
 import { Button } from "@/components/ui/button";
 import { MobileMenu } from "./mobile-menu";
@@ -22,7 +21,7 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
+      setIsScrolled(window.scrollY > 15);
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -31,22 +30,23 @@ export function Header() {
 
   return (
     <>
-      <header
-        className={cn(
-          "sticky top-0 z-40 w-full transition-all duration-200 safe-top",
-          isScrolled
-            ? "bg-brand-bg/90 backdrop-blur-md border-b border-brand-border/80 shadow-2xs py-3"
-            : "bg-transparent py-4 sm:py-6"
-        )}
-      >
-        <Container className="flex items-center justify-between">
+      {/* Floating Header with explicit margins from top & viewport edges */}
+      <header className="sticky top-3 sm:top-5 z-40 w-full px-3 sm:px-6 lg:px-8 safe-top">
+        <div
+          className={cn(
+            "mx-auto w-full max-w-[1320px] rounded-2xl transition-all duration-200 px-4 sm:px-6 py-2.5 sm:py-3 flex items-center justify-between",
+            isScrolled
+              ? "bg-brand-surface/95 backdrop-blur-md border border-brand-border shadow-sm"
+              : "bg-brand-surface/85 backdrop-blur-md border border-brand-border/80 shadow-2xs"
+          )}
+        >
           {/* Brand Logo */}
           <Logo />
 
           {/* Desktop Navigation Links */}
           <nav
             aria-label="Main Navigation"
-            className="hidden md:flex items-center gap-1 lg:gap-2 px-3 py-1.5 rounded-full bg-brand-surface/80 backdrop-blur-xs border border-brand-border/60 shadow-2xs"
+            className="hidden md:flex items-center gap-1 lg:gap-1.5 px-2 py-1 rounded-full bg-brand-bg/70 border border-brand-border/60"
           >
             {siteConfig.navItems.map((item) => {
               const isActive = pathname === item.href;
@@ -55,9 +55,9 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "px-4 py-2 text-sm font-heading font-medium rounded-full transition-colors",
+                    "px-3.5 py-1.5 text-xs sm:text-sm font-heading font-medium rounded-full transition-colors",
                     isActive
-                      ? "bg-brand-dark-surface text-brand-dark-text shadow-2xs"
+                      ? "bg-brand-dark-surface text-brand-dark-text shadow-2xs font-semibold"
                       : "text-brand-secondary hover:text-brand-primary hover:bg-black/5"
                   )}
                 >
@@ -69,7 +69,7 @@ export function Header() {
 
           {/* Desktop Right CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <Button href="/contact" variant="dark" size="sm">
+            <Button href="/contact" variant="dark" size="sm" className="h-9 px-4 text-xs">
               Start a project
             </Button>
           </div>
@@ -80,7 +80,7 @@ export function Header() {
               href="/contact"
               variant="dark"
               size="sm"
-              className="text-xs h-9 px-3"
+              className="text-xs h-8.5 px-3"
             >
               Start project
             </Button>
@@ -88,12 +88,12 @@ export function Header() {
               type="button"
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open navigation menu"
-              className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-brand-surface border border-brand-border text-brand-primary active:scale-95 transition-transform"
+              className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-brand-surface border border-brand-border text-brand-primary active:scale-95 transition-transform"
             >
-              <Menu className="w-5 h-5" />
+              <Menu className="w-4 h-4" />
             </button>
           </div>
-        </Container>
+        </div>
       </header>
 
       {/* Mobile Menu Dialog */}

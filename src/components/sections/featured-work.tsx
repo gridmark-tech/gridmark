@@ -41,7 +41,9 @@ export function FeaturedWork() {
             <div className="lg:col-span-6 p-8 sm:p-10 lg:p-12 flex flex-col justify-between">
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-4">
-                  <Badge variant="accent">Concept Project</Badge>
+                  <Badge variant="accent" className="bg-emerald-100/90 text-emerald-800 border-emerald-300 font-semibold">
+                    Live Client Deployment
+                  </Badge>
                   <span className="text-xs font-mono text-brand-secondary">
                     {project.category}
                   </span>

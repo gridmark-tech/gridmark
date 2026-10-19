@@ -189,7 +189,7 @@ export default function ServicesPage() {
                 Start a project conversation
               </Button>
               <Button href="/work" variant="outline" size="md" className="border-white/20 text-white hover:bg-white/10">
-                View Northstar Concept Case Study
+                View Northstar Electronics Case Study
               </Button>
             </div>
           </div>

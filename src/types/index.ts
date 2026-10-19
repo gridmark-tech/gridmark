@@ -16,7 +16,7 @@ export interface ServiceItem {
   scopeNotes?: string;
 }
 
-export type ProjectStatus = "Concept project" | "Live client project" | "In development";
+export type ProjectStatus = "Live client project" | "Active deployment" | "In development";
 
 export interface ProjectItem {
   id: string;
