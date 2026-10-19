@@ -4,6 +4,7 @@ import { Hero } from "@/components/sections/hero";
 import { TrustPositioning } from "@/components/sections/trust-positioning";
 import { ServicesOverview } from "@/components/sections/services-overview";
 import { FeaturedWork } from "@/components/sections/featured-work";
+import { SolutionConfigurator } from "@/components/sections/solution-configurator";
 import { WhyGridmark } from "@/components/sections/why-gridmark";
 import { Process } from "@/components/sections/process";
 import { FinalCta } from "@/components/sections/final-cta";
@@ -17,6 +18,7 @@ export default function HomePage() {
         <TrustPositioning />
         <ServicesOverview />
         <FeaturedWork />
+        <SolutionConfigurator />
         <WhyGridmark />
         <Process />
         <FinalCta />

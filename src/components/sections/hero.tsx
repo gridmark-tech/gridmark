@@ -2,7 +2,7 @@ import React from "react";
 import { ArrowRight, Sparkles, CheckCircle2 } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Button } from "@/components/ui/button";
-import { StudioShowcase } from "./studio-showcase";
+import { InteractiveDeviceStage } from "./interactive-device-stage";
 import { Reveal } from "@/components/motion/reveal";
 
 export function Hero() {
@@ -74,10 +74,10 @@ export function Hero() {
             </Reveal>
           </div>
 
-          {/* Right Column: Gridmark Digital Studio Suite Showcase */}
-          <div className="lg:col-span-6 w-full">
+          {/* Right Column: Interactive Mobile & Desktop Device Stage */}
+          <div className="lg:col-span-6 w-full flex justify-center">
             <Reveal direction="left" delay={0.3} duration={0.6}>
-              <StudioShowcase />
+              <InteractiveDeviceStage />
             </Reveal>
           </div>
         </div>
