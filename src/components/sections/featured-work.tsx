@@ -1,4 +1,4 @@
-import React from "react";
+import Image from "next/image";
 import { ArrowRight, Laptop, MessageSquare, CheckCircle } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Badge } from "@/components/ui/badge";
@@ -103,6 +103,17 @@ export function FeaturedWork() {
                 {/* Micro product detail mockup */}
                 <div className="space-y-4">
                   <div className="p-4 rounded-xl bg-neutral-50 border border-neutral-200">
+                    {/* Real Product Studio Photo */}
+                    <div className="relative w-full h-32 rounded-lg bg-white border border-neutral-200 overflow-hidden mb-3 flex items-center justify-center p-2">
+                      <Image
+                        src="/images/products/macbook-pro-16.webp"
+                        alt="MacBook Pro 16 M3 Max"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 360px"
+                        className="object-contain p-1"
+                      />
+                    </div>
+
                     <div className="text-xs text-brand-secondary uppercase font-mono">
                       Selected Model
                     </div>

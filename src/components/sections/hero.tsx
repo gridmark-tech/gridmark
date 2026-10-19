@@ -5,9 +5,24 @@ import { Button } from "@/components/ui/button";
 import { InteractiveDeviceStage } from "./interactive-device-stage";
 import { Reveal } from "@/components/motion/reveal";
 
+import Image from "next/image";
+
 export function Hero() {
   return (
     <section className="relative w-full overflow-hidden pt-6 pb-16 sm:py-20 lg:py-24">
+      {/* Subtle atmospheric background image & grid texture */}
+      <div className="absolute inset-0 -z-20 overflow-hidden pointer-events-none select-none">
+        <Image
+          src="/images/hero/hero-bg.webp"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-10 mix-blend-multiply"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/80 via-transparent to-brand-bg" />
+      </div>
+
       {/* Subtle grid background pattern */}
       <div
         className="absolute inset-0 -z-10 opacity-35 [background-image:linear-gradient(to_right,#E3E5DE_1px,transparent_1px),linear-gradient(to_bottom,#E3E5DE_1px,transparent_1px)] [background-size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"
