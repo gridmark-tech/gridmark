@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #F7F7F4;
+  --color-brand-surface: #FFFFFF;
+  --color-brand-primary: #171916;
+  --color-brand-secondary: #646962;
+  --color-brand-accent: #B8F36B;
+  --color-brand-border: #E3E5DE;
+  --color-brand-dark-surface: #171916;
+  --color-brand-dark-text: #F7F7F4;
+
+  --font-heading: var(--font-manrope), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+}
+
+:root {
+  --background: #F7F7F4;
+  --foreground: #171916;
+  --surface: #FFFFFF;
+  --secondary: #646962;
+  --accent: #B8F36B;
+  --border: #E3E5DE;
+  --dark-surface: #171916;
+  --dark-text: #F7F7F4;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  overscroll-behavior-y: none;
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+  min-height: 100dvh;
+}
+
+/* Mobile-native: prevent 16px iOS auto-zoom */
+input, textarea, select {
+  font-size: 16px;
+}
+
+/* Mobile-native: responsive tap and disable callout/selection on buttons */
+button, a, [role="button"] {
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Safe areas */
+.safe-top {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
