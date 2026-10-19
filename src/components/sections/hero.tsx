@@ -18,9 +18,9 @@ export function Hero() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-center opacity-10 mix-blend-multiply"
+          className="object-cover object-center opacity-45 mix-blend-multiply"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/80 via-transparent to-brand-bg" />
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/70 via-transparent to-brand-bg" />
       </div>
 
       {/* Subtle grid background pattern */}
