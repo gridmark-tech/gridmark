@@ -90,8 +90,8 @@ export function Hero() {
           </div>
 
           {/* Right Column: Interactive Mobile & Desktop Device Stage */}
-          <div className="lg:col-span-6 w-full flex justify-center">
-            <Reveal direction="left" delay={0.3} duration={0.6}>
+          <div className="lg:col-span-6 w-full min-w-0 max-w-full flex justify-center">
+            <Reveal direction="up" delay={0.3} duration={0.6} className="w-full min-w-0 max-w-full flex justify-center">
               <InteractiveDeviceStage />
             </Reveal>
           </div>

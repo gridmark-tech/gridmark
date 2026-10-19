@@ -44,7 +44,7 @@ export function ServicesOverview() {
             </Reveal>
           </div>
 
-          <Reveal direction="left" delay={0.2}>
+          <Reveal direction="up" delay={0.2}>
             <Link
               href="/services"
               className="group inline-flex items-center gap-2 text-sm font-heading font-semibold text-brand-primary hover:text-neutral-700 transition-colors"

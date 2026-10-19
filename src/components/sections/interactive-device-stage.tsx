@@ -89,32 +89,35 @@ export function InteractiveDeviceStage() {
   };
 
   return (
-    <div className="w-full flex flex-col items-center">
+    <div className="w-full max-w-full min-w-0 flex flex-col items-center">
       {/* =========================================================================
           1. MOBILE-NATIVE INTERACTIVE SHOWCASE (< lg screens)
           Designed specifically for phone viewports: no nested phone chassis,
           no endless scrolling, immediate visual product proof + 1-tap test.
          ========================================================================= */}
-      <div className="w-full lg:hidden flex flex-col items-stretch max-w-md mx-auto">
-        <div className="rounded-3xl bg-brand-surface border border-brand-border/90 shadow-lg overflow-hidden">
+      <div className="w-full max-w-full sm:max-w-md mx-auto min-w-0 lg:hidden flex flex-col items-stretch">
+        <div className="w-full max-w-full min-w-0 rounded-2xl sm:rounded-3xl bg-brand-surface border border-brand-border/90 shadow-md overflow-hidden">
           {/* Header Bar */}
-          <div className="px-4 py-3 bg-brand-dark-surface text-brand-dark-text flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <span className="w-5 h-5 rounded-md bg-brand-accent text-brand-primary font-extrabold text-[10px] flex items-center justify-center">
+          <div className="px-3.5 sm:px-4 py-2.5 sm:py-3 bg-brand-dark-surface text-brand-dark-text flex items-center justify-between gap-2 min-w-0">
+            <div className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+              <span className="w-5 h-5 rounded-md bg-brand-accent text-brand-primary font-extrabold text-[10px] flex items-center justify-center shrink-0">
                 G
               </span>
-              <span className="font-heading font-bold text-xs tracking-tight text-white">
+              <span className="font-heading font-bold text-xs tracking-tight text-white truncate">
                 LIVE STORE ENGINE
               </span>
             </div>
-            <span className="text-[10px] bg-emerald-500/20 text-emerald-400 font-mono px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1">
+            <span className="shrink-0 text-[10px] bg-emerald-500/20 text-emerald-400 font-mono px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
               Sub-Second 4G
             </span>
           </div>
 
-          {/* Quick SKU Switcher Pills (Horizontal Snap Scroll) */}
-          <div className="px-3 py-2.5 bg-brand-bg/60 border-b border-brand-border/70 flex items-center gap-1.5 overflow-x-auto no-scrollbar">
+          {/* Quick SKU Switcher Pills (Horizontal Snap Scroll without scrollbar) */}
+          <div
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            className="px-2.5 sm:px-3 py-2 bg-brand-bg/60 border-b border-brand-border/70 flex items-center gap-1.5 overflow-x-auto no-scrollbar touch-pan-x w-full min-w-0"
+          >
             {PRODUCTS.map((prod) => {
               const isSelected = selectedProduct.id === prod.id;
               return (
@@ -122,7 +125,7 @@ export function InteractiveDeviceStage() {
                   key={prod.id}
                   type="button"
                   onClick={() => setSelectedProduct(prod)}
-                  className={`px-3 py-1.5 rounded-xl text-xs font-heading font-semibold whitespace-nowrap transition-all cursor-pointer ${
+                  className={`shrink-0 px-2.5 py-1.5 rounded-lg text-xs font-heading font-semibold whitespace-nowrap transition-all cursor-pointer ${
                     isSelected
                       ? "bg-brand-primary text-white shadow-xs"
                       : "bg-brand-surface text-brand-secondary border border-brand-border hover:text-brand-primary"
@@ -135,9 +138,9 @@ export function InteractiveDeviceStage() {
           </div>
 
           {/* Active Product Showcase */}
-          <div className="p-4 sm:p-5 flex flex-col gap-3.5">
+          <div className="p-3.5 sm:p-5 flex flex-col gap-3 min-w-0 w-full">
             {/* Product Image Stage */}
-            <div className="relative w-full aspect-[16/10] rounded-2xl bg-gradient-to-b from-neutral-100/80 to-neutral-200/50 border border-brand-border/60 overflow-hidden flex items-center justify-center p-3">
+            <div className="relative w-full max-w-full aspect-[16/10] rounded-xl sm:rounded-2xl bg-gradient-to-b from-neutral-100 to-neutral-200/50 border border-brand-border/60 overflow-hidden flex items-center justify-center p-2 sm:p-3">
               <Image
                 src={selectedProduct.image}
                 alt={selectedProduct.name}
@@ -148,36 +151,34 @@ export function InteractiveDeviceStage() {
               />
 
               {/* Status Badges Overlay */}
-              <div className="absolute top-2.5 left-2.5 right-2.5 flex items-center justify-between pointer-events-none">
-                <span className="text-[10px] font-mono font-semibold uppercase bg-brand-surface/90 backdrop-blur-xs text-brand-primary px-2 py-0.5 rounded-md border border-brand-border shadow-2xs">
+              <div className="absolute top-2 left-2 right-2 flex items-center justify-between gap-1 pointer-events-none">
+                <span className="text-[9px] sm:text-[10px] font-mono font-semibold uppercase bg-brand-surface/95 backdrop-blur-xs text-brand-primary px-1.5 sm:px-2 py-0.5 rounded-md border border-brand-border shadow-2xs">
                   {selectedProduct.condition}
                 </span>
-                <span className="text-[10px] font-semibold text-emerald-800 bg-emerald-100/90 backdrop-blur-xs px-2 py-0.5 rounded-md border border-emerald-300 shadow-2xs">
+                <span className="text-[9px] sm:text-[10px] font-semibold text-emerald-800 bg-emerald-100/95 backdrop-blur-xs px-1.5 sm:px-2 py-0.5 rounded-md border border-emerald-300 shadow-2xs">
                   {selectedProduct.stock}
                 </span>
               </div>
             </div>
 
             {/* Product Metadata */}
-            <div>
-              <div className="flex items-center justify-between gap-2">
-                <h3 className="font-heading font-extrabold text-base text-brand-primary">
-                  {selectedProduct.name}
-                </h3>
-              </div>
-              <p className="text-xs text-brand-secondary mt-1 flex items-center gap-1.5">
+            <div className="min-w-0">
+              <h3 className="font-heading font-extrabold text-sm sm:text-base text-brand-primary leading-snug">
+                {selectedProduct.name}
+              </h3>
+              <p className="text-xs text-brand-secondary mt-1 flex items-center gap-1.5 min-w-0">
                 <Cpu className="w-3.5 h-3.5 text-brand-secondary shrink-0" />
-                <span>{selectedProduct.specs}</span>
+                <span className="truncate">{selectedProduct.specs}</span>
               </p>
             </div>
 
             {/* Price & 1-Tap Action Row */}
-            <div className="pt-3 border-t border-brand-border/70 flex items-center justify-between gap-3">
-              <div>
-                <span className="text-[10px] font-mono uppercase text-brand-secondary block">
+            <div className="pt-2.5 sm:pt-3 border-t border-brand-border/70 flex items-center justify-between gap-2 min-w-0">
+              <div className="min-w-0">
+                <span className="text-[9px] sm:text-[10px] font-mono uppercase text-brand-secondary block leading-none mb-1">
                   Advertised Price
                 </span>
-                <span className="font-heading font-black text-lg text-brand-primary">
+                <span className="font-heading font-black text-base sm:text-lg text-brand-primary block leading-none">
                   {selectedProduct.price}
                 </span>
               </div>
@@ -185,7 +186,7 @@ export function InteractiveDeviceStage() {
               <button
                 type="button"
                 onClick={() => handleEnquire(selectedProduct)}
-                className={`inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl font-heading font-bold text-xs transition-all cursor-pointer ${
+                className={`shrink-0 inline-flex items-center gap-1.5 px-3 py-2 sm:px-4 sm:py-2.5 rounded-xl font-heading font-bold text-xs transition-all cursor-pointer ${
                   copiedId === selectedProduct.id
                     ? "bg-emerald-600 text-white shadow-xs"
                     : "bg-brand-dark-surface text-brand-dark-text hover:bg-black active:scale-95"
@@ -207,7 +208,7 @@ export function InteractiveDeviceStage() {
 
             {/* Feedback Simulation Message when tapped */}
             {copiedId === selectedProduct.id && (
-              <div className="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-[11px] text-emerald-900 leading-snug animate-in fade-in slide-in-from-top-1">
+              <div className="p-2 sm:p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-[11px] text-emerald-900 leading-snug animate-in fade-in slide-in-from-top-1">
                 <span className="font-bold block">✓ Instant Handoff Simulated:</span>
                 &ldquo;Hello, I want to order {selectedProduct.name} ({selectedProduct.price}) confirmed in stock at {selectedProduct.stock}.&rdquo;
               </div>
@@ -215,12 +216,12 @@ export function InteractiveDeviceStage() {
           </div>
 
           {/* Bottom Telemetry Bar */}
-          <div className="px-4 py-2.5 bg-brand-surface border-t border-brand-border/80 flex items-center justify-between text-[10px] text-brand-secondary">
+          <div className="px-3 sm:px-4 py-2 bg-brand-surface border-t border-brand-border/80 flex flex-wrap items-center justify-between gap-1.5 text-[10px] text-brand-secondary">
             <span className="flex items-center gap-1">
-              <Zap className="w-3 h-3 text-emerald-600" /> 0.03s Page Load
+              <Zap className="w-3 h-3 text-emerald-600 shrink-0" /> 0.03s Page Load
             </span>
             <span className="flex items-center gap-1">
-              <ShieldCheck className="w-3 h-3 text-emerald-600" /> Verified Showroom Stock
+              <ShieldCheck className="w-3 h-3 text-emerald-600 shrink-0" /> Verified Showroom Stock
             </span>
           </div>
         </div>
@@ -293,7 +294,10 @@ export function InteractiveDeviceStage() {
               </div>
 
               {/* Quick Filter Chips */}
-              <div className="p-3 bg-brand-surface border-b border-brand-border/70 flex items-center gap-1.5 overflow-x-auto text-[11px]">
+              <div
+                style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+                className="p-3 bg-brand-surface border-b border-brand-border/70 flex items-center gap-1.5 overflow-x-auto no-scrollbar text-[11px]"
+              >
                 {["all", "laptops", "phones", "displays"].map((cat) => (
                   <button
                     key={cat}

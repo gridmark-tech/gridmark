@@ -73,7 +73,7 @@ export function TrustPositioning() {
               mobileTab === "friction" ? "block" : "hidden md:block"
             }`}
           >
-            <Reveal direction="right" delay={0.2} className="h-full">
+            <Reveal direction="up" delay={0.2} className="h-full">
               <div className="h-full rounded-3xl p-6 sm:p-8 bg-red-50/40 border border-red-200/80 shadow-xs flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between pb-4 border-b border-red-200/60 mb-6">
@@ -138,7 +138,7 @@ export function TrustPositioning() {
               mobileTab === "engine" ? "block" : "hidden md:block"
             }`}
           >
-            <Reveal direction="left" delay={0.3} className="h-full">
+            <Reveal direction="up" delay={0.3} className="h-full">
               <div className="h-full rounded-3xl p-6 sm:p-8 bg-emerald-50/40 border border-emerald-300 shadow-xs flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between pb-4 border-b border-emerald-200/80 mb-5">
