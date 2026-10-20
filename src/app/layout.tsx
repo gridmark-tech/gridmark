@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Manrope } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import { siteConfig } from "@/config/site";
 import "./globals.css";
 
@@ -106,6 +107,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-brand-bg text-brand-primary font-sans">
         {children}
+        <Analytics />
       </body>
     </html>
   );
