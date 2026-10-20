@@ -12,20 +12,25 @@ export function TrustPositioning() {
   const [mobileTab, setMobileTab] = useState<"friction" | "engine">("friction");
   const sectionRef = useRef<HTMLElement>(null);
   const hasAutoSwitchedRef = useRef(false);
+  const userInteractedRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (hasAutoSwitchedRef.current) return;
+      // If user already interacted (swiped or tapped) or already auto-switched once, keep normal consistent scroll
+      if (hasAutoSwitchedRef.current || userInteractedRef.current) return;
       const section = sectionRef.current;
       if (!section) return;
 
       const rect = section.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
 
-      // When the section reaches upper half of viewport on initial scroll down
-      if (rect.top <= viewportHeight * 0.45 && rect.bottom >= viewportHeight * 0.2) {
-        setMobileTab("engine");
-        hasAutoSwitchedRef.current = true;
+      // Occurs when user has scrolled through the card and is about to exit to the next section
+      // (top of section is scrolled up, and bottom is nearing lower viewport)
+      if (rect.top < 0 && rect.bottom <= viewportHeight * 0.85 && rect.bottom >= viewportHeight * 0.1) {
+        if (mobileTab === "friction") {
+          setMobileTab("engine");
+          hasAutoSwitchedRef.current = true;
+        }
       }
     };
 
@@ -33,7 +38,7 @@ export function TrustPositioning() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [mobileTab]);
 
   // Shared Chaos Card Component
   const renderChaosCard = () => (
@@ -214,7 +219,7 @@ export function TrustPositioning() {
                 type="button"
                 onClick={() => {
                   setMobileTab("friction");
-                  hasAutoSwitchedRef.current = true;
+                  userInteractedRef.current = true;
                 }}
                 className={`relative z-10 flex-1 py-2 px-3 rounded-xl text-xs font-heading font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer ${
                   mobileTab === "friction"
@@ -237,7 +242,7 @@ export function TrustPositioning() {
                 type="button"
                 onClick={() => {
                   setMobileTab("engine");
-                  hasAutoSwitchedRef.current = true;
+                  userInteractedRef.current = true;
                 }}
                 className={`relative z-10 flex-1 py-2 px-3 rounded-xl text-xs font-heading font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer ${
                   mobileTab === "engine"
@@ -263,10 +268,10 @@ export function TrustPositioning() {
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={mobileTab}
-                initial={{ opacity: 0, x: mobileTab === "engine" ? 60 : -60 }}
+                initial={{ opacity: 0, x: mobileTab === "engine" ? 80 : -80 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: mobileTab === "engine" ? -60 : 60 }}
-                transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+                exit={{ opacity: 0, x: mobileTab === "engine" ? -80 : 80 }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
                 dragElastic={0.2}
@@ -274,10 +279,10 @@ export function TrustPositioning() {
                   const threshold = 40;
                   if (info.offset.x < -threshold && mobileTab === "friction") {
                     setMobileTab("engine");
-                    hasAutoSwitchedRef.current = true;
+                    userInteractedRef.current = true;
                   } else if (info.offset.x > threshold && mobileTab === "engine") {
                     setMobileTab("friction");
-                    hasAutoSwitchedRef.current = true;
+                    userInteractedRef.current = true;
                   }
                 }}
                 className="cursor-grab active:cursor-grabbing w-full"
