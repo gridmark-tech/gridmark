@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { CheckCircle2, AlertCircle, Loader2, Send } from "lucide-react";
 import { SERVICE_OPTIONS, BUDGET_OPTIONS } from "@/config/contact";
 import { Button } from "@/components/ui/button";
+import { Dropdown } from "@/components/ui/dropdown";
 import type { ContactFormData } from "@/types";
 
 export function ContactForm() {
@@ -217,19 +218,23 @@ export function ContactForm() {
           >
             Service of Interest <span className="text-red-500">*</span>
           </label>
-          <select
+          <Dropdown
             id="service"
             name="service"
             value={formData.service}
-            onChange={handleChange}
-            className="w-full h-11 px-4 rounded-xl bg-brand-bg/50 border border-brand-border text-brand-primary focus:bg-white focus:outline-2 focus:outline-brand-primary text-base transition-colors cursor-pointer"
-          >
-            {SERVICE_OPTIONS.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </select>
+            onChange={(val) => {
+              setFormData((prev) => ({ ...prev, service: val }));
+              if (fieldErrors.service) {
+                setFieldErrors((prev) => {
+                  const next = { ...prev };
+                  delete next.service;
+                  return next;
+                });
+              }
+            }}
+            options={SERVICE_OPTIONS}
+            placeholder="Select service"
+          />
         </div>
       </div>
 
@@ -260,19 +265,23 @@ export function ContactForm() {
           >
             Indicative Scope / Tier
           </label>
-          <select
+          <Dropdown
             id="budget"
             name="budget"
             value={formData.budget}
-            onChange={handleChange}
-            className="w-full h-11 px-4 rounded-xl bg-brand-bg/50 border border-brand-border text-brand-primary focus:bg-white focus:outline-2 focus:outline-brand-primary text-base transition-colors cursor-pointer"
-          >
-            {BUDGET_OPTIONS.map((opt) => (
-              <option key={opt.value} value={opt.value}>
-                {opt.label}
-              </option>
-            ))}
-          </select>
+            onChange={(val) => {
+              setFormData((prev) => ({ ...prev, budget: val }));
+              if (fieldErrors.budget) {
+                setFieldErrors((prev) => {
+                  const next = { ...prev };
+                  delete next.budget;
+                  return next;
+                });
+              }
+            }}
+            options={BUDGET_OPTIONS}
+            placeholder="Select scope / tier"
+          />
         </div>
       </div>
 
