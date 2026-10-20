@@ -31,6 +31,7 @@ interface PackageData {
     price: string;
     badge: string;
     image: string;
+    actionLabel: string;
   };
   whatsappMessage: string;
 }
@@ -65,6 +66,7 @@ const PACKAGES: Record<BusinessType, PackageData> = {
       price: "₦3,850,000",
       badge: "In Stock Ikeja",
       image: "/images/products/macbook-pro-16.webp",
+      actionLabel: "1-Tap WhatsApp",
     },
     whatsappMessage:
       "Hello Gridmark, I want to build a Retail Storefront for my shop with 1-tap WhatsApp ordering.",
@@ -93,11 +95,12 @@ const PACKAGES: Record<BusinessType, PackageData> = {
       },
     ],
     samplePreview: {
-      title: "Corporate Advisory Platform",
-      specs: "Multi-Page · Lead Routing · Fast 4G",
-      price: "Fixed Quote",
-      badge: "Executive Standard",
-      image: "/images/products/dell-ultrasharp-32.webp",
+      title: "Strategic Advisory Firm",
+      specs: "Practice Areas · Client Portal · SEO",
+      price: "Enterprise Scope",
+      badge: "Corporate Firm",
+      image: "/images/previews/corporate-landing.webp",
+      actionLabel: "Direct Consult",
     },
     whatsappMessage:
       "Hello Gridmark, I would like to build an Executive Business Website for our firm.",
@@ -126,11 +129,12 @@ const PACKAGES: Record<BusinessType, PackageData> = {
       },
     ],
     samplePreview: {
-      title: "Dell XPS 15 9530 (5x Carton)",
-      specs: "i9 13900H · 32GB · RTX 4070",
-      price: "₦2,450,000 / unit",
-      badge: "Hub Stock Active",
-      image: "/images/products/dell-xps-15.webp",
+      title: "Wholesale & Volume Inventory",
+      specs: "Carton Margin Calc · Real-Time Stock",
+      price: "Volume Engine",
+      badge: "Dealer Analytics",
+      image: "/images/previews/wholesale-analytics.webp",
+      actionLabel: "Dealer Reorder",
     },
     whatsappMessage:
       "Hello Gridmark, I need a Wholesale / B2B Catalogue for our distribution business.",
@@ -315,7 +319,7 @@ export function SolutionConfigurator() {
                       </span>
                       <span className="inline-flex items-center gap-1 text-[10px] font-heading font-bold bg-brand-dark-surface text-brand-dark-text px-2 py-1 rounded-md">
                         <MessageSquare className="w-3 h-3 text-brand-accent" />
-                        1-Tap WhatsApp
+                        {pkg.samplePreview.actionLabel}
                       </span>
                     </div>
                   </div>
