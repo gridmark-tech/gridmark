@@ -7,6 +7,8 @@ import { ChevronDown, Check } from "lucide-react";
 export interface DropdownOption {
   value: string;
   label: string;
+  description?: string;
+  badge?: string;
 }
 
 interface DropdownProps {
@@ -103,7 +105,7 @@ export function Dropdown({
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -4, scale: 0.98 }}
             transition={{ duration: 0.16, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute left-0 right-0 top-full mt-1.5 z-50 p-1.5 bg-white border border-brand-border rounded-2xl shadow-xl max-h-64 overflow-y-auto"
+            className="absolute left-0 right-0 top-full mt-1.5 z-50 p-1.5 bg-white border border-brand-border rounded-2xl shadow-xl max-h-80 overflow-y-auto no-scrollbar"
           >
             {options.map((opt) => {
               const isSelected = opt.value === value;
@@ -116,15 +118,41 @@ export function Dropdown({
                     onChange(opt.value);
                     setIsOpen(false);
                   }}
-                  className={`px-3 py-2.5 text-sm rounded-xl flex items-center justify-between cursor-pointer transition-colors ${
+                  className={`px-3.5 py-3 rounded-xl flex items-start justify-between cursor-pointer transition-colors ${
                     isSelected
-                      ? "bg-brand-primary text-white font-medium"
+                      ? "bg-brand-primary text-white"
                       : "text-brand-primary hover:bg-neutral-100"
                   }`}
                 >
-                  <span className="truncate">{opt.label}</span>
+                  <div className="flex-1 min-w-0 pr-2">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="font-heading font-bold text-sm tracking-tight leading-snug">
+                        {opt.label}
+                      </span>
+                      {opt.badge && (
+                        <span
+                          className={`text-[10px] font-sans px-2 py-0.5 rounded-full font-semibold tracking-wide shrink-0 ${
+                            isSelected
+                              ? "bg-white/20 text-brand-accent"
+                              : "bg-brand-bg text-brand-secondary border border-brand-border/70"
+                          }`}
+                        >
+                          {opt.badge}
+                        </span>
+                      )}
+                    </div>
+                    {opt.description && (
+                      <p
+                        className={`text-xs mt-1 leading-snug ${
+                          isSelected ? "text-neutral-300" : "text-brand-secondary"
+                        }`}
+                      >
+                        {opt.description}
+                      </p>
+                    )}
+                  </div>
                   {isSelected && (
-                    <Check className="w-4 h-4 text-brand-accent shrink-0 ml-2" />
+                    <Check className="w-4 h-4 text-brand-accent shrink-0 mt-0.5" />
                   )}
                 </div>
               );

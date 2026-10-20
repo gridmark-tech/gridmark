@@ -1,8 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { CheckCircle2, AlertCircle, Loader2, Send } from "lucide-react";
-import { SERVICE_OPTIONS, BUDGET_OPTIONS } from "@/config/contact";
+import { CheckCircle2, AlertCircle, Loader2, Send, Check, Sparkles } from "lucide-react";
+import { motion } from "motion/react";
+import { SERVICE_OPTIONS, BUDGET_OPTIONS, BUDGET_TIER_DETAILS } from "@/config/contact";
 import { Button } from "@/components/ui/button";
 import { Dropdown } from "@/components/ui/dropdown";
 import type { ContactFormData } from "@/types";
@@ -23,6 +24,8 @@ export function ContactForm() {
   const [isSuccess, setIsSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const [fieldErrors, setFieldErrors] = useState<Record<string, string[]>>({});
+
+  const selectedTier = formData.budget ? BUDGET_TIER_DETAILS[formData.budget] : null;
 
   const handleChange = (
     e: React.ChangeEvent<
@@ -284,6 +287,47 @@ export function ContactForm() {
           />
         </div>
       </div>
+
+      {/* Scope Inclusions Callout Card */}
+      {selectedTier && (
+        <motion.div
+          key={selectedTier.value}
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2 }}
+          className="rounded-2xl border border-brand-border bg-white/70 p-4 sm:p-5 shadow-xs"
+        >
+          <div className="flex items-center justify-between gap-3 flex-wrap mb-2.5">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 rounded-lg bg-brand-primary text-brand-accent flex items-center justify-center shrink-0">
+                <Sparkles className="w-3.5 h-3.5" />
+              </div>
+              <h4 className="font-heading font-bold text-xs uppercase tracking-wider text-brand-primary">
+                Scope Inclusions & Timeline
+              </h4>
+            </div>
+            <span className="text-[11px] font-mono font-medium px-2.5 py-0.5 rounded-full bg-brand-bg text-brand-primary border border-brand-border/70">
+              Est: {selectedTier.timeline}
+            </span>
+          </div>
+
+          <p className="text-xs sm:text-sm text-brand-secondary leading-relaxed mb-3.5">
+            {selectedTier.summary}
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-3 border-t border-brand-border/50">
+            {selectedTier.deliverables.map((item, idx) => (
+              <div
+                key={idx}
+                className="flex items-center gap-2 text-xs text-brand-primary font-medium"
+              >
+                <Check className="w-3.5 h-3.5 text-brand-accent shrink-0" />
+                <span>{item}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      )}
 
       {/* Row 4: Message Description */}
       <div>
