@@ -117,28 +117,36 @@ export function TrustPositioning() {
   }, [releaseScrollHalt]);
 
   useEffect(() => {
+    let rafId: number | null = null;
+
     const handleScroll = () => {
       // If user already interacted (swiped or tapped) or already auto-switched once, keep normal consistent scroll
       if (hasAutoSwitchedRef.current || userInteractedRef.current || isHaltedRef.current) return;
-      const section = sectionRef.current;
-      if (!section) return;
+      if (rafId !== null) return;
 
-      const rect = section.getBoundingClientRect();
-      const viewportHeight = window.innerHeight;
+      rafId = window.requestAnimationFrame(() => {
+        rafId = null;
+        const section = sectionRef.current;
+        if (!section) return;
 
-      // Occurs when user has scrolled through the card and is about to exit to the next section
-      // (top of section is scrolled up, and bottom is nearing lower viewport)
-      if (rect.top < 0 && rect.bottom <= viewportHeight * 0.88 && rect.bottom >= viewportHeight * 0.1) {
-        if (mobileTabRef.current === "friction") {
-          hasAutoSwitchedRef.current = true;
-          haltVerticalScroll(700);
-          setMobileTab("engine");
+        const rect = section.getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+
+        // Occurs when user has scrolled through the card and is about to exit to the next section
+        // (top of section is scrolled up, and bottom is nearing lower viewport)
+        if (rect.top < 0 && rect.bottom <= viewportHeight * 0.88 && rect.bottom >= viewportHeight * 0.1) {
+          if (mobileTabRef.current === "friction") {
+            hasAutoSwitchedRef.current = true;
+            haltVerticalScroll(700);
+            setMobileTab("engine");
+          }
         }
-      }
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
+      if (rafId !== null) window.cancelAnimationFrame(rafId);
       window.removeEventListener("scroll", handleScroll);
       releaseScrollHalt();
     };
@@ -243,9 +251,9 @@ export function TrustPositioning() {
           </div>
 
           <div>
-            <h4 className="font-heading font-extrabold text-sm sm:text-base text-brand-primary">
+            <p className="font-heading font-extrabold text-sm sm:text-base text-brand-primary">
               Dell XPS 15 9530 (2024 Edition)
-            </h4>
+            </p>
             <p className="text-[11px] sm:text-xs text-brand-secondary mt-0.5 font-sans">
               Core i9-13900H · 32GB RAM · 1TB SSD · RTX 4070 · OLED 3.5K
             </p>

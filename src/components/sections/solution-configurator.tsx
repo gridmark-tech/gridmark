@@ -305,9 +305,9 @@ export function SolutionConfigurator() {
                     </div>
 
                     <div>
-                      <h4 className="font-heading font-bold text-xs sm:text-sm text-brand-primary truncate">
+                      <p className="font-heading font-bold text-xs sm:text-sm text-brand-primary truncate">
                         {pkg.samplePreview.title}
-                      </h4>
+                      </p>
                       <p className="text-[10.5px] text-brand-secondary font-sans truncate mt-0.5">
                         {pkg.samplePreview.specs}
                       </p>

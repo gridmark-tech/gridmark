@@ -163,9 +163,9 @@ export function InteractiveDeviceStage() {
 
             {/* Product Metadata */}
             <div className="min-w-0">
-              <h3 className="font-heading font-extrabold text-sm sm:text-base text-brand-primary leading-snug">
+              <p className="font-heading font-extrabold text-sm sm:text-base text-brand-primary leading-snug">
                 {selectedProduct.name}
-              </h3>
+              </p>
               <p className="text-xs text-brand-secondary mt-1 flex items-center gap-1.5 min-w-0">
                 <Cpu className="w-3.5 h-3.5 text-brand-secondary shrink-0" />
                 <span className="truncate">{selectedProduct.specs}</span>
@@ -323,9 +323,9 @@ export function InteractiveDeviceStage() {
                                 </span>
                               </div>
 
-                              <h4 className="font-heading font-bold text-xs text-brand-primary leading-tight truncate">
+                              <p className="font-heading font-bold text-xs text-brand-primary leading-tight truncate">
                                 {product.name}
-                              </h4>
+                              </p>
 
                               <p className="text-[10px] text-brand-secondary mt-0.5 truncate">
                                 {product.specs}
@@ -504,9 +504,9 @@ export function InteractiveDeviceStage() {
                               Verified Genuine
                             </span>
                           </div>
-                          <h3 className="font-heading font-black text-base text-brand-primary leading-tight truncate whitespace-nowrap">
+                          <p className="font-heading font-black text-base text-brand-primary leading-tight truncate whitespace-nowrap">
                             {selectedProduct.name}
-                          </h3>
+                          </p>
                         </div>
 
                         <div className="text-right shrink-0">
@@ -588,9 +588,9 @@ export function InteractiveDeviceStage() {
                                   className="object-contain p-0.5"
                                 />
                               </div>
-                              <h5 className="font-heading font-bold text-[10.5px] text-brand-primary truncate leading-tight">
+                              <p className="font-heading font-bold text-[10.5px] text-brand-primary truncate leading-tight">
                                 {prod.shortName}
-                              </h5>
+                              </p>
                               <span className="font-sans font-bold text-[9.5px] text-brand-secondary mt-0.5">
                                 {prod.price}
                               </span>

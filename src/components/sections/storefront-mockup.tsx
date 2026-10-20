@@ -149,9 +149,9 @@ export function StorefrontMockup() {
                   />
                 </div>
 
-                <h4 className="font-heading font-bold text-sm text-brand-primary line-clamp-1">
+                <p className="font-heading font-bold text-sm text-brand-primary line-clamp-1">
                   {product.name}
-                </h4>
+                </p>
                 <p className="text-xs text-brand-secondary mt-1 flex items-center gap-1">
                   <Cpu className="w-3 h-3 shrink-0" />
                   <span className="truncate">{product.specs}</span>

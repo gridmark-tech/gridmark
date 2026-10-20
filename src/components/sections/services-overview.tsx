@@ -149,9 +149,9 @@ export function ServicesOverview() {
                           />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <h4 className="font-heading font-bold text-xs text-brand-primary truncate">
+                          <p className="font-heading font-bold text-xs text-brand-primary truncate">
                             MacBook Pro 16&quot; M3 Max
-                          </h4>
+                          </p>
                           <p className="text-[10px] text-brand-secondary font-sans mt-0.5 truncate">
                             36GB RAM · 1TB SSD · Space Black
                           </p>
