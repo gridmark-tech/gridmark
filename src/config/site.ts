@@ -16,8 +16,8 @@ export const siteConfig: SiteConfig = {
   ],
   contact: {
     email: process.env.NEXT_PUBLIC_CONTACT_EMAIL || "hello@gridmark.tech",
-    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "2348000000000",
-    whatsappDisplay: "+234 (WhatsApp)",
+    whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "2349075340889",
+    whatsappDisplay: "+234 907 534 0889",
     location: "Lagos, Nigeria",
   },
 };

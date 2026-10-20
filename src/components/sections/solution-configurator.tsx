@@ -168,9 +168,13 @@ export function SolutionConfigurator() {
   const result = CONFIG_MATRIX[business][scale];
 
   return (
-    <section className="w-full py-20 sm:py-28 bg-brand-surface/70 border-t border-brand-border/70" id="estimator">
+    <section
+      className="w-full py-16 sm:py-24 lg:py-28 bg-brand-surface/70 border-t border-brand-border/70"
+      id="estimator"
+    >
       <Container>
-        <div className="max-w-3xl mb-12 sm:mb-16">
+        {/* Section Header */}
+        <div className="max-w-3xl mb-10 sm:mb-14">
           <Reveal direction="up" delay={0.1}>
             <span className="text-xs font-heading font-semibold uppercase tracking-wider text-brand-secondary">
               Interactive Scope Planner
@@ -178,148 +182,196 @@ export function SolutionConfigurator() {
           </Reveal>
 
           <Reveal direction="up" delay={0.2}>
-            <h2 className="mt-2 font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl tracking-tight text-brand-primary">
+            <h2 className="mt-2 font-heading font-extrabold text-2xl sm:text-3xl lg:text-4xl tracking-tight text-brand-primary">
               Configure the exact digital system your business needs.
             </h2>
           </Reveal>
 
           <Reveal direction="up" delay={0.3}>
-            <p className="mt-4 text-base sm:text-lg text-brand-secondary leading-relaxed">
-              Select your commercial model and catalogue scale below to view recommended architecture, turnaround time, and deliverables.
+            <p className="mt-3 sm:mt-4 text-sm sm:text-base lg:text-lg text-brand-secondary leading-relaxed">
+              Select your commercial model and catalogue scale below to view
+              recommended architecture, turnaround time, and deliverables.
             </p>
           </Reveal>
         </div>
 
         {/* Configurator Box */}
         <Reveal direction="up" delay={0.2}>
-          <div className="rounded-3xl bg-brand-surface border border-brand-border/90 shadow-md p-6 sm:p-10 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-10">
+          <div className="rounded-2xl sm:rounded-3xl bg-brand-surface border border-brand-border/90 shadow-sm p-4 sm:p-8 lg:p-12 grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10">
             {/* Left Column: Interactive Inputs */}
-            <div className="lg:col-span-6 space-y-8">
-              {/* Step 1: Industry */}
+            <div className="lg:col-span-6 space-y-6 sm:space-y-8">
+              {/* Step 1: Industry Selection */}
               <div>
-                <label className="text-xs font-heading font-bold uppercase tracking-wider text-brand-primary block mb-3">
+                <label className="text-xs font-heading font-bold uppercase tracking-wider text-brand-primary block mb-2 sm:mb-3">
                   Step 1: Your Business Model
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                <div className="grid grid-cols-3 gap-1.5 sm:gap-2.5">
                   {[
-                    { id: "electronics", label: "Electronics Retail", sub: "Computers / Gadgets" },
-                    { id: "corporate", label: "Corporate Services", sub: "Firms / Consultancies" },
-                    { id: "wholesale", label: "Wholesale & B2B", sub: "Importers / Bulk" },
-                  ].map((item) => (
-                    <button
-                      key={item.id}
-                      type="button"
-                      onClick={() => setBusiness(item.id as BusinessType)}
-                      className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
-                        business === item.id
-                          ? "bg-brand-dark-surface text-brand-dark-text border-brand-dark-surface shadow-xs"
-                          : "bg-brand-bg/60 text-brand-primary border-brand-border hover:border-brand-primary/40"
-                      }`}
-                    >
-                      <span className="font-heading font-bold text-xs block leading-tight">
-                        {item.label}
-                      </span>
-                      <span
-                        className={`text-[10px] block mt-1 ${
-                          business === item.id ? "text-brand-dark-text/70" : "text-brand-secondary"
+                    {
+                      id: "electronics",
+                      shortLabel: "Electronics",
+                      fullLabel: "Electronics Retail",
+                      sub: "Computers / Gadgets",
+                    },
+                    {
+                      id: "corporate",
+                      shortLabel: "Corporate",
+                      fullLabel: "Corporate Services",
+                      sub: "Firms & Consultancies",
+                    },
+                    {
+                      id: "wholesale",
+                      shortLabel: "Wholesale",
+                      fullLabel: "Wholesale & B2B",
+                      sub: "Importers & Bulk",
+                    },
+                  ].map((item) => {
+                    const isSelected = business === item.id;
+                    return (
+                      <button
+                        key={item.id}
+                        type="button"
+                        onClick={() => setBusiness(item.id as BusinessType)}
+                        className={`p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border text-left transition-all cursor-pointer ${
+                          isSelected
+                            ? "bg-brand-dark-surface text-brand-dark-text border-brand-dark-surface shadow-xs"
+                            : "bg-brand-bg/60 text-brand-primary border-brand-border hover:border-brand-primary/40"
                         }`}
                       >
-                        {item.sub}
-                      </span>
-                    </button>
-                  ))}
+                        <span className="font-heading font-bold text-xs sm:text-sm block leading-tight">
+                          <span className="sm:hidden">{item.shortLabel}</span>
+                          <span className="hidden sm:inline">{item.fullLabel}</span>
+                        </span>
+                        <span
+                          className={`text-[9.5px] sm:text-[10px] block mt-1 truncate ${
+                            isSelected
+                              ? "text-brand-dark-text/70"
+                              : "text-brand-secondary"
+                          }`}
+                        >
+                          {item.sub}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
-              {/* Step 2: Inventory Scale */}
+              {/* Step 2: Inventory Scale Selection */}
               <div>
-                <label className="text-xs font-heading font-bold uppercase tracking-wider text-brand-primary block mb-3">
+                <label className="text-xs font-heading font-bold uppercase tracking-wider text-brand-primary block mb-2 sm:mb-3">
                   Step 2: Catalogue / Platform Scale
                 </label>
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                <div className="grid grid-cols-3 gap-1.5 sm:gap-2.5">
                   {[
-                    { id: "starter", label: "Starter Tier", sub: "1–50 Core Models" },
-                    { id: "growth", label: "Growth Tier", sub: "100–300+ SKUs" },
-                    { id: "enterprise", label: "Full Suite", sub: "Multi-Category" },
-                  ].map((tier) => (
-                    <button
-                      key={tier.id}
-                      type="button"
-                      onClick={() => setScale(tier.id as ScaleTier)}
-                      className={`p-3.5 rounded-2xl border text-left transition-all cursor-pointer ${
-                        scale === tier.id
-                          ? "bg-brand-dark-surface text-brand-dark-text border-brand-dark-surface shadow-xs"
-                          : "bg-brand-bg/60 text-brand-primary border-brand-border hover:border-brand-primary/40"
-                      }`}
-                    >
-                      <span className="font-heading font-bold text-xs block leading-tight">
-                        {tier.label}
-                      </span>
-                      <span
-                        className={`text-[10px] block mt-1 ${
-                          scale === tier.id ? "text-brand-dark-text/70" : "text-brand-secondary"
+                    {
+                      id: "starter",
+                      shortLabel: "Starter",
+                      fullLabel: "Starter Tier",
+                      sub: "1–50 Core SKUs",
+                    },
+                    {
+                      id: "growth",
+                      shortLabel: "Growth",
+                      fullLabel: "Growth Tier",
+                      sub: "100–300+ SKUs",
+                    },
+                    {
+                      id: "enterprise",
+                      shortLabel: "Full Suite",
+                      fullLabel: "Enterprise Suite",
+                      sub: "Multi-Category",
+                    },
+                  ].map((tier) => {
+                    const isSelected = scale === tier.id;
+                    return (
+                      <button
+                        key={tier.id}
+                        type="button"
+                        onClick={() => setScale(tier.id as ScaleTier)}
+                        className={`p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl border text-left transition-all cursor-pointer ${
+                          isSelected
+                            ? "bg-brand-dark-surface text-brand-dark-text border-brand-dark-surface shadow-xs"
+                            : "bg-brand-bg/60 text-brand-primary border-brand-border hover:border-brand-primary/40"
                         }`}
                       >
-                        {tier.sub}
-                      </span>
-                    </button>
-                  ))}
+                        <span className="font-heading font-bold text-xs sm:text-sm block leading-tight">
+                          <span className="sm:hidden">{tier.shortLabel}</span>
+                          <span className="hidden sm:inline">{tier.fullLabel}</span>
+                        </span>
+                        <span
+                          className={`text-[9.5px] sm:text-[10px] block mt-1 truncate ${
+                            isSelected
+                              ? "text-brand-dark-text/70"
+                              : "text-brand-secondary"
+                          }`}
+                        >
+                          {tier.sub}
+                        </span>
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
               {/* Architectural Highlights pill */}
-              <div className="p-4 rounded-2xl bg-brand-bg/70 border border-brand-border/80 flex items-center justify-between text-xs text-brand-secondary">
-                <span className="flex items-center gap-2">
-                  <Sparkles className="w-4 h-4 text-emerald-600" />
-                  <span>Tailored for Lagos & Nigerian retail realities</span>
+              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-brand-bg/70 border border-brand-border/80 flex items-center justify-between gap-2 text-xs text-brand-secondary">
+                <span className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+                  <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 shrink-0" />
+                  <span className="truncate">Lagos & Nigerian retail realities</span>
                 </span>
-                <span className="font-heading text-emerald-700 font-bold text-xs">100% Fixed Scope</span>
+                <span className="font-heading text-emerald-700 font-bold text-[11px] sm:text-xs shrink-0">
+                  100% Fixed Scope
+                </span>
               </div>
             </div>
 
             {/* Right Column: Live Tailored Architecture Card */}
-            <div className="lg:col-span-6 bg-brand-bg/50 rounded-2xl border border-brand-border p-6 sm:p-8 flex flex-col justify-between">
+            <div className="lg:col-span-6 bg-brand-bg/50 rounded-xl sm:rounded-2xl border border-brand-border p-4 sm:p-7 lg:p-8 flex flex-col justify-between">
               <div>
-                <div className="flex items-center justify-between border-b border-brand-border/70 pb-4 mb-5">
-                  <div>
-                    <span className="text-[10px] font-heading uppercase tracking-wider text-emerald-800 font-bold bg-emerald-100 px-2.5 py-0.5 rounded-full inline-block mb-1">
+                <div className="flex items-start justify-between border-b border-brand-border/70 pb-3.5 mb-4 gap-2">
+                  <div className="min-w-0">
+                    <span className="text-[9.5px] sm:text-[10px] font-heading uppercase tracking-wider text-emerald-800 font-bold bg-emerald-100 px-2 py-0.5 rounded-full inline-block mb-1">
                       {result.recommendedPillar}
                     </span>
-                    <h3 className="font-heading font-extrabold text-2xl text-brand-primary">
+                    <h3 className="font-heading font-extrabold text-lg sm:text-xl lg:text-2xl text-brand-primary leading-tight">
                       {result.title}
                     </h3>
                   </div>
 
-                  <div className="text-right">
-                    <span className="text-[10px] text-brand-secondary font-heading font-semibold block uppercase">
+                  <div className="text-right shrink-0">
+                    <span className="text-[9px] sm:text-[10px] text-brand-secondary font-heading font-semibold block uppercase">
                       Timeline
                     </span>
-                    <span className="font-sans font-bold text-xs text-brand-primary flex items-center gap-1 justify-end">
-                      <Clock className="w-3.5 h-3.5 text-emerald-600" />
-                      {result.turnaround}
+                    <span className="font-sans font-bold text-xs sm:text-sm text-brand-primary flex items-center gap-1 justify-end mt-0.5">
+                      <Clock className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                      <span>{result.turnaround}</span>
                     </span>
                   </div>
                 </div>
 
-                <div className="space-y-4">
+                <div className="space-y-3.5">
                   <div>
-                    <span className="text-[11px] font-heading uppercase tracking-wider text-brand-secondary block mb-1.5 font-semibold">
+                    <span className="text-[10.5px] sm:text-[11px] font-heading uppercase tracking-wider text-brand-secondary block mb-1 font-semibold">
                       Architecture & Stack
                     </span>
-                    <div className="p-3 rounded-xl bg-white border border-brand-border text-xs font-sans font-medium text-brand-primary flex items-center gap-2 shadow-2xs">
-                      <Layers className="w-4 h-4 text-brand-accent shrink-0" />
-                      <span className="truncate">{result.architecture}</span>
+                    <div className="p-2.5 sm:p-3 rounded-xl bg-white border border-brand-border text-xs font-sans font-medium text-brand-primary flex items-start sm:items-center gap-2 shadow-2xs">
+                      <Layers className="w-4 h-4 text-brand-accent shrink-0 mt-0.5 sm:mt-0" />
+                      <span className="leading-snug">{result.architecture}</span>
                     </div>
                   </div>
 
                   <div>
-                    <span className="text-[11px] font-heading uppercase tracking-wider text-brand-secondary block mb-2 font-semibold">
+                    <span className="text-[10.5px] sm:text-[11px] font-heading uppercase tracking-wider text-brand-secondary block mb-1.5 font-semibold">
                       Key Inclusions
                     </span>
-                    <ul className="space-y-2">
+                    <ul className="space-y-1.5 sm:space-y-2">
                       {result.deliverables.map((item, idx) => (
-                        <li key={idx} className="flex items-start gap-2.5 text-xs text-brand-primary">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                        <li
+                          key={idx}
+                          className="flex items-start gap-2 text-xs text-brand-primary"
+                        >
+                          <CheckCircle2 className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-emerald-600 shrink-0 mt-0.5" />
                           <span className="leading-snug">{item}</span>
                         </li>
                       ))}
@@ -328,21 +380,26 @@ export function SolutionConfigurator() {
                 </div>
               </div>
 
-              {/* Action Buttons: Signature Gridmark Accent + Secondary */}
-              <div className="mt-8 pt-5 border-t border-brand-border/70 flex flex-col sm:flex-row items-center gap-3">
+              {/* Action Buttons */}
+              <div className="mt-6 pt-4 border-t border-brand-border/70 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
                 <Button
                   href={getWhatsAppUrl(result.whatsappMessage)}
                   external
                   variant="accent"
                   size="md"
-                  className="w-full sm:w-auto gap-2 shadow-sm font-heading font-bold"
+                  className="w-full sm:w-auto gap-2 shadow-xs font-heading font-bold text-xs sm:text-sm justify-center"
                 >
-                  <MessageSquare className="w-4 h-4 text-brand-primary" />
-                  <span>Enquire Exact Scope on WhatsApp</span>
-                  <ArrowRight className="w-4 h-4 ml-auto sm:ml-1 text-brand-primary" />
+                  <MessageSquare className="w-4 h-4 text-brand-primary shrink-0" />
+                  <span>Enquire Scope on WhatsApp</span>
+                  <ArrowRight className="w-4 h-4 ml-1 text-brand-primary shrink-0" />
                 </Button>
 
-                <Button href="/contact" variant="secondary" size="md" className="w-full sm:w-auto font-heading">
+                <Button
+                  href="/contact"
+                  variant="secondary"
+                  size="md"
+                  className="w-full sm:w-auto font-heading text-xs sm:text-sm justify-center"
+                >
                   Submit Form Details
                 </Button>
               </div>

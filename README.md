@@ -120,7 +120,7 @@ Configure your environment variables:
 ```dotenv
 NEXT_PUBLIC_SITE_URL=https://gridmark.tech
 NEXT_PUBLIC_CONTACT_EMAIL=hello@gridmark.tech
-NEXT_PUBLIC_WHATSAPP_NUMBER=2348000000000
+NEXT_PUBLIC_WHATSAPP_NUMBER=2349075340889
 ```
 
 ### Running Locally
