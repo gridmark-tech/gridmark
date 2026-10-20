@@ -39,8 +39,58 @@ export async function POST(request: Request) {
       timestamp: new Date().toISOString(),
     });
 
-    // In production with email provider configured (e.g., RESEND_API_KEY):
-    // Delivery will be executed here. If no credentials exist, acknowledge receipt gracefully.
+    // Deliver via Web3Forms if access key is configured
+    const accessKey =
+      process.env.WEB3FORMS_ACCESS_KEY ||
+      process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+
+    if (accessKey) {
+      const web3Response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          subject: `New Gridmark Enquiry: ${data.service} - ${data.businessName || data.name}`,
+          from_name: "Gridmark Web Portal",
+          name: data.name,
+          email: data.email,
+          business_name: data.businessName || "Not specified",
+          service: data.service,
+          budget: data.budget || "Not specified",
+          timeframe: data.timeframe || "Not specified",
+          website_or_social: data.websiteOrSocial || "None provided",
+          message: data.message,
+          replyto: data.email,
+        }),
+      });
+
+      let web3Result: { success?: boolean; message?: string } | null = null;
+      try {
+        web3Result = await web3Response.json();
+      } catch {
+        web3Result = null;
+      }
+
+      if (!web3Response.ok || !web3Result?.success) {
+        console.error("[Gridmark Web3Forms Error]", web3Result);
+        return NextResponse.json(
+          {
+            error:
+              web3Result?.message ||
+              "Failed to submit enquiry through Web3Forms. Please message us on WhatsApp.",
+          },
+          { status: 502 }
+        );
+      }
+    } else {
+      console.warn(
+        "[Gridmark Contact API] WEB3FORMS_ACCESS_KEY is not configured. Running in acknowledgement simulation mode."
+      );
+    }
+
     return NextResponse.json(
       {
         success: true,

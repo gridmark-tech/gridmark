@@ -121,6 +121,7 @@ Configure your environment variables:
 NEXT_PUBLIC_SITE_URL=https://gridmark.tech
 NEXT_PUBLIC_CONTACT_EMAIL=hello@gridmark.tech
 NEXT_PUBLIC_WHATSAPP_NUMBER=2349075340889
+WEB3FORMS_ACCESS_KEY=your_web3forms_access_key
 ```
 
 ### Running Locally
