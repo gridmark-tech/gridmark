@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Container } from "@/components/ui/container";
+import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Terms of Use",
@@ -70,10 +71,10 @@ export default function TermsPage() {
               <p>
                 For questions regarding these terms, contact us at{" "}
                 <a
-                  href="mailto:hello@gridmark.tech"
+                  href={`mailto:${siteConfig.contact.email}`}
                   className="font-medium text-brand-primary underline"
                 >
-                  hello@gridmark.tech
+                  {siteConfig.contact.email}
                 </a>
                 .
               </p>

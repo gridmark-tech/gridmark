@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { MessageSquare, Mail, MapPin, Clock, ArrowRight } from "lucide-react";
+import { MessageSquare, Mail, MapPin, Clock, ArrowRight, Phone } from "lucide-react";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { Container } from "@/components/ui/container";
@@ -91,6 +91,19 @@ export default function ContactPage() {
                         className="text-brand-secondary hover:text-brand-primary transition-colors text-xs"
                       >
                         {siteConfig.contact.email}
+                      </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3.5 text-sm">
+                    <Phone className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <div>
+                      <span className="font-medium text-brand-primary block">Phone / Direct Line</span>
+                      <a
+                        href={`tel:+${siteConfig.contact.whatsappNumber}`}
+                        className="text-brand-secondary hover:text-brand-primary transition-colors text-xs"
+                      >
+                        {siteConfig.contact.whatsappDisplay}
                       </a>
                     </div>
                   </div>

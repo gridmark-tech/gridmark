@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MessageSquare, Mail, MapPin } from "lucide-react";
+import { MessageSquare, Mail, MapPin, Phone } from "lucide-react";
 import { siteConfig } from "@/config/site";
 import { getWhatsAppUrl } from "@/config/contact";
 import { Container } from "@/components/ui/container";
@@ -31,6 +31,13 @@ export function Footer() {
               >
                 <Mail className="w-4 h-4 text-brand-accent shrink-0" />
                 <span>{siteConfig.contact.email}</span>
+              </a>
+              <a
+                href={`tel:+${siteConfig.contact.whatsappNumber}`}
+                className="inline-flex items-center gap-2.5 hover:text-brand-accent transition-colors"
+              >
+                <Phone className="w-4 h-4 text-brand-accent shrink-0" />
+                <span>{siteConfig.contact.whatsappDisplay}</span>
               </a>
               <a
                 href={getWhatsAppUrl()}
@@ -151,9 +158,6 @@ export function Footer() {
                   </Link>
                 </li>
               </ul>
-              <p className="text-xs text-brand-dark-text/50 pt-2 leading-relaxed">
-                Proposed domain: {siteConfig.proposedDomain}
-              </p>
             </div>
           </div>
         </div>

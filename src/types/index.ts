@@ -46,10 +46,11 @@ export interface SiteConfig {
   tagline: string;
   description: string;
   url: string;
-  proposedDomain: string;
+  proposedDomain?: string;
   navItems: NavItem[];
   contact: {
     email: string;
+    phone?: string;
     whatsappNumber: string;
     whatsappDisplay: string;
     location: string;
