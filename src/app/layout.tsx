@@ -8,12 +8,14 @@ const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
 const manrope = Manrope({
   variable: "--font-manrope",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
 export const viewport: Viewport = {
@@ -105,7 +107,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${manrope.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col bg-brand-bg text-brand-primary font-sans">
+      <body className={`${inter.className} min-h-full flex flex-col bg-brand-bg text-brand-primary font-sans`}>
         {children}
         <Analytics />
       </body>

@@ -145,7 +145,6 @@ export function InteractiveDeviceStage() {
                 src={selectedProduct.image}
                 alt={selectedProduct.name}
                 fill
-                priority
                 sizes="(max-width: 640px) 100vw, 400px"
                 className="object-contain p-2 drop-shadow-md"
               />
@@ -379,7 +378,6 @@ export function InteractiveDeviceStage() {
                     src="/images/mockups/iphone-bezel.png"
                     alt="iPhone Mockup"
                     fill
-                    priority
                     sizes="(max-width: 1280px) 340px, 355px"
                     className="pointer-events-none select-none z-20 object-contain drop-shadow-2xl"
                   />
@@ -483,7 +481,6 @@ export function InteractiveDeviceStage() {
                               src={selectedProduct.image}
                               alt={selectedProduct.name}
                               fill
-                              priority
                               sizes="(max-width: 1024px) 100vw, 620px"
                               className="object-contain p-2 drop-shadow-md transition-transform duration-300 group-hover:scale-[1.02]"
                             />
