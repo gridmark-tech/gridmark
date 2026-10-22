@@ -44,20 +44,20 @@ const PACKAGES: Record<BusinessType, PackageData> = {
     badge: "Most Popular in Lagos",
     title: "Digital Storefront & Live Catalogue",
     subtitle:
-      "For electronics shops, phone dealers, and retail stores in Lagos selling via WhatsApp.",
+      "Instant catalogue with 1-tap WhatsApp checkout for phone & gadget merchants.",
     timeline: "7–10 Days",
     keyBenefits: [
       {
         title: "1-Tap WhatsApp Orders",
-        desc: "Customers tap 'Order' and send pre-filled model name, specs, and price directly to your chat.",
+        desc: "Customers tap once; pre-filled model, price & specs land in your chat.",
       },
       {
         title: "Live Showroom Inventory",
-        desc: "Clear stock badges (In Stock Ikeja / 2 Units Left) eliminate repetitive pricing DMs.",
+        desc: "Clear stock badges (In Stock Ikeja / 2 Left) end repetitive pricing DMs.",
       },
       {
-        title: "Sub-Second Mobile 4G Speed",
-        desc: "Loads in 0.03 seconds so buyers on smartphones never leave due to slow loading.",
+        title: "Sub-Second 4G Speed",
+        desc: "Loads in 0.03s on smartphones so buyers never drop off waiting.",
       },
     ],
     samplePreview: {
@@ -75,23 +75,23 @@ const PACKAGES: Record<BusinessType, PackageData> = {
     id: "corporate",
     tabLabel: "Corporate Site",
     icon: "🏢",
-    badge: "High-Trust Presence",
+    badge: "Executive Web Presence",
     title: "Executive Business Website",
     subtitle:
-      "For consultancies, law firms, real estate agencies, and B2B corporate service providers.",
+      "High-trust corporate presence for consultancies, law firms, and advisory agencies.",
     timeline: "7–10 Days",
     keyBenefits: [
       {
-        title: "Authority Brand Presentation",
-        desc: "Clean typography, structured case studies, and corporate credibility that wins premium clients.",
+        title: "Executive Credibility",
+        desc: "Clean typography, practice areas & case studies that win corporate clients.",
       },
       {
-        title: "Validated Direct Enquiries",
-        desc: "Client briefs routed instantly to your official business email and executive WhatsApp.",
+        title: "Direct Client Inquiries",
+        desc: "Briefs delivered instantly to official business email & leadership WhatsApp.",
       },
       {
-        title: "Google Local Search SEO",
-        desc: "Indexed properly for Lagos corporate searches with sub-second performance guarantee.",
+        title: "Google Search Indexing",
+        desc: "Optimized for corporate search discovery and sub-second mobile speed.",
       },
     ],
     samplePreview: {
@@ -112,20 +112,20 @@ const PACKAGES: Record<BusinessType, PackageData> = {
     badge: "Bulk & Importers",
     title: "Wholesale & Volume Catalogue",
     subtitle:
-      "For gadget importers, Computer Village distributors, and bulk merchants managing dealer orders.",
+      "Structured bulk ordering portal for gadget importers and multi-hub distributors.",
     timeline: "10–14 Days",
     keyBenefits: [
       {
-        title: "Volume & Carton Pricing",
-        desc: "Clear MOQ and carton rate tiers that end daily back-and-forth price negotiations.",
+        title: "Carton & Volume Pricing",
+        desc: "Clear MOQ & carton rate tiers end daily price haggling.",
       },
       {
         title: "Fast Dealer Reorders",
-        desc: "Retail dealers and agents submit structured bulk orders directly into WhatsApp.",
+        desc: "Retail dealers and agents submit bulk orders with one tap.",
       },
       {
-        title: "Warehouse Location Stock",
-        desc: "Real-time stock tags by warehouse location prevent overselling and customer disputes.",
+        title: "Multi-Hub Inventory",
+        desc: "Live stock allocation across warehouses prevents overselling.",
       },
     ],
     samplePreview: {
@@ -229,37 +229,37 @@ export function SolutionConfigurator() {
                     {pkg.subtitle}
                   </p>
 
-                  {/* 3 Visual Key Benefits (Icons, Punchy Titles, No Jargon) */}
-                  <div className="mt-4 sm:mt-6 space-y-2.5">
+                  {/* 3 Visual Key Benefits (Scannable, Punchy, Zero Fluff) */}
+                  <div className="mt-4 space-y-2">
                     {pkg.keyBenefits.map((benefit, i) => (
                       <div
                         key={i}
-                        className="p-3 rounded-xl bg-brand-bg/60 border border-brand-border/70 flex items-start gap-2.5"
+                        className="p-2.5 rounded-xl bg-brand-bg/60 border border-brand-border/70 flex items-start gap-2.5"
                       >
-                        <div className="w-6 h-6 rounded-lg bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-xs">
+                        <div className="w-5 h-5 rounded-md bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-[10px]">
                           ✓
                         </div>
                         <div className="min-w-0">
-                          <h4 className="font-heading font-bold text-xs sm:text-sm text-brand-primary leading-tight">
+                          <span className="font-heading font-bold text-xs sm:text-sm text-brand-primary block leading-tight">
                             {benefit.title}
-                          </h4>
-                          <p className="text-[11px] sm:text-xs text-brand-secondary mt-0.5 leading-snug">
+                          </span>
+                          <span className="text-[11px] sm:text-xs text-brand-secondary block mt-0.5 leading-snug">
                             {benefit.desc}
-                          </p>
+                          </span>
                         </div>
                       </div>
                     ))}
                   </div>
                 </div>
 
-                {/* Bottom Action Bar */}
-                <div className="pt-3 border-t border-brand-border/70 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+                {/* Bottom Action Bar: 1 Primary CTA + 1 Secondary Link */}
+                <div className="pt-3.5 border-t border-brand-border/70 flex flex-col sm:flex-row items-center justify-between gap-3">
                   <Button
                     href={getWhatsAppUrl(pkg.whatsappMessage)}
                     external
                     variant="accent"
                     size="md"
-                    className="w-full sm:w-auto font-heading font-bold text-xs sm:text-sm justify-center gap-2 shadow-xs py-2.5 px-4"
+                    className="w-full sm:w-auto font-heading font-bold text-xs sm:text-sm justify-center gap-2 shadow-xs py-2.5 px-5"
                   >
                     <MessageSquare className="w-4 h-4 text-brand-primary shrink-0" />
                     <span>Get Exact Scope on WhatsApp</span>
@@ -268,11 +268,11 @@ export function SolutionConfigurator() {
 
                   <Button
                     href="/contact"
-                    variant="outline"
-                    size="md"
-                    className="w-full sm:w-auto font-heading text-xs sm:text-sm justify-center py-2.5 px-4"
+                    variant="ghost"
+                    size="sm"
+                    className="text-xs font-heading font-bold text-brand-secondary hover:text-brand-primary transition-colors py-1 px-2"
                   >
-                    Request Written Proposal
+                    Request Written Proposal →
                   </Button>
                 </div>
               </div>

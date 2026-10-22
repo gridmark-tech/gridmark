@@ -28,14 +28,16 @@ export function Reveal({
   }
 
   const offsetMap = {
-    up: { y: 20, x: 0 },
-    down: { y: -20, x: 0 },
-    left: { x: 20, y: 0 },
-    right: { x: -20, y: 0 },
+    up: { y: 8, x: 0 },
+    down: { y: -8, x: 0 },
+    left: { x: 8, y: 0 },
+    right: { x: -8, y: 0 },
     none: { x: 0, y: 0 },
   };
 
   const initialOffset = offsetMap[direction];
+  const effectiveDelay = Math.min(delay, 0.15);
+  const effectiveDuration = Math.min(duration, 0.3);
 
   return (
     <motion.div
@@ -43,9 +45,9 @@ export function Reveal({
       whileInView={{ opacity: 1, x: 0, y: 0 }}
       viewport={{ once: true, margin: viewportMargin }}
       transition={{
-        duration,
-        delay,
-        ease: [0.21, 0.47, 0.32, 0.98],
+        duration: effectiveDuration,
+        delay: effectiveDelay,
+        ease: [0.16, 1, 0.3, 1],
       }}
       className={cn(className)}
     >

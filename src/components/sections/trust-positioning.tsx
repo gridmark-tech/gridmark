@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "motion/react";
 import { CheckCircle2, XCircle, Zap, MessageSquare } from "lucide-react";
@@ -8,149 +8,7 @@ import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/motion/reveal";
 
 export function TrustPositioning() {
-  // Fresh load begins on Status Quo Chaos (friction)
   const [mobileTab, setMobileTab] = useState<"friction" | "engine">("friction");
-  const mobileTabRef = useRef(mobileTab);
-
-  const sectionRef = useRef<HTMLElement>(null);
-  const mobileCardRef = useRef<HTMLDivElement>(null);
-  const hasAutoSwitchedRef = useRef(false);
-  const userInteractedRef = useRef(false);
-  const isHaltedRef = useRef(false);
-  const lockedYRef = useRef<number>(0);
-  const unlockTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const lockListenersRef = useRef<{
-    scroll: () => void;
-    touch: (e: TouchEvent) => void;
-    wheel: (e: WheelEvent) => void;
-    key: (e: KeyboardEvent) => void;
-  } | null>(null);
-
-  useEffect(() => {
-    mobileTabRef.current = mobileTab;
-  }, [mobileTab]);
-
-  const releaseScrollHalt = useCallback(() => {
-    if (!isHaltedRef.current && !lockListenersRef.current) return;
-    isHaltedRef.current = false;
-
-    if (unlockTimeoutRef.current) {
-      clearTimeout(unlockTimeoutRef.current);
-      unlockTimeoutRef.current = null;
-    }
-
-    if (lockListenersRef.current) {
-      const { scroll, touch, wheel, key } = lockListenersRef.current;
-      window.removeEventListener("scroll", scroll);
-      window.removeEventListener("touchmove", touch);
-      window.removeEventListener("wheel", wheel);
-      window.removeEventListener("keydown", key);
-      document.body.style.touchAction = "";
-      lockListenersRef.current = null;
-    }
-  }, []);
-
-  // Brings vertical scrolling to an immediate halt during card transition, then unlocks
-  const haltVerticalScroll = useCallback((durationMs = 700) => {
-    if (typeof window === "undefined" || isHaltedRef.current) return;
-
-    releaseScrollHalt();
-    isHaltedRef.current = true;
-
-    // Frame card cleanly: if scrolled past card top, frame card right in view
-    let targetY = window.scrollY;
-    if (mobileCardRef.current) {
-      const cardRect = mobileCardRef.current.getBoundingClientRect();
-      if (cardRect.top < 24) {
-        targetY = Math.max(0, window.scrollY + cardRect.top - 56);
-      }
-    }
-    lockedYRef.current = targetY;
-
-    // Immediately halt momentum scrolling
-    window.scrollTo({ top: targetY, behavior: "instant" as ScrollBehavior });
-
-    const handleScrollLock = () => {
-      if (isHaltedRef.current && window.scrollY !== lockedYRef.current) {
-        window.scrollTo({ top: lockedYRef.current, behavior: "instant" as ScrollBehavior });
-      }
-    };
-
-    const handleTouchMove = (e: TouchEvent) => {
-      if (isHaltedRef.current && e.cancelable) {
-        e.preventDefault();
-      }
-    };
-
-    const handleWheel = (e: WheelEvent) => {
-      if (isHaltedRef.current && e.cancelable) {
-        e.preventDefault();
-      }
-    };
-
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (
-        isHaltedRef.current &&
-        ["ArrowDown", "ArrowUp", "PageDown", "PageUp", "Space", " "].includes(e.key)
-      ) {
-        e.preventDefault();
-      }
-    };
-
-    window.addEventListener("scroll", handleScrollLock, { passive: false });
-    window.addEventListener("touchmove", handleTouchMove, { passive: false });
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    window.addEventListener("keydown", handleKeyDown, { passive: false });
-
-    document.body.style.touchAction = "pan-x";
-
-    lockListenersRef.current = {
-      scroll: handleScrollLock,
-      touch: handleTouchMove,
-      wheel: handleWheel,
-      key: handleKeyDown,
-    };
-
-    unlockTimeoutRef.current = setTimeout(() => {
-      releaseScrollHalt();
-    }, durationMs);
-  }, [releaseScrollHalt]);
-
-  useEffect(() => {
-    let rafId: number | null = null;
-
-    const handleScroll = () => {
-      // If user already interacted (swiped or tapped) or already auto-switched once, keep normal consistent scroll
-      if (hasAutoSwitchedRef.current || userInteractedRef.current || isHaltedRef.current) return;
-      if (rafId !== null) return;
-
-      rafId = window.requestAnimationFrame(() => {
-        rafId = null;
-        const section = sectionRef.current;
-        if (!section) return;
-
-        const rect = section.getBoundingClientRect();
-        const viewportHeight = window.innerHeight;
-
-        // Occurs when user has scrolled through the card and is about to exit to the next section
-        // (top of section is scrolled up, and bottom is nearing lower viewport)
-        if (rect.top < 0 && rect.bottom <= viewportHeight * 0.88 && rect.bottom >= viewportHeight * 0.1) {
-          if (mobileTabRef.current === "friction") {
-            hasAutoSwitchedRef.current = true;
-            haltVerticalScroll(700);
-            setMobileTab("engine");
-          }
-        }
-      });
-    };
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      if (rafId !== null) window.cancelAnimationFrame(rafId);
-      window.removeEventListener("scroll", handleScroll);
-      releaseScrollHalt();
-    };
-  }, [haltVerticalScroll, releaseScrollHalt]);
 
   // Shared Chaos Card Component
   const renderChaosCard = () => (
@@ -295,10 +153,7 @@ export function TrustPositioning() {
   );
 
   return (
-    <section
-      ref={sectionRef}
-      className="w-full py-14 sm:py-20 lg:py-28 border-y border-brand-border/70 bg-brand-surface/40 overflow-hidden"
-    >
+    <section className="w-full py-14 sm:py-20 lg:py-28 border-y border-brand-border/70 bg-brand-surface/40 overflow-hidden">
       <Container>
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12">
@@ -329,11 +184,7 @@ export function TrustPositioning() {
             <div className="relative inline-flex p-1 rounded-2xl bg-brand-bg border border-brand-border/90 shadow-2xs w-full max-w-sm">
               <button
                 type="button"
-                onClick={() => {
-                  releaseScrollHalt();
-                  setMobileTab("friction");
-                  userInteractedRef.current = true;
-                }}
+                onClick={() => setMobileTab("friction")}
                 className={`relative z-10 flex-1 py-2 px-3 rounded-xl text-xs font-heading font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer ${
                   mobileTab === "friction"
                     ? "text-white"
@@ -353,11 +204,7 @@ export function TrustPositioning() {
 
               <button
                 type="button"
-                onClick={() => {
-                  releaseScrollHalt();
-                  setMobileTab("engine");
-                  userInteractedRef.current = true;
-                }}
+                onClick={() => setMobileTab("engine")}
                 className={`relative z-10 flex-1 py-2 px-3 rounded-xl text-xs font-heading font-bold flex items-center justify-center gap-1.5 transition-colors cursor-pointer ${
                   mobileTab === "engine"
                     ? "text-white"
@@ -378,34 +225,23 @@ export function TrustPositioning() {
           </div>
 
           {/* Swipeable Motion Stage */}
-          <div ref={mobileCardRef} className="relative w-full touch-pan-y min-h-[500px]">
+          <div className="relative w-full touch-pan-y min-h-[480px]">
             <AnimatePresence mode="wait" initial={false}>
               <motion.div
                 key={mobileTab}
-                initial={{ opacity: 0, x: mobileTab === "engine" ? 70 : -70 }}
+                initial={{ opacity: 0, x: mobileTab === "engine" ? 40 : -40 }}
                 animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: mobileTab === "engine" ? -70 : 70 }}
-                transition={{ duration: 0.36, ease: [0.22, 1, 0.36, 1] }}
-                onAnimationComplete={() => {
-                  if (mobileTab === "engine" && isHaltedRef.current) {
-                    setTimeout(() => {
-                      releaseScrollHalt();
-                    }, 150);
-                  }
-                }}
+                exit={{ opacity: 0, x: mobileTab === "engine" ? -40 : 40 }}
+                transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.2}
+                dragElastic={0.15}
                 onDragEnd={(_e, info) => {
-                  const threshold = 40;
+                  const threshold = 35;
                   if (info.offset.x < -threshold && mobileTab === "friction") {
-                    releaseScrollHalt();
                     setMobileTab("engine");
-                    userInteractedRef.current = true;
                   } else if (info.offset.x > threshold && mobileTab === "engine") {
-                    releaseScrollHalt();
                     setMobileTab("friction");
-                    userInteractedRef.current = true;
                   }
                 }}
                 className="cursor-grab active:cursor-grabbing w-full"

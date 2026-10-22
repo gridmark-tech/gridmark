@@ -38,8 +38,7 @@ export function FeaturedWork() {
 
           <Reveal direction="up" delay={0.3}>
             <p className="mt-2 text-xs sm:text-sm lg:text-base text-brand-secondary leading-relaxed">
-              How a Computer Village electronics dealer turned scattered social media
-              posts into organized WhatsApp sales.
+              How Northstar Electronics in Computer Village replaced DM chaos with organized WhatsApp orders.
             </p>
           </Reveal>
         </div>
@@ -66,70 +65,67 @@ export function FeaturedWork() {
                   {project.title}
                 </h3>
 
-                <p className="mt-2 sm:mt-3 text-xs sm:text-sm text-brand-secondary leading-relaxed">
-                  Replaced chaotic Instagram DMs and repetitive pricing calls with a
-                  lightning-fast catalogue where customers check specs, see live Ikeja
-                  stock, and tap once to buy on WhatsApp.
+                <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-brand-secondary leading-relaxed">
+                  Replaced endless &ldquo;Is this available?&rdquo; DMs with an instant product catalogue that converts directly on WhatsApp.
                 </p>
 
-                {/* 3 Clear Proof Highlights */}
-                <div className="mt-5 space-y-2">
-                  {[
-                    {
-                      title: "1-Tap WhatsApp Checkout",
-                      desc: "Customer taps once; sends exact model name, specs, and price.",
-                    },
-                    {
-                      title: "Sub-Second 4G Speed",
-                      desc: "Loads in 0.03s with zero layout lag on mobile smartphones.",
-                    },
-                    {
-                      title: "300+ Verified Stock SKUs",
-                      desc: "Live inventory tags (New, Open Box) end customer hesitation.",
-                    },
-                  ].map((item, idx) => (
-                    <div
-                      key={idx}
-                      className="p-2.5 rounded-xl bg-brand-bg/60 border border-brand-border/70 flex items-start gap-2.5"
-                    >
-                      <div className="w-5 h-5 rounded-md bg-emerald-100 text-emerald-800 flex items-center justify-center shrink-0 mt-0.5 font-bold text-[10px]">
-                        ✓
-                      </div>
-                      <div className="min-w-0">
-                        <span className="font-heading font-bold text-xs text-brand-primary block leading-tight">
-                          {item.title}
-                        </span>
-                        <span className="text-[11px] text-brand-secondary block mt-0.5 leading-snug">
-                          {item.desc}
-                        </span>
-                      </div>
-                    </div>
-                  ))}
+                {/* 3 Punchy Outcome Metrics (Instant scan for busy merchants) */}
+                <div className="mt-4 grid grid-cols-3 gap-2">
+                  <div className="p-2.5 rounded-xl bg-brand-bg/80 border border-brand-border/70 text-center">
+                    <span className="font-heading font-extrabold text-sm sm:text-base text-brand-primary block">
+                      0.03s
+                    </span>
+                    <span className="text-[10px] sm:text-xs text-brand-secondary font-medium block mt-0.5">
+                      4G Speed
+                    </span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-brand-bg/80 border border-brand-border/70 text-center">
+                    <span className="font-heading font-extrabold text-sm sm:text-base text-brand-primary block">
+                      1-Tap
+                    </span>
+                    <span className="text-[10px] sm:text-xs text-brand-secondary font-medium block mt-0.5">
+                      WhatsApp Orders
+                    </span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-brand-bg/80 border border-brand-border/70 text-center">
+                    <span className="font-heading font-extrabold text-sm sm:text-base text-brand-primary block">
+                      300+
+                    </span>
+                    <span className="text-[10px] sm:text-xs text-brand-secondary font-medium block mt-0.5">
+                      Live SKUs
+                    </span>
+                  </div>
+                </div>
+
+                {/* Outcome Summary Bullet */}
+                <div className="mt-3 py-2 px-3 rounded-lg bg-emerald-50/70 border border-emerald-200/80 text-[11px] sm:text-xs text-emerald-900 font-medium flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
+                  <span>Customers check live showroom stock and order pre-filled specs in 1 tap.</span>
                 </div>
               </div>
 
-              {/* Bottom Actions */}
-              <div className="mt-6 pt-4 border-t border-brand-border/80 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5">
+              {/* Bottom Actions: 1 Primary CTA + 1 Clean Secondary Link */}
+              <div className="mt-4 pt-3.5 border-t border-brand-border/80 flex flex-col sm:flex-row items-center justify-between gap-3">
                 <Button
                   href="/work"
                   variant="dark"
                   size="md"
-                  className="w-full sm:w-auto justify-center font-heading font-bold text-xs sm:text-sm py-2.5 px-4"
+                  className="w-full sm:w-auto justify-center font-heading font-bold text-xs sm:text-sm py-2.5 px-5"
                 >
-                  <span>View full case study</span>
+                  <span>View Case Study & Live Demo</span>
                   <ArrowRight className="w-4 h-4 ml-1.5" />
                 </Button>
-                <Button
+                <a
                   href={getWhatsAppUrl(
                     "Hello Gridmark, I saw the Northstar Electronics case study on your site and want to build a similar digital storefront."
                   )}
-                  external
-                  variant="outline"
-                  size="md"
-                  className="w-full sm:w-auto justify-center font-heading text-xs sm:text-sm py-2.5 px-4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs font-heading font-bold text-emerald-700 hover:text-emerald-800 transition-colors inline-flex items-center gap-1 text-center py-1"
                 >
-                  Request Similar Build
-                </Button>
+                  <MessageSquare className="w-3.5 h-3.5" />
+                  <span>Request Similar Build on WhatsApp</span>
+                </a>
               </div>
             </div>
 
