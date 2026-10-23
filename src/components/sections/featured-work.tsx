@@ -73,14 +73,6 @@ export function FeaturedWork() {
                 <div className="mt-4 grid grid-cols-3 gap-2">
                   <div className="p-2.5 rounded-xl bg-brand-bg/80 border border-brand-border/70 text-center">
                     <span className="font-heading font-extrabold text-sm sm:text-base text-brand-primary block">
-                      0.03s
-                    </span>
-                    <span className="text-[10px] sm:text-xs text-brand-secondary font-medium block mt-0.5">
-                      4G Speed
-                    </span>
-                  </div>
-                  <div className="p-2.5 rounded-xl bg-brand-bg/80 border border-brand-border/70 text-center">
-                    <span className="font-heading font-extrabold text-sm sm:text-base text-brand-primary block">
                       1-Tap
                     </span>
                     <span className="text-[10px] sm:text-xs text-brand-secondary font-medium block mt-0.5">
@@ -92,7 +84,15 @@ export function FeaturedWork() {
                       300+
                     </span>
                     <span className="text-[10px] sm:text-xs text-brand-secondary font-medium block mt-0.5">
-                      Live SKUs
+                      Live Showroom SKUs
+                    </span>
+                  </div>
+                  <div className="p-2.5 rounded-xl bg-brand-bg/80 border border-brand-border/70 text-center">
+                    <span className="font-heading font-extrabold text-sm sm:text-base text-brand-primary block">
+                      Zero
+                    </span>
+                    <span className="text-[10px] sm:text-xs text-brand-secondary font-medium block mt-0.5">
+                      DM Repetition
                     </span>
                   </div>
                 </div>

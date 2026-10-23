@@ -237,41 +237,41 @@ export function ServicesOverview() {
                   </h3>
 
                   <p className="mt-2.5 text-xs sm:text-sm text-brand-secondary leading-relaxed">
-                    Tailored corporate and enterprise websites engineered for sub-second speeds, flawless SEO, and executive trust.
+                    Authoritative corporate websites designed to position your business as an industry leader and capture qualified client inquiries.
                   </p>
 
-                  {/* Visual Artifact 2: Telemetry & Core Web Vitals Gauge */}
+                  {/* Visual Artifact 2: Business Impact Strip */}
                   <div className="mt-5 p-3.5 rounded-2xl bg-brand-bg/80 border border-brand-border space-y-2.5">
                     <div className="flex items-center justify-between text-[10px]">
-                      <span className="font-heading font-semibold text-brand-secondary">Mobile Performance Telemetry</span>
-                      <span className="font-sans text-emerald-700 font-bold">Grade: 100/100</span>
+                      <span className="font-heading font-semibold text-brand-secondary">Commercial Results</span>
+                      <span className="font-sans text-emerald-700 font-bold">Growth Engine</span>
                     </div>
 
                     <div className="grid grid-cols-3 gap-2">
                       <div className="p-2.5 rounded-xl bg-white border border-brand-border text-center">
-                        <div className="w-8 h-8 rounded-full border-2 border-emerald-500 text-emerald-600 font-bold text-xs flex items-center justify-center mx-auto font-sans">
-                          100
-                        </div>
+                        <span className="font-heading font-extrabold text-sm text-brand-primary block">
+                          Trust
+                        </span>
                         <span className="text-[9px] font-heading font-semibold text-brand-secondary block mt-1 uppercase">
-                          Performance
+                          Executive Presence
                         </span>
                       </div>
 
                       <div className="p-2.5 rounded-xl bg-white border border-brand-border text-center">
-                        <div className="w-8 h-8 rounded-full border-2 border-emerald-500 text-emerald-600 font-bold text-xs flex items-center justify-center mx-auto font-sans">
-                          0.4s
-                        </div>
+                        <span className="font-heading font-extrabold text-sm text-brand-primary block">
+                          Search
+                        </span>
                         <span className="text-[9px] font-heading font-semibold text-brand-secondary block mt-1 uppercase">
-                          LCP Time
+                          Google Inquiries
                         </span>
                       </div>
 
                       <div className="p-2.5 rounded-xl bg-white border border-brand-border text-center">
-                        <div className="w-8 h-8 rounded-full border-2 border-emerald-500 text-emerald-600 font-bold text-xs flex items-center justify-center mx-auto font-sans">
-                          0.0
-                        </div>
+                        <span className="font-heading font-extrabold text-sm text-brand-primary block">
+                          Direct
+                        </span>
                         <span className="text-[9px] font-heading font-semibold text-brand-secondary block mt-1 uppercase">
-                          Zero CLS
+                          Lead Capture
                         </span>
                       </div>
                     </div>
@@ -281,11 +281,11 @@ export function ServicesOverview() {
                   <ul className="mt-5 space-y-2 text-xs text-brand-secondary">
                     <li className="flex items-center gap-2">
                       <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span>Server-rendered with Next.js 16 App Router</span>
+                      <span>Structured customer enquiry and consult booking flow</span>
                     </li>
                     <li className="flex items-center gap-2">
                       <Check className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                      <span>Structured corporate lead capture workflows</span>
+                      <span>Optimized for local Google discovery across your service regions</span>
                     </li>
                   </ul>
                 </div>

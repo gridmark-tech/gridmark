@@ -30,7 +30,7 @@ const PRODUCTS: ProductItem[] = [
     id: "1",
     name: "MacBook Pro 16\" M3 Max",
     shortName: "MacBook Pro 16\"",
-    specs: "36GB RAM · 1TB SSD · 16-Core CPU",
+    specs: "Apple M3 Max · Space Black · 1-Yr Warranty",
     price: "₦3,850,000",
     condition: "Brand New Sealed",
     stock: "In Stock Ikeja",
@@ -41,7 +41,7 @@ const PRODUCTS: ProductItem[] = [
     id: "2",
     name: "Dell XPS 15 9530",
     shortName: "Dell XPS 15",
-    specs: "i9 13900H · 32GB · RTX 4070 · OLED",
+    specs: "32GB RAM · OLED InfinityEdge · In Stock",
     price: "₦2,450,000",
     condition: "Open Box A+",
     stock: "2 Units Left",
@@ -52,7 +52,7 @@ const PRODUCTS: ProductItem[] = [
     id: "3",
     name: "iPhone 16 Pro Max 256GB",
     shortName: "iPhone 16 Pro Max",
-    specs: "Natural Titanium · eSIM + Physical",
+    specs: "Natural Titanium · Sealed Box · In Stock",
     price: "₦1,950,000",
     condition: "Brand New Sealed",
     stock: "In Stock",
@@ -63,7 +63,7 @@ const PRODUCTS: ProductItem[] = [
     id: "4",
     name: "Dell UltraSharp 32\" 4K",
     shortName: "UltraSharp 32\"",
-    specs: "IPS Black · USB-C Hub 90W · HDR400",
+    specs: "4K Color-Accurate · USB-C Hub · In Stock",
     price: "₦1,150,000",
     condition: "Brand New",
     stock: "Available Ikeja",
@@ -104,12 +104,12 @@ export function InteractiveDeviceStage() {
                 G
               </span>
               <span className="font-heading font-bold text-xs tracking-tight text-white truncate">
-                LIVE STORE ENGINE
+                LIVE STOREFRONT
               </span>
             </div>
             <span className="shrink-0 text-[10px] bg-emerald-500/20 text-emerald-400 font-heading font-semibold px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1">
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              Sub-Second 4G
+              Automated Orders
             </span>
           </div>
 
@@ -217,10 +217,10 @@ export function InteractiveDeviceStage() {
           {/* Bottom Telemetry Bar */}
           <div className="px-3 sm:px-4 py-2 bg-brand-surface border-t border-brand-border/80 flex items-center justify-between gap-1 text-[9.5px] sm:text-[10px] text-brand-secondary overflow-hidden whitespace-nowrap">
             <span className="flex items-center gap-1 truncate">
-              <Zap className="w-3 h-3 text-emerald-600 shrink-0" /> 0.03s Page Load
+              <Zap className="w-3 h-3 text-emerald-600 shrink-0" /> 1-Tap WhatsApp Checkout
             </span>
             <span className="flex items-center gap-1 truncate">
-              <ShieldCheck className="w-3 h-3 text-emerald-600 shrink-0" /> Verified Showroom Stock
+              <ShieldCheck className="w-3 h-3 text-emerald-600 shrink-0" /> Real-Time Live Stock
             </span>
           </div>
         </div>
@@ -260,7 +260,7 @@ export function InteractiveDeviceStage() {
 
                       <span className="text-[10px] bg-emerald-500/20 text-emerald-400 font-heading font-semibold px-2 py-0.5 rounded-full border border-emerald-500/30 flex items-center gap-1 shrink-0">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                        Live 4G
+                        Live Orders
                       </span>
                     </div>
 

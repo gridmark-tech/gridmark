@@ -6,49 +6,49 @@ export function Process() {
   const steps = [
     {
       step: "01",
-      name: "Discover",
+      name: "Strategy & Scope",
       description:
-        "We discuss your business, audience, goals, existing sales channels, and core requirements.",
+        "We map your sales goals, target buyers, and agree on an exact fixed deliverable scope.",
     },
     {
       step: "02",
-      name: "Plan",
+      name: "Interactive Prototype",
       description:
-        "We agree on the scope, page structure, deliverables, timeline, and fixed project cost.",
+        "Click through your design screens and approve every layout and interaction before code begins.",
     },
     {
       step: "03",
-      name: "Build",
+      name: "Build & Content",
       description:
-        "We design and develop the agreed solution, sharing progress and collecting feedback at defined checkpoints.",
+        "Custom development populated with your verified catalogue, contact forms, and WhatsApp order routing.",
     },
     {
       step: "04",
-      name: "Launch",
+      name: "Launch & Handoff",
       description:
-        "We test the finished work, deploy to production, and provide the agreed handover or ongoing support.",
+        "Live deployment, custom domain setup, and team walkthrough so you start taking orders immediately.",
     },
   ];
 
   return (
-    <section className="w-full py-20 sm:py-28 bg-brand-surface/60 border-y border-brand-border/70" id="process">
+    <section className="w-full py-16 sm:py-24 bg-brand-surface/60 border-y border-brand-border/70" id="process">
       <Container>
-        <div className="max-w-2xl mb-14 sm:mb-18">
+        <div className="max-w-2xl mb-10 sm:mb-14">
           <Reveal direction="up" delay={0.1}>
             <span className="text-xs font-heading font-semibold uppercase tracking-wider text-brand-secondary">
-              Our Methodology
+              Predictable Delivery
             </span>
           </Reveal>
 
           <Reveal direction="up" delay={0.2}>
-            <h2 className="mt-2 font-heading font-extrabold text-3xl sm:text-4xl tracking-tight text-brand-primary">
-              From first conversation to launch.
+            <h2 className="mt-2 font-heading font-extrabold text-2xl sm:text-4xl tracking-tight text-brand-primary">
+              A clear roadmap. No surprises.
             </h2>
           </Reveal>
 
           <Reveal direction="up" delay={0.3}>
-            <p className="mt-4 text-base sm:text-lg text-brand-secondary leading-relaxed">
-              A transparent, structured engagement that keeps you informed at every milestone without surprises.
+            <p className="mt-3 text-sm sm:text-base text-brand-secondary leading-relaxed">
+              Transparent milestones that take you from initial consultation to a live, converting platform in 7 to 14 days.
             </p>
           </Reveal>
         </div>

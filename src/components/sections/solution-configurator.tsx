@@ -56,8 +56,8 @@ const PACKAGES: Record<BusinessType, PackageData> = {
         desc: "Clear stock badges (In Stock Ikeja / 2 Left) end repetitive pricing DMs.",
       },
       {
-        title: "Sub-Second 4G Speed",
-        desc: "Loads in 0.03s on smartphones so buyers never drop off waiting.",
+        title: "Instant Mobile Experience",
+        desc: "Fast, frictionless browsing on smartphones so buyers never drop off.",
       },
     ],
     samplePreview: {
@@ -90,8 +90,8 @@ const PACKAGES: Record<BusinessType, PackageData> = {
         desc: "Briefs delivered instantly to official business email & leadership WhatsApp.",
       },
       {
-        title: "Google Search Indexing",
-        desc: "Optimized for corporate search discovery and sub-second mobile speed.",
+        title: "Google Search Discovery",
+        desc: "Optimized for local and corporate search discovery so prospective clients find you easily.",
       },
     ],
     samplePreview: {
@@ -329,7 +329,7 @@ export function SolutionConfigurator() {
                 <div className="mt-3 pt-2.5 border-t border-brand-border/70 flex items-center justify-between text-[10px] text-brand-secondary">
                   <span className="flex items-center gap-1">
                     <Zap className="w-3 h-3 text-emerald-600 shrink-0" />
-                    <span>0.03s 4G Load</span>
+                    <span>Instant WhatsApp Orders</span>
                   </span>
                   <span className="flex items-center gap-1">
                     <ShieldCheck className="w-3 h-3 text-emerald-600 shrink-0" />

@@ -8,45 +8,45 @@ export function WhyGridmark() {
     {
       icon: Target,
       number: "01",
-      title: "Business first",
+      title: "High-Converting Design",
       description:
-        "We start by understanding what your business needs to communicate and what your customers need to do before writing a line of code.",
+        "We design clean, distraction-free layouts structured around buyer psychology, turning casual social media browsers into paid orders.",
     },
     {
       icon: Compass,
       number: "02",
-      title: "Designed with purpose",
+      title: "Automated Sales Flow",
       description:
-        "Every page, interaction, and visual element should help visitors understand your business and take the next practical commercial step.",
+        "Stop repeating prices and bank details in DMs. Direct integrations route customer orders with pre-filled specs straight to your WhatsApp.",
     },
     {
       icon: Smartphone,
       number: "03",
-      title: "Built for real use",
+      title: "Guaranteed Delivery",
       description:
-        "Your website should work reliably across mobile devices, load fast on local network conditions, and remain straightforward to maintain.",
+        "No endless revisions or vague timelines. Clear scopes, transparent milestones, and on-schedule launches without surprises.",
     },
   ];
 
   return (
-    <section className="w-full py-20 sm:py-28">
+    <section className="w-full py-16 sm:py-24">
       <Container>
-        <div className="max-w-2xl mx-auto text-center mb-14 sm:mb-18">
+        <div className="max-w-2xl mx-auto text-center mb-10 sm:mb-14">
           <Reveal direction="up" delay={0.1}>
             <span className="text-xs font-heading font-semibold uppercase tracking-wider text-brand-secondary">
-              Our Principles
+              Why Businesses Choose Us
             </span>
           </Reveal>
 
           <Reveal direction="up" delay={0.2}>
-            <h2 className="mt-2 font-heading font-extrabold text-3xl sm:text-4xl tracking-tight text-brand-primary">
-              Digital solutions should solve real business problems.
+            <h2 className="mt-2 font-heading font-extrabold text-2xl sm:text-4xl tracking-tight text-brand-primary">
+              Built for sales, not just aesthetics.
             </h2>
           </Reveal>
 
           <Reveal direction="up" delay={0.3}>
-            <p className="mt-4 text-base sm:text-lg text-brand-secondary leading-relaxed">
-              We replace guesswork and superficial effects with solutions rooted in commercial reality.
+            <p className="mt-3 text-sm sm:text-base text-brand-secondary leading-relaxed">
+              Every layout, button, and headline is engineered to guide visitors toward buying, booking, or sending an enquiry.
             </p>
           </Reveal>
         </div>

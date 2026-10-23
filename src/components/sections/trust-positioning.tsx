@@ -58,13 +58,13 @@ export function TrustPositioning() {
         </div>
 
         <div className="mt-4 sm:mt-6 p-3 sm:p-4 rounded-xl bg-red-100/70 border border-red-200 text-xs text-red-950 leading-relaxed font-medium">
-          Result: 2 hours of manual typing, buyer frustration, customer loses patience and buys elsewhere.
+          Result: Unanswered DMs, repeated pricing questions, and buyers who abandon when replies are delayed.
         </div>
       </div>
 
       <div className="mt-5 pt-3.5 border-t border-red-200/70 flex items-center justify-between text-xs text-red-700 font-heading font-semibold">
-        <span>Friction Factor: High</span>
-        <span className="font-bold">Estimated 65% Lost Sales</span>
+        <span>Typical Delay: 2–4 Hours</span>
+        <span className="font-bold">High Buyer Drop-off</span>
       </div>
     </div>
   );
@@ -77,11 +77,11 @@ export function TrustPositioning() {
           <div className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-600 shrink-0" />
             <span className="font-heading font-bold text-xs sm:text-sm uppercase tracking-wide text-emerald-950">
-              The Gridmark Engine
+              The Gridmark System
             </span>
           </div>
           <span className="text-[10.5px] sm:text-xs font-heading text-emerald-800 bg-emerald-200/80 px-2 sm:px-2.5 py-0.5 rounded-full font-bold">
-            1-Tap Conversion
+            Automated Sales
           </span>
         </div>
 
@@ -113,20 +113,20 @@ export function TrustPositioning() {
               Dell XPS 15 9530 (2024 Edition)
             </p>
             <p className="text-[11px] sm:text-xs text-brand-secondary mt-0.5 font-sans">
-              Core i9-13900H · 32GB RAM · 1TB SSD · RTX 4070 · OLED 3.5K
+              32GB RAM · 1TB SSD · OLED 3.5K Display · In Stock
             </p>
           </div>
 
           <div className="grid grid-cols-2 gap-1.5 text-[10.5px] sm:text-[11px] bg-neutral-50 p-2 sm:p-2.5 rounded-xl border border-neutral-200/70 font-sans">
-            <div>Battery Health: <strong className="text-brand-primary">98% (32 Cycles)</strong></div>
             <div>Warranty: <strong className="text-brand-primary">6 Mo. Direct</strong></div>
             <div>Grade: <strong className="text-emerald-700">Open Box A+</strong></div>
-            <div>Location: <strong className="text-brand-primary">Ikeja Hub</strong></div>
+            <div>Location: <strong className="text-brand-primary">Ikeja Showroom</strong></div>
+            <div>Delivery: <strong className="text-brand-primary">Same-Day Lagos</strong></div>
           </div>
 
           <div className="pt-2 flex items-center justify-between">
             <div>
-              <span className="text-[9px] text-brand-secondary block uppercase">Advertised Price</span>
+              <span className="text-[9px] text-brand-secondary block uppercase">Price</span>
               <span className="font-heading font-extrabold text-base sm:text-lg text-brand-primary">₦2,450,000</span>
             </div>
 
@@ -138,15 +138,15 @@ export function TrustPositioning() {
         </div>
 
         <div className="mt-4 sm:mt-5 p-3 sm:p-4 rounded-xl bg-emerald-100/70 border border-emerald-200 text-xs text-emerald-950 leading-relaxed font-medium">
-          Result: Buyer views exact photos, confirms specs and warranty, and taps once with prefilled model details ready to pay.
+          Result: Buyers check real-time stock, confirm specs, and tap once with a pre-filled order ready to pay.
         </div>
       </div>
 
       <div className="mt-5 pt-3.5 border-t border-emerald-200/80 flex items-center justify-between text-xs text-emerald-800 font-heading font-semibold">
-        <span>Customer Friction: Zero</span>
+        <span>Workflow: Zero Repetition</span>
         <span className="font-bold flex items-center gap-1">
           <Zap className="w-3.5 h-3.5 text-emerald-600" />
-          Instant Qualified Orders
+          Pre-Qualified Orders
         </span>
       </div>
     </div>
@@ -156,23 +156,22 @@ export function TrustPositioning() {
     <section className="w-full py-14 sm:py-20 lg:py-28 border-y border-brand-border/70 bg-brand-surface/40 overflow-hidden">
       <Container>
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-8 sm:mb-12">
+        <div className="max-w-2xl mx-auto text-center mb-8 sm:mb-12">
           <Reveal direction="up" delay={0.1}>
             <span className="text-[11px] sm:text-xs font-heading font-semibold uppercase tracking-wider text-brand-secondary">
-              The Commercial Reality
+              The Sales Bottleneck
             </span>
           </Reveal>
 
           <Reveal direction="up" delay={0.2}>
             <h2 className="mt-1.5 font-heading font-extrabold text-2xl sm:text-3xl md:text-5xl tracking-tight text-brand-primary">
-              Stop losing paying customers in WhatsApp chaos.
+              Stop losing ready buyers to delayed replies.
             </h2>
           </Reveal>
 
           <Reveal direction="up" delay={0.3}>
             <p className="mt-2.5 sm:mt-3 text-xs sm:text-base lg:text-lg text-brand-secondary leading-relaxed">
-              When product specs and prices are buried across 50 status updates and
-              random chat screenshots, sales stall. Here is how Gridmark fixes it.
+              When customers have to wait hours in DMs just to check prices or availability, they buy from competitors. Gridmark turns your catalogue into an automated self-serve sales machine.
             </p>
           </Reveal>
         </div>
