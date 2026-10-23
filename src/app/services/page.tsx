@@ -153,11 +153,11 @@ export default function ServicesPage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="flex md:grid md:grid-cols-2 gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory pb-3 no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
               {FAQS.map((faq, i) => (
                 <div
                   key={i}
-                  className="p-6 sm:p-7 rounded-2xl bg-brand-surface border border-brand-border/80"
+                  className="snap-center shrink-0 w-[84%] md:w-auto p-6 sm:p-7 rounded-2xl bg-brand-surface border border-brand-border/80"
                 >
                   <div className="flex items-start gap-3">
                     <HelpCircle className="w-5 h-5 text-emerald-600 shrink-0 mt-0.5" />

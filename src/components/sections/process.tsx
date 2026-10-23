@@ -53,41 +53,51 @@ export function Process() {
           </Reveal>
         </div>
 
-        {/* 4-Step Process Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Horizontal Snap Scroll on Mobile (< md), 2/4-Column Grid on Desktop */}
+        <div className="flex md:grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
           {steps.map((step, index) => (
-            <Reveal
+            <div
               key={step.step}
-              direction="up"
-              delay={0.1 * (index + 1)}
-              className="h-full"
+              className="snap-center shrink-0 w-[82%] sm:w-[85%] md:w-auto h-full"
             >
-              <div className="h-full p-6 sm:p-7 rounded-2xl bg-brand-surface border border-brand-border/80 shadow-2xs relative flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="w-10 h-10 rounded-xl bg-brand-dark-surface text-brand-dark-text font-heading text-sm font-black flex items-center justify-center">
-                      {step.step}
-                    </span>
-                    <span className="text-xs font-heading uppercase tracking-wider text-brand-secondary font-medium">
-                      Stage {index + 1}
-                    </span>
+              <Reveal
+                direction="up"
+                delay={0.1 * (index + 1)}
+                className="h-full"
+              >
+                <div className="h-full p-5 sm:p-7 rounded-2xl bg-brand-surface border border-brand-border/80 shadow-2xs relative flex flex-col justify-between">
+                  <div>
+                    <div className="flex items-center justify-between mb-4 sm:mb-5">
+                      <span className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-brand-dark-surface text-brand-dark-text font-heading text-xs sm:text-sm font-black flex items-center justify-center">
+                        {step.step}
+                      </span>
+                      <span className="text-[11px] sm:text-xs font-heading uppercase tracking-wider text-brand-secondary font-medium">
+                        Stage {index + 1}
+                      </span>
+                    </div>
+
+                    <h3 className="font-heading font-bold text-lg sm:text-xl text-brand-primary">
+                      {step.name}
+                    </h3>
+
+                    <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm text-brand-secondary leading-relaxed">
+                      {step.description}
+                    </p>
                   </div>
 
-                  <h3 className="font-heading font-bold text-xl text-brand-primary">
-                    {step.name}
-                  </h3>
-
-                  <p className="mt-3 text-sm text-brand-secondary leading-relaxed">
-                    {step.description}
-                  </p>
+                  <div className="mt-5 sm:mt-6 pt-3.5 sm:pt-4 border-t border-brand-border/50 text-[11px] font-heading font-semibold text-brand-secondary">
+                    Checkpoint verified
+                  </div>
                 </div>
-
-                <div className="mt-6 pt-4 border-t border-brand-border/50 text-[11px] font-heading font-semibold text-brand-secondary">
-                  Checkpoint verified
-                </div>
-              </div>
-            </Reveal>
+              </Reveal>
+            </div>
           ))}
+        </div>
+
+        {/* Mobile Swipe Hint */}
+        <div className="md:hidden flex justify-center items-center gap-1.5 mt-1 text-[11px] font-heading font-semibold text-brand-secondary/70">
+          <span>Swipe stages</span>
+          <span className="text-emerald-600">→</span>
         </div>
       </Container>
     </section>

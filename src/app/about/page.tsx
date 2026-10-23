@@ -108,11 +108,11 @@ export default function AboutPage() {
               </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="flex sm:grid sm:grid-cols-2 gap-4 sm:gap-6 overflow-x-auto snap-x snap-mandatory pb-3 no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
               {principles.map((principle, index) => (
                 <div
                   key={index}
-                  className="p-7 rounded-2xl bg-brand-surface border border-brand-border/80 shadow-2xs"
+                  className="snap-center shrink-0 w-[82%] sm:w-auto p-6 sm:p-7 rounded-2xl bg-brand-surface border border-brand-border/80 shadow-2xs"
                 >
                   <span className="font-heading text-xs font-black text-brand-secondary/60 block mb-3">
                     0{index + 1}

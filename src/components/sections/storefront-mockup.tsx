@@ -114,15 +114,15 @@ export function StorefrontMockup() {
         </div>
       </div>
 
-      {/* Storefront Products Grid with WebP Images */}
-      <div className="p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-2 gap-3.5 bg-brand-bg/40">
+      {/* Storefront Products Grid with WebP Images (Horizontal Snap Scroll on Mobile, 2-Cols on Desktop) */}
+      <div className="p-3.5 sm:p-5 flex sm:grid sm:grid-cols-2 gap-3.5 bg-brand-bg/40 overflow-x-auto snap-x snap-mandatory no-scrollbar">
         {filteredProducts.map((product) => {
           const isSelected = selectedProduct.id === product.id;
           return (
             <div
               key={product.id}
               onClick={() => setSelectedProduct(product)}
-              className={`p-3.5 rounded-xl border transition-all cursor-pointer bg-brand-surface flex flex-col justify-between ${
+              className={`snap-start shrink-0 w-[78%] sm:w-auto p-3.5 rounded-xl border transition-all cursor-pointer bg-brand-surface flex flex-col justify-between ${
                 isSelected
                   ? "border-brand-primary ring-2 ring-brand-primary/10 shadow-sm"
                   : "border-brand-border hover:border-brand-primary/40"

@@ -215,11 +215,11 @@ export function InteractiveDeviceStage() {
           </div>
 
           {/* Bottom Telemetry Bar */}
-          <div className="px-3 sm:px-4 py-2 bg-brand-surface border-t border-brand-border/80 flex flex-wrap items-center justify-between gap-1.5 text-[10px] text-brand-secondary">
-            <span className="flex items-center gap-1">
+          <div className="px-3 sm:px-4 py-2 bg-brand-surface border-t border-brand-border/80 flex items-center justify-between gap-1 text-[9.5px] sm:text-[10px] text-brand-secondary overflow-hidden whitespace-nowrap">
+            <span className="flex items-center gap-1 truncate">
               <Zap className="w-3 h-3 text-emerald-600 shrink-0" /> 0.03s Page Load
             </span>
-            <span className="flex items-center gap-1">
+            <span className="flex items-center gap-1 truncate">
               <ShieldCheck className="w-3 h-3 text-emerald-600 shrink-0" /> Verified Showroom Stock
             </span>
           </div>

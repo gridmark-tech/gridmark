@@ -71,10 +71,10 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: "/images/hero/hero-bg.webp",
+        url: "/images/og/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "Gridmark Digital Experiences",
+        alt: "Gridmark - Websites & Digital Storefronts for Ambitious Businesses",
       },
     ],
   },
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Gridmark | Websites & Digital Storefronts for Businesses",
     description: siteConfig.description,
-    images: ["/images/hero/hero-bg.webp"],
+    images: ["/images/og/og-image.jpg"],
   },
   robots: {
     index: true,

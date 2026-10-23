@@ -51,43 +51,54 @@ export function WhyGridmark() {
           </Reveal>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* Horizontal Snap Scroll on Mobile (< md), 3-Column Grid on Desktop */}
+        <div className="flex md:grid md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 overflow-x-auto snap-x snap-mandatory pb-4 no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
           {principles.map((item, index) => {
             const Icon = item.icon;
             return (
-              <Reveal
+              <div
                 key={item.number}
-                direction="up"
-                delay={0.15 * (index + 1)}
-                className="h-full"
+                className="snap-center shrink-0 w-[84%] sm:w-[86%] md:w-auto h-full"
               >
-                <div className="h-full p-8 rounded-2xl bg-brand-surface border border-brand-border/80 shadow-2xs flex flex-col justify-between">
-                  <div>
-                    <div className="flex items-center justify-between mb-6">
-                      <div className="w-12 h-12 rounded-xl bg-brand-bg flex items-center justify-center text-brand-primary border border-brand-border/60">
-                        <Icon className="w-6 h-6" />
+                <Reveal
+                  direction="up"
+                  delay={0.15 * (index + 1)}
+                  className="h-full"
+                >
+                  <div className="h-full p-6 sm:p-8 rounded-2xl bg-brand-surface border border-brand-border/80 shadow-2xs flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between mb-4 sm:mb-6">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-brand-bg flex items-center justify-center text-brand-primary border border-brand-border/60">
+                          <Icon className="w-5 h-5 sm:w-6 sm:h-6" />
+                        </div>
+                        <span className="font-heading text-xs sm:text-sm font-black text-brand-secondary/60">
+                          {item.number}
+                        </span>
                       </div>
-                      <span className="font-heading text-sm font-black text-brand-secondary/60">
-                        {item.number}
-                      </span>
+
+                      <h3 className="font-heading font-bold text-lg sm:text-xl text-brand-primary">
+                        {item.title}
+                      </h3>
+
+                      <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm text-brand-secondary leading-relaxed">
+                        {item.description}
+                      </p>
                     </div>
 
-                    <h3 className="font-heading font-bold text-xl text-brand-primary">
-                      {item.title}
-                    </h3>
-
-                    <p className="mt-3 text-sm text-brand-secondary leading-relaxed">
-                      {item.description}
-                    </p>
+                    <div className="mt-6 sm:mt-8 pt-3.5 sm:pt-4 border-t border-brand-border/50 text-xs font-medium text-emerald-700">
+                      Precision Delivery
+                    </div>
                   </div>
-
-                  <div className="mt-8 pt-4 border-t border-brand-border/50 text-xs font-medium text-emerald-700">
-                    Precision Delivery
-                  </div>
-                </div>
-              </Reveal>
+                </Reveal>
+              </div>
             );
           })}
+        </div>
+
+        {/* Mobile Swipe Hint */}
+        <div className="md:hidden flex justify-center items-center gap-1.5 mt-1 text-[11px] font-heading font-semibold text-brand-secondary/70">
+          <span>Swipe principles</span>
+          <span className="text-emerald-600">→</span>
         </div>
       </Container>
     </section>
